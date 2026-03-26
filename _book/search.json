@@ -1,0 +1,229 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "iOS26 SwiftUI for Web Developers",
+    "section": "",
+    "text": "Preface\n\n\n\nThis is a book aimed at others on a similar journey of specialisation in Swift - from the world of React and web development.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html",
+    "href": "ch01_foundations/Stacks.html",
+    "title": "1  Stacks",
+    "section": "",
+    "text": "1.1 ZStack\nThink of a stack like a &lt;div with extra styling baked in\nTopmost Stack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#zstack",
+    "href": "ch01_foundations/Stacks.html#zstack",
+    "title": "1  Stacks",
+    "section": "1.2 ZStack",
+    "text": "1.2 ZStack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#hstack",
+    "href": "ch01_foundations/Stacks.html#hstack",
+    "title": "1  Stacks",
+    "section": "1.3 HStack",
+    "text": "1.3 HStack\nHorizontal-Stack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#grid",
+    "href": "ch01_foundations/Stacks.html#grid",
+    "title": "1  Stacks",
+    "section": "1.4 Grid",
+    "text": "1.4 Grid",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#section",
+    "href": "ch01_foundations/Stacks.html#section",
+    "title": "1  Stacks",
+    "section": "1.5 ",
+    "text": "1.5",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch02_data/state.html",
+    "href": "ch02_data/state.html",
+    "title": "3  State and Data Flow",
+    "section": "",
+    "text": ".",
+    "crumbs": [
+      "Part II: Data Flow and Architecture",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>State and Data Flow</span>"
+    ]
+  },
+  {
+    "objectID": "ch03_advanced/navigation.html",
+    "href": "ch03_advanced/navigation.html",
+    "title": "4  Navigation and Routing",
+    "section": "",
+    "text": ".",
+    "crumbs": [
+      "Part III: Advanced iOS Interfaces",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Navigation and Routing</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/viewBuilder.html",
+    "href": "ch01_foundations/viewBuilder.html",
+    "title": "2  ViewBuilder",
+    "section": "",
+    "text": "A ViewBuilder is a property wrapper that allows you to create views that can accept multiple child views.\nstruct MyView&lt;Content: View&gt;: View {\n    let content: Content\n    \n    init(@ViewBuilder content: () -&gt; Content) {\n        self.content = content()\n    }\n    \n    var body: some View {\n        content\n    }\n}",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ViewBuilder</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#vstack",
+    "href": "ch01_foundations/Stacks.html#vstack",
+    "title": "1  Stacks",
+    "section": "1.2 VStack",
+    "text": "1.2 VStack\nVertical-Stack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#making-grids",
+    "href": "ch01_foundations/Stacks.html#making-grids",
+    "title": "1  Stacks",
+    "section": "1.4 Making Grids",
+    "text": "1.4 Making Grids",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/Stacks.html#making-grids-with-stacks",
+    "href": "ch01_foundations/Stacks.html#making-grids-with-stacks",
+    "title": "1  Stacks",
+    "section": "1.4 Making Grids with Stacks",
+    "text": "1.4 Making Grids with Stacks",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.stacks.html",
+    "href": "ch01_foundations/1.stacks.html",
+    "title": "1  Stacks",
+    "section": "",
+    "text": "1.1 ZStack\nThink of a stack like a &lt;div with extra styling baked in\nTopmost Stack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.stacks.html#vstack",
+    "href": "ch01_foundations/1.stacks.html#vstack",
+    "title": "1  Stacks",
+    "section": "1.2 VStack",
+    "text": "1.2 VStack\nVertical-Stack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.stacks.html#hstack",
+    "href": "ch01_foundations/1.stacks.html#hstack",
+    "title": "1  Stacks",
+    "section": "1.3 HStack",
+    "text": "1.3 HStack\nHorizontal-Stack",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.stacks.html#making-grids-with-stacks",
+    "href": "ch01_foundations/1.stacks.html#making-grids-with-stacks",
+    "title": "1  Stacks",
+    "section": "1.4 Making Grids with Stacks",
+    "text": "1.4 Making Grids with Stacks",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/3.view-builder.html",
+    "href": "ch01_foundations/3.view-builder.html",
+    "title": "3  ViewBuilder",
+    "section": "",
+    "text": "A ViewBuilder is a property wrapper that allows you to create views that can accept multiple child views.\nstruct MyView&lt;Content: View&gt;: View {\n    let content: Content\n    \n    init(@ViewBuilder content: () -&gt; Content) {\n        self.content = content()\n    }\n    \n    var body: some View {\n        content\n    }\n}",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ViewBuilder</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/5.view-builder.html",
+    "href": "ch01_foundations/5.view-builder.html",
+    "title": "5  ViewBuilder",
+    "section": "",
+    "text": "A (ViewBuilder?) is a list of Views. The reason for using it is to group together functional code.\n\nViewBuilder\na property wrapper that allows for lets, ifs, switches etc. within a view.\n\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        return Text(\"1\")\n    } else {\n        return Text(\"2\")\n    }\n    return Circle().fill(.red) \n}\nadding ‘(ViewBuilder?)’ to the following function transforms it to no longer need return\n\n@ViewBuilder\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        Text(\"1\")\n    } else {\n        Text(\"2\")\n    }\n    Circle().fill(.red) \n}",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>ViewBuilder</span>"
+    ]
+  }
+]

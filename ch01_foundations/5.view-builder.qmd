@@ -1,0 +1,38 @@
+# ViewBuilder
+
+
+A @ViewBuilder is a list of Views. The reason for using it is to group together functional code.
+
+- [ViewBuilder](https://developer.apple.com/documentation/swiftui/viewbuilder) 
+
+
+- a property wrapper that allows for `lets`, `ifs`, `switches` etc. within a view. 
+
+```swift
+func matchMarker(peg: Int) -> some View {
+    if peg == 1 {
+        return Text("1")
+    } else {
+        return Text("2")
+    }
+    return Circle().fill(.red) 
+}
+```
+
+adding '@ViewBuilder' to the following function transforms it to no longer need **return**
+
+```swift
+
+@ViewBuilder
+func matchMarker(peg: Int) -> some View {
+    if peg == 1 {
+        Text("1")
+    } else {
+        Text("2")
+    }
+    Circle().fill(.red) 
+}
+
+```
+
+

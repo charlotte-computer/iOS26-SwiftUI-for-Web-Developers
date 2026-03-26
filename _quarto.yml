@@ -1,0 +1,46 @@
+project:
+  type: book
+
+book:
+  title: "iOS26 SwiftUI for Web Developers"
+  author: "Charlotte Bondarev"
+  date: "3/26/2026"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: "Part I: Foundations"
+      chapters:
+        - ch01_foundations/1.stacks.qmd
+        - ch01_foundations/2.functions.qmd
+        - ch01_foundations/3.model.qmd
+        - ch01_foundations/4.loops.qmd
+        - ch01_foundations/5.view-builder.qmd
+    - part: "Part II: Data Flow and Architecture"
+      chapters:
+        - ch02_data/state.qmd
+    - part: "Part III: Advanced iOS Interfaces"
+      chapters:
+        - ch03_advanced/navigation.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+crossref:
+  fig-title: Figure
+  tbl-title: Table
+  title-delim: "—"
+  fig-prefix: Figure
+  tbl-prefix: Table
+  eq-prefix: Equation
+
+number-sections: true
+number-depth: 2
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt

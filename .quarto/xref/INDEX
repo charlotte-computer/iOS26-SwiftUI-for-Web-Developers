@@ -1,0 +1,44 @@
+{
+  "index.qmd": {
+    "index.html": "173bd7a7"
+  },
+  "intro.qmd": {
+    "intro.html": "f2d79f4f"
+  },
+  "summary.qmd": {
+    "summary.html": "b7afefe6"
+  },
+  "references.qmd": {
+    "references.html": "adfd797c"
+  },
+  "ch01_foundations/viewBuilder.qmd": {
+    "viewBuilder.html": "a80eeb3b"
+  },
+  "ch01_foundations/Stacks.qmd": {
+    "Stacks.html": "c9cfb319"
+  },
+  "ch02_data/state.qmd": {
+    "state.html": "58b1077b"
+  },
+  "ch03_advanced/navigation.qmd": {
+    "navigation.html": "2346f9a1"
+  },
+  "ch01_foundations/1.stacks.qmd": {
+    "1.stacks.html": "28903419"
+  },
+  "ch01_foundations/2.functions.qmd": {
+    "2.functions.html": "023fda9d"
+  },
+  "ch01_foundations/3.view-builder.qmd": {
+    "3.view-builder.html": "e55eed58"
+  },
+  "ch01_foundations/3.model.qmd": {
+    "3.model.html": "33dfc4e9"
+  },
+  "ch01_foundations/4.loops.qmd": {
+    "4.loops.html": "f05ff0ef"
+  },
+  "ch01_foundations/5.view-builder.qmd": {
+    "5.view-builder.html": "59695864"
+  }
+}
