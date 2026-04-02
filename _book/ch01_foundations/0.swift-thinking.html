@@ -180,32 +180,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/1.stacks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Stacks</span></span></a>
+  <a href="../ch01_foundations/1b.syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/2.functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">2.functions.html</span></span></a>
+  <a href="../ch01_foundations/2.stacks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/3.model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">3.model.html</span></span></a>
+  <a href="../ch01_foundations/3.functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">3.functions.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/4.loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">4.loops.html</span></span></a>
+  <a href="../ch01_foundations/4.model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">4.model.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/5.view-builder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
+  <a href="../ch01_foundations/5.loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">5.loops.html</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/6.view-builder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -222,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch02_data/state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
   </div>
 </li>
       </ul>
@@ -239,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch03_advanced/navigation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
   </div>
 </li>
       </ul>
@@ -247,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,6 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#swift-is-object-and-protocol-oriented" id="toc-swift-is-object-and-protocol-oriented" class="nav-link" data-scroll-target="#swift-is-object-and-protocol-oriented">1. Swift is Object and Protocol-Oriented</a></li>
   <li><a href="#swift-is-strongly-and-statically-typed" id="toc-swift-is-strongly-and-statically-typed" class="nav-link" data-scroll-target="#swift-is-strongly-and-statically-typed">2. Swift is Strongly and Statically Typed</a></li>
+  <li><a href="#the-compile-cycle-what-happens-when-you-hit-build" id="toc-the-compile-cycle-what-happens-when-you-hit-build" class="nav-link" data-scroll-target="#the-compile-cycle-what-happens-when-you-hit-build">3. The Compile Cycle: What happens when you hit build?</a></li>
   </ul></li>
   <li><a href="#comparing-swift-swiftui-to-javascript-react" id="toc-comparing-swift-swiftui-to-javascript-react" class="nav-link" data-scroll-target="#comparing-swift-swiftui-to-javascript-react"><span class="header-section-number">1.4</span> Comparing Swift &amp; SwiftUI to JavaScript &amp; React</a></li>
   </ul>
@@ -361,22 +368,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="swift-is-object-and-protocol-oriented" class="level3">
 <h3 class="anchored" data-anchor-id="swift-is-object-and-protocol-oriented">1. Swift is Object and Protocol-Oriented</h3>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Important</span>Everything in Swift is an object.
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>Fact:</strong> Everything in Swift is an object. Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.</p>
+<p><strong>Fact:</strong> Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">age</span> <span class="op">=</span> <span class="dv">30</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">// 'age' is an Int object. We can call methods directly on it:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">isMultiple</span> <span class="op">=</span> age<span class="op">.</span>isMultiple<span class="op">(</span>of<span class="op">:</span> <span class="dv">5</span><span class="op">)</span> <span class="co">// returns true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </div>
 </div>
 <p><strong>Why is Swift designed this way?</strong> - <strong>Interoperability:</strong> The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem. - <strong>Protocol-Oriented Programming:</strong> Swift expands on traditional OOP. Instead of focusing only on what objects <em>are</em> (via inheritance), Swift places a heavy emphasis on what objects <em>can do</em> using Protocols (similar to Interfaces in TypeScript).</p>
@@ -384,26 +388,40 @@ Important
 <section id="swift-is-strongly-and-statically-typed" class="level3">
 <h3 class="anchored" data-anchor-id="swift-is-strongly-and-statically-typed">2. Swift is Strongly and Statically Typed</h3>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Important</span>Everything in Swift has a specific type.
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>Fact:</strong> Everything in Swift has a specific type (e.g., Integer, String, View). The compiler enforces these types before the app can run.</p>
+<p><strong>Fact:</strong> The compiler enforces these types before the app can run.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> <span class="va">name</span> <span class="op">=</span> <span class="st">"Charlotte"</span> <span class="co">// The compiler infers this is a String</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">// The compiler immediately flags this as an error before the app ever runs:</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">// name = 42 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</div>
 <p><strong>How this differs from JavaScript:</strong> - <strong>JavaScript:</strong> You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes. - <strong>Swift:</strong> Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production. - <strong>Type Inference:</strong> Swift’s compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.</p>
+</section>
+<section id="the-compile-cycle-what-happens-when-you-hit-build" class="level3">
+<h3 class="anchored" data-anchor-id="the-compile-cycle-what-happens-when-you-hit-build">3. The Compile Cycle: What happens when you hit build?</h3>
+<p><strong>Fact:</strong> Swift compiles directly down to native machine code (binary). Unlike React, which is shipped as raw text (JavaScript) to be read and interpreted by a user’s web browser at runtime, an iOS app is fully “pre-baked” before it ever leaves your computer.</p>
+<p><strong>The Build Process (Step-by-step):</strong></p>
+<ol type="1">
+<li><strong>You write <code>.swift</code> code</strong> (Human readable logic).</li>
+<li><strong>LLVM Compiler engages.</strong> It strictly checks for type-errors, missing variables, or syntactic anomalies. If it finds even one error, the build forcibly halts.</li>
+<li><strong>Translation into Machine Code.</strong> If your code passes all checks, LLVM translates your logic directly into highly optimized 1s and 0s (ARM Machine Code) specifically tailored for an iPhone’s processor.</li>
+<li><strong>Packaging into an <code>.ipa</code>.</strong> This compiled binary, alongside your images and configuration files, is securely zipped into an <code>.ipa</code> (iOS App Store Package) file.</li>
+</ol>
+<p><strong>What actually ships to the App Store?</strong></p>
+<ul>
+<li>You do <strong>not</strong> ship your raw source code.</li>
+<li>You ship the finalized, fully compiled <code>.ipa</code> binary package.</li>
+<li><strong>Why this matters for your users:</strong> Because the app arrives on their physical phone already translated into raw machine code, it opens and runs blazingly fast compared to a web browser downloading and parsing a heavy JavaScript bundle.</li>
+</ul>
 </section>
 </section>
 <section id="comparing-swift-swiftui-to-javascript-react" class="level2" data-number="1.4">

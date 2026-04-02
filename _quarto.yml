@@ -13,17 +13,20 @@ book:
         - ch01_foundations/0.swift-thinking.qmd
         - ch01_foundations/1.anatomy.qmd
         - ch01_foundations/1b.syntax.qmd
-        - ch01_foundations/1.stacks.qmd
-        - ch01_foundations/2.functions.qmd
-        - ch01_foundations/3.model.qmd
-        - ch01_foundations/4.loops.qmd
-        - ch01_foundations/5.view-builder.qmd
+        - ch01_foundations/2.stacks.qmd
+        - ch01_foundations/3.functions.qmd
+        - ch01_foundations/4.model.qmd
+        - ch01_foundations/5.loops.qmd
+        - ch01_foundations/6.view-builder.qmd
     - part: "Part II: Data Flow and Architecture"
       chapters:
         - ch02_data/state.qmd
     - part: "Part III: Advanced iOS Interfaces"
       chapters:
         - ch03_advanced/navigation.qmd
+    - part: "Part IV: Interview Prep"
+      chapters:
+        - ch04_interview/interview-prep.qmd
     - summary.qmd
     - references.qmd
 

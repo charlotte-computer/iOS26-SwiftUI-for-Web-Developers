@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Swift Syntax &amp; Lexical Rules – iOS26 SwiftUI for Web Developers</title>
+<title>8&nbsp; @ViewBuilder – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ch01_foundations/2.stacks.html" rel="next">
-<link href="../ch01_foundations/1.anatomy.html" rel="prev">
+<link href="../ch02_data/state.html" rel="next">
+<link href="../ch01_foundations/5.loops.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1b.syntax.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/6.view-builder.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -180,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/1b.syntax.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ch01_foundations/1b.syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span></a>
   </div>
 </li>
@@ -210,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/6.view-builder.html" class="sidebar-item-text sidebar-link">
+  <a href="../ch01_foundations/6.view-builder.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
   </div>
 </li>
@@ -267,29 +287,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-rules-of-syntax" id="toc-the-rules-of-syntax" class="nav-link active" data-scroll-target="#the-rules-of-syntax"><span class="header-section-number">3.1</span> The Rules of Syntax</a>
-  <ul class="collapse">
-  <li><a href="#semicolons-are-dead" id="toc-semicolons-are-dead" class="nav-link" data-scroll-target="#semicolons-are-dead">1. Semicolons are Dead</a></li>
-  <li><a href="#variables-and-constants-let-vs-var" id="toc-variables-and-constants-let-vs-var" class="nav-link" data-scroll-target="#variables-and-constants-let-vs-var">2. Variables and Constants (let vs var)</a></li>
-  <li><a href="#writing-functions" id="toc-writing-functions" class="nav-link" data-scroll-target="#writing-functions">3. Writing Functions</a></li>
-  <li><a href="#string-interpolation" id="toc-string-interpolation" class="nav-link" data-scroll-target="#string-interpolation">4. String Interpolation</a></li>
-  <li><a href="#parentheses-in-control-flow" id="toc-parentheses-in-control-flow" class="nav-link" data-scroll-target="#parentheses-in-control-flow">5. Parentheses in Control Flow</a></li>
-  <li><a href="#multi-line-dot-syntax-modifier-chaining" id="toc-multi-line-dot-syntax-modifier-chaining" class="nav-link" data-scroll-target="#multi-line-dot-syntax-modifier-chaining">6. Multi-Line Dot Syntax (Modifier Chaining)</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1b.syntax.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/6.view-builder.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></h1>
 </div>
 
 
@@ -306,199 +312,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Welcome to the lexical breakdown of Swift. When transitioning from JavaScript, you will notice Swift is structurally cleaner, strictly enforced by the compiler, and relies heavily on minimizing visual clutter.</p>
-<section id="the-rules-of-syntax" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-rules-of-syntax"><span class="header-section-number">3.1</span> The Rules of Syntax</h2>
-<p>Here is a fast, factual rundown of the core lexical rules in Swift.</p>
-<section id="semicolons-are-dead" class="level3">
-<h3 class="anchored" data-anchor-id="semicolons-are-dead">1. Semicolons are Dead</h3>
-<p><strong>Fact:</strong> Swift does not require semicolons <code>;</code> at the end of statements.</p>
+<p>A <code>@ViewBuilder</code> is a list of Views. The reason for using it is to group together functional code.</p>
+<p>The official Apple documentation <span class="citation" data-cites="appleViewBuilder">(<a href="../references.html#ref-appleViewBuilder" role="doc-biblioref">Apple Inc. 2026</a>)</span> states it is “A custom parameter attribute that constructs views from closures.”</p>
 <ul>
-<li>In modern JavaScript, semicolons are technically optional but are widely enforced by linters (like Prettier/ESLint) to prevent interpreter errors.</li>
-<li>In Swift, semicolons are genuinely discouraged by the compiler.</li>
-<li><strong>Rule:</strong> Only use a semicolon if you are writing two completely separate statements on the exact same line (which you should rarely ever do).</li>
+<li>a property wrapper that allows for <code>lets</code>, <code>ifs</code>, <code>switches</code> etc. within a view.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Correct Swift</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">name</span> <span class="op">=</span> <span class="st">"Charlotte"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">age</span> <span class="op">=</span> <span class="dv">28</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Discouraged Swift (Do not do this)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">name</span> <span class="op">=</span> <span class="st">"Charlotte"</span><span class="op">;</span> <span class="kw">let</span> <span class="va">age</span> <span class="op">=</span> <span class="dv">28</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="variables-and-constants-let-vs-var" class="level3">
-<h3 class="anchored" data-anchor-id="variables-and-constants-let-vs-var">2. Variables and Constants (let vs var)</h3>
-<p><strong>Fact:</strong> <code>let</code> in Swift is functionally identical to <code>const</code> in JavaScript. <code>var</code> in Swift is identical to <code>let</code> in JavaScript.</p>
-<ul>
-<li><strong>Rule:</strong> Always default to using <code>let</code> when declaring new data. Only change it to <code>var</code> if the Swift compiler explicitly throws an error telling you that the value needs to mutate later.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What does this look like in JavaScript?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// JavaScript</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> name <span class="op">=</span> <span class="st">"Charlotte"</span> <span class="co">// Immutable</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> age <span class="op">=</span> <span class="dv">28</span> <span class="co">// Mutable</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p><strong>Swift Equivalent:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Swift</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">name</span> <span class="op">=</span> <span class="st">"Charlotte"</span> <span class="co">// Immutable (Use this default)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> <span class="va">age</span> <span class="op">=</span> <span class="dv">28</span> <span class="co">// Mutable (Use only if changing)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="writing-functions" class="level3">
-<h3 class="anchored" data-anchor-id="writing-functions">3. Writing Functions</h3>
-<p><strong>Fact:</strong> Swift functions use the <code>func</code> keyword, enforce strict types on both the arguments and the output, and explicitly mandate how you call them.</p>
-<p><strong>Key differences compared to JavaScript:</strong></p>
-<ul>
-<li>Arguments require explicit types (e.g., <code>name: String</code>).</li>
-<li>A function’s return type is declared with a right-facing arrow <code>-&gt;</code>.</li>
-<li>When invoking a function, you <strong>must explicitly write out the parameter’s name</strong> to make the code highly legible.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What does this look like in JavaScript &amp; React?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 1. Standard JavaScript Function</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">greet</span>(name) {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hello "</span> <span class="op">+</span> name<span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">greet</span>(<span class="st">"Charlotte"</span>)<span class="op">;</span> <span class="co">// Called without explicitly naming the parameters</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. React Functional Component (Returns UI)</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="fu">Greet</span>({ name }) {</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello {name}<span class="op">&lt;/</span>h1<span class="op">&gt;;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Called using JSX, where props act similarly to named parameters</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Greet name<span class="op">=</span><span class="st">"Charlotte"</span> <span class="op">/&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p><strong>Swift Equivalent:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 1. Standard Swift Function</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="fu">greet</span><span class="op">(</span><span class="va">name</span><span class="op">:</span> <span class="dt">String</span><span class="op">)</span> -&gt; <span class="fu">String</span> <span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="st">"Hello </span><span class="er">\(</span><span class="st">name)"</span> <span class="co">// Notice string interpolation uses \( ) not ${ }</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">message</span> <span class="op">=</span> greet<span class="op">(</span>name<span class="op">:</span> <span class="st">"Charlotte"</span><span class="op">)</span> <span class="co">// ⬅️ MUST explicitly write 'name:' </span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. SwiftUI View (Struct returning UI)</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Greet<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">name</span><span class="op">:</span> String</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"Hello </span><span class="er">\(</span><span class="st">name)"</span><span class="op">)</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">// ⬇️ Called exactly like a function using named parameters!</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>Greet<span class="op">(</span>name<span class="op">:</span> <span class="st">"Charlotte"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Function Parameter Omitting:</strong> If you want Swift to behave exactly like JavaScript and let you omit the parameter name when calling a function, you explicitly place an underscore <code>_</code> before the parameter name in the definition.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="fu">fastGreet</span><span class="op">(</span><span class="va">_</span> <span class="va">name</span><span class="op">:</span> <span class="dt">String</span><span class="op">)</span> -&gt; <span class="fu">String</span> <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="st">"Hey </span><span class="er">\(</span><span class="st">name)"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Now it looks exactly like JavaScript when invoked:</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">fastMessage</span> <span class="op">=</span> fastGreet<span class="op">(</span><span class="st">"Charlotte"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="string-interpolation" class="level3">
-<h3 class="anchored" data-anchor-id="string-interpolation">4. String Interpolation</h3>
-<p><strong>Fact:</strong> Swift uses <code>\()</code> to inject variables into strings. - In JavaScript, you switch to backticks and use <code>${variable}</code>. - In Swift, you keep standard double quotes <code>""</code> and inject the variable natively using a backslash and parentheses <code>\(variable)</code>.</p>
-</section>
-<section id="parentheses-in-control-flow" class="level3">
-<h3 class="anchored" data-anchor-id="parentheses-in-control-flow">5. Parentheses in Control Flow</h3>
-<p><strong>Fact:</strong> Swift deliberately drops the parentheses <code>()</code> around <code>if</code>, <code>guard</code>, and <code>switch</code> statements. - <strong>Rule:</strong> The curly braces <code>{}</code> encompassing the block are strictly mandatory, but the parentheses holding the boolean condition are entirely omitted to reduce visual noise.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What does this look like in JavaScript?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (age <span class="op">&gt;</span> <span class="dv">18</span>) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Adult"</span>)<span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p><strong>Swift Equivalent:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// ⬇️ No parenthesis needed around 'age &gt; 18'</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;</span> <span class="dv">18</span> <span class="op">{</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    print<span class="op">(</span><span class="st">"Adult"</span><span class="op">)</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="multi-line-dot-syntax-modifier-chaining" class="level3">
-<h3 class="anchored" data-anchor-id="multi-line-dot-syntax-modifier-chaining">6. Multi-Line Dot Syntax (Modifier Chaining)</h3>
-<p><strong>Fact:</strong> Swift heavily relies on chaining methods together using dot <code>.</code> notation. For readability in enterprise applications, these chains are almost always broken across multiple vertical lines. - <strong>Rule:</strong> The dot <code>.</code> must start on the new line, typically aligned directly beneath the object it modifies.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What does this look like in JavaScript &amp; React?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// JavaScript Method Chaining (Data Handling)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> activeUsers <span class="op">=</span> users</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filter</span>(user <span class="kw">=&gt;</span> user<span class="op">.</span><span class="at">isActive</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> a<span class="op">.</span><span class="at">id</span> <span class="op">-</span> b<span class="op">.</span><span class="at">id</span>)<span class="op">;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">// React UI Equivalent (Applying styles/actions)</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">// React rarely uses dot-chaining for components; instead, you stack physical props or merge class strings:</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>button </span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    className<span class="op">=</span><span class="st">"bg-blue-500 text-white font-bold py-2 px-4 rounded"</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    onClick<span class="op">=</span>{handleTap}</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    Enter Dashboard</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p><strong>Swift Equivalent (SwiftUI Modifiers):</strong> In SwiftUI, you strictly apply styles and behaviors using “View Modifiers”, which are just functions chained vertically via dot notation.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enterprise App Snippet: Structuring a styled button</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Button<span class="op">(</span>action<span class="op">:</span> handleTap<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    Text<span class="op">(</span><span class="st">"Enter Dashboard"</span><span class="op">)</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>fontWeight<span class="op">(.</span>bold<span class="op">)</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>padding<span class="op">(.</span>vertical<span class="op">,</span> <span class="dv">12</span><span class="op">)</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>padding<span class="op">(.</span>horizontal<span class="op">,</span> <span class="dv">24</span><span class="op">)</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>blue<span class="op">)</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">8</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="fu">matchMarker</span><span class="op">(</span><span class="va">peg</span><span class="op">:</span> <span class="dt">Int</span><span class="op">)</span> -&gt; <span class="fu">some</span> <span class="fu">View</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> peg <span class="op">==</span> <span class="dv">1</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> Text<span class="op">(</span><span class="st">"1"</span><span class="op">)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> Text<span class="op">(</span><span class="st">"2"</span><span class="op">)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> Circle<span class="op">().</span>fill<span class="op">(.</span>red<span class="op">)</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>adding ‘<span class="citation" data-cites="ViewBuilder">(<a href="../references.html#ref-ViewBuilder" role="doc-biblioref"><strong>ViewBuilder?</strong></a>)</span>’ to the following function transforms it to no longer need <strong>return</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">@ViewBuilder</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="fu">matchMarker</span><span class="op">(</span><span class="va">peg</span><span class="op">:</span> <span class="dt">Int</span><span class="op">)</span> -&gt; <span class="fu">some</span> <span class="fu">View</span> <span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> peg <span class="op">==</span> <span class="dv">1</span> <span class="op">{</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"1"</span><span class="op">)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"2"</span><span class="op">)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    Circle<span class="op">().</span>fill<span class="op">(.</span>red<span class="op">)</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-appleViewBuilder" class="csl-entry" role="listitem">
+Apple Inc. 2026. <span>“ViewBuilder | Apple Developer Documentation.”</span> 2026. <a href="https://developer.apple.com/documentation/swiftui/viewbuilder">https://developer.apple.com/documentation/swiftui/viewbuilder</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -903,13 +747,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch01_foundations/1.anatomy.html" class="pagination-link" aria-label="Anatomy of a Basic App">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a Basic App</span></span>
+      <a href="../ch01_foundations/5.loops.html" class="pagination-link" aria-label="5.loops.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">5.loops.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ch01_foundations/2.stacks.html" class="pagination-link" aria-label="Layout Building Blocks (Stacks)">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ch02_data/state.html" class="pagination-link" aria-label="State and Data Flow">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

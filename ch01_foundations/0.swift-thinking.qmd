@@ -70,8 +70,10 @@ When transitioning from JavaScript to Swift, these are the two most important di
 
 ### 1. Swift is Object and Protocol-Oriented
 
-::: {.callout-important collapse="false"}
-**Fact:** Everything in Swift is an object. Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.
+::: {.callout-important}
+#### Everything in Swift is an object.
+
+**Fact:** Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.
 
 ```swift
 let age = 30
@@ -86,8 +88,10 @@ let isMultiple = age.isMultiple(of: 5) // returns true
 
 ### 2. Swift is Strongly and Statically Typed
 
-::: {.callout-important collapse="false"}
-**Fact:** Everything in Swift has a specific type (e.g., Integer, String, View). The compiler enforces these types before the app can run.
+::: {.callout-important}
+#### Everything in Swift has a specific type.
+
+**Fact:** The compiler enforces these types before the app can run.
 
 ```swift
 var name = "Charlotte" // The compiler infers this is a String
@@ -101,6 +105,23 @@ var name = "Charlotte" // The compiler infers this is a String
 - **JavaScript:** You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes.
 - **Swift:** Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production.
 - **Type Inference:** Swift's compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.
+
+### 3. The Compile Cycle: What happens when you hit build?
+
+**Fact:** Swift compiles directly down to native machine code (binary). Unlike React, which is shipped as raw text (JavaScript) to be read and interpreted by a user's web browser at runtime, an iOS app is fully "pre-baked" before it ever leaves your computer.
+
+**The Build Process (Step-by-step):**
+
+1. **You write `.swift` code** (Human readable logic).
+2. **LLVM Compiler engages.** It strictly checks for type-errors, missing variables, or syntactic anomalies. If it finds even one error, the build forcibly halts.
+3. **Translation into Machine Code.** If your code passes all checks, LLVM translates your logic directly into highly optimized 1s and 0s (ARM Machine Code) specifically tailored for an iPhone's processor.
+4. **Packaging into an `.ipa`.** This compiled binary, alongside your images and configuration files, is securely zipped into an `.ipa` (iOS App Store Package) file.
+
+**What actually ships to the App Store?**
+
+- You do **not** ship your raw source code.
+- You ship the finalized, fully compiled `.ipa` binary package.
+- **Why this matters for your users:** Because the app arrives on their physical phone already translated into raw machine code, it opens and runs blazingly fast compared to a web browser downloading and parsing a heavy JavaScript bundle.
 
 ## Comparing Swift & SwiftUI to JavaScript & React
 

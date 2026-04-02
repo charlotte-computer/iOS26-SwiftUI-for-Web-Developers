@@ -108,12 +108,12 @@
   {
     "objectID": "ch03_advanced/navigation.html",
     "href": "ch03_advanced/navigation.html",
-    "title": "4  Navigation and Routing",
+    "title": "10  Navigation and Routing",
     "section": "",
     "text": ".",
     "crumbs": [
       "Part III: Advanced iOS Interfaces",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Navigation and Routing</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Navigation and Routing</span>"
     ]
   },
   {
@@ -163,45 +163,45 @@
   {
     "objectID": "ch01_foundations/1.stacks.html",
     "href": "ch01_foundations/1.stacks.html",
-    "title": "1  Stacks",
+    "title": "4  Stacks",
     "section": "",
-    "text": "1.1 ZStack\nThink of a stack like a &lt;div with extra styling baked in\nTopmost Stack",
+    "text": "4.1 ZStack\nThink of a stack like a &lt;div with extra styling baked in\nTopmost Stack",
     "crumbs": [
       "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
     ]
   },
   {
     "objectID": "ch01_foundations/1.stacks.html#vstack",
     "href": "ch01_foundations/1.stacks.html#vstack",
-    "title": "1  Stacks",
-    "section": "1.2 VStack",
-    "text": "1.2 VStack\nVertical-Stack",
+    "title": "4  Stacks",
+    "section": "4.2 VStack",
+    "text": "4.2 VStack\nVertical-Stack",
     "crumbs": [
       "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
     ]
   },
   {
     "objectID": "ch01_foundations/1.stacks.html#hstack",
     "href": "ch01_foundations/1.stacks.html#hstack",
-    "title": "1  Stacks",
-    "section": "1.3 HStack",
-    "text": "1.3 HStack\nHorizontal-Stack",
+    "title": "4  Stacks",
+    "section": "4.3 HStack",
+    "text": "4.3 HStack\nHorizontal-Stack",
     "crumbs": [
       "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
     ]
   },
   {
     "objectID": "ch01_foundations/1.stacks.html#making-grids-with-stacks",
     "href": "ch01_foundations/1.stacks.html#making-grids-with-stacks",
-    "title": "1  Stacks",
-    "section": "1.4 Making Grids with Stacks",
-    "text": "1.4 Making Grids with Stacks",
+    "title": "4  Stacks",
+    "section": "4.4 Making Grids with Stacks",
+    "text": "4.4 Making Grids with Stacks",
     "crumbs": [
       "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
     ]
   },
   {
@@ -264,7 +264,7 @@
     "href": "ch01_foundations/0.swift-thinking.html#two-core-concepts-of-swift",
     "title": "1  Thinking in Swift",
     "section": "1.3 Two Core Concepts of Swift",
-    "text": "1.3 Two Core Concepts of Swift\nWhen transitioning from JavaScript to Swift, these are the two most important differences to understand:\n\n1. Swift is Object and Protocol-Oriented\n\n\n\n\n\n\nImportant\n\n\n\n\n\nFact: Everything in Swift is an object. Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.\nlet age = 30\n// 'age' is an Int object. We can call methods directly on it:\nlet isMultiple = age.isMultiple(of: 5) // returns true\n\n\n\nWhy is Swift designed this way? - Interoperability: The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem. - Protocol-Oriented Programming: Swift expands on traditional OOP. Instead of focusing only on what objects are (via inheritance), Swift places a heavy emphasis on what objects can do using Protocols (similar to Interfaces in TypeScript).\n\n\n2. Swift is Strongly and Statically Typed\n\n\n\n\n\n\nImportant\n\n\n\n\n\nFact: Everything in Swift has a specific type (e.g., Integer, String, View). The compiler enforces these types before the app can run.\nvar name = \"Charlotte\" // The compiler infers this is a String\n\n// The compiler immediately flags this as an error before the app ever runs:\n// name = 42 \n\n\n\nHow this differs from JavaScript: - JavaScript: You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes. - Swift: Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production. - Type Inference: Swift’s compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.",
+    "text": "1.3 Two Core Concepts of Swift\nWhen transitioning from JavaScript to Swift, these are the two most important differences to understand:\n\n1. Swift is Object and Protocol-Oriented\n\n\n\n\n\n\nImportantEverything in Swift is an object.\n\n\n\nFact: Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.\nlet age = 30\n// 'age' is an Int object. We can call methods directly on it:\nlet isMultiple = age.isMultiple(of: 5) // returns true\n\n\nWhy is Swift designed this way? - Interoperability: The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem. - Protocol-Oriented Programming: Swift expands on traditional OOP. Instead of focusing only on what objects are (via inheritance), Swift places a heavy emphasis on what objects can do using Protocols (similar to Interfaces in TypeScript).\n\n\n2. Swift is Strongly and Statically Typed\n\n\n\n\n\n\nImportantEverything in Swift has a specific type.\n\n\n\nFact: The compiler enforces these types before the app can run.\nvar name = \"Charlotte\" // The compiler infers this is a String\n\n// The compiler immediately flags this as an error before the app ever runs:\n// name = 42 \n\n\nHow this differs from JavaScript: - JavaScript: You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes. - Swift: Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production. - Type Inference: Swift’s compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.\n\n\n3. The Compile Cycle: What happens when you hit build?\nFact: Swift compiles directly down to native machine code (binary). Unlike React, which is shipped as raw text (JavaScript) to be read and interpreted by a user’s web browser at runtime, an iOS app is fully “pre-baked” before it ever leaves your computer.\nThe Build Process (Step-by-step):\n\nYou write .swift code (Human readable logic).\nLLVM Compiler engages. It strictly checks for type-errors, missing variables, or syntactic anomalies. If it finds even one error, the build forcibly halts.\nTranslation into Machine Code. If your code passes all checks, LLVM translates your logic directly into highly optimized 1s and 0s (ARM Machine Code) specifically tailored for an iPhone’s processor.\nPackaging into an .ipa. This compiled binary, alongside your images and configuration files, is securely zipped into an .ipa (iOS App Store Package) file.\n\nWhat actually ships to the App Store?\n\nYou do not ship your raw source code.\nYou ship the finalized, fully compiled .ipa binary package.\nWhy this matters for your users: Because the app arrives on their physical phone already translated into raw machine code, it opens and runs blazingly fast compared to a web browser downloading and parsing a heavy JavaScript bundle.",
     "crumbs": [
       "Part I: Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
@@ -367,6 +367,72 @@
     "crumbs": [
       "Part I: Foundations",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Swift Syntax & Lexical Rules</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/2.stacks.html",
+    "href": "ch01_foundations/2.stacks.html",
+    "title": "4  Layout Building Blocks (Stacks)",
+    "section": "",
+    "text": "4.1 The &lt;div&gt; Equivalent\nWelcome to SwiftUI layouts. In HTML and React, developers reach for native &lt;div&gt; elements and CSS Flexbox to physically position items on the screen. In Swift, you explicitly use Stacks, which are structurally safer and highly optimized pre-configured wrappers.\nFact: Stacks act conceptually identically to div tags, but they come with pre-baked flexbox styles specifically tailored for mobile and desktop screens. - In React, a div is structurally dumb. You must explicitly apply display: flex; flex-direction: column just to format items sequentially. - In Swift, Stacks are inherently intelligent and are implicitly pre-configured to handle flexible layout distribution and alignment.",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/2.stacks.html#the-div-equivalent",
+    "href": "ch01_foundations/2.stacks.html#the-div-equivalent",
+    "title": "4  Layout Building Blocks (Stacks)",
+    "section": "",
+    "text": "1. VStack (Vertical Stack)\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React equivalent using inline Flexbox styles\n&lt;div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}&gt;\n    &lt;h1&gt;Top Item&lt;/h1&gt;\n    &lt;p&gt;Bottom Item&lt;/p&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// Swift automatically stacks vertically and injects a default Apple-standard gap\nVStack {\n    Text(\"Top Item\")\n        .font(.title)\n    Text(\"Bottom Item\")\n}\n\n\n2. HStack (Horizontal Stack)\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React equivalent using inline Flexbox styles\n&lt;div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}&gt;\n    &lt;span&gt;Left Item&lt;/span&gt;\n    &lt;span&gt;Right Item&lt;/span&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// Swift automatically links them horizontally\nHStack {\n    Text(\"Left Item\")\n    Text(\"Right Item\")\n}\n\n\n3. ZStack (Depth Stack)\nFact: ZStack physically stacks visual elements on top of each other strictly along the Z-axis (depth). - Rule: The first item written systematically in the code is placed at the mathematical bottom, and subsequent items visually stack sequentially on top of it.\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React typically overrides standard flow using relative and absolute positioning\n&lt;div style={{ position: 'relative', width: '200px', height: '200px' }}&gt;\n    &lt;img src=\"background.jpg\" style={{ position: 'absolute', width: '100%', zIndex: 0 }} /&gt;\n    &lt;h1 style={{ position: 'absolute', zIndex: 10 }}&gt;Text on top&lt;/h1&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// No manual CSS absolute positioning required\nZStack {\n    Image(\"background\") // Bottom physical layer\n        .resizable()\n\n    Text(\"Text on top\") // Top physical layer\n        .foregroundColor(.white)\n}",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/2.stacks.html#making-grids",
+    "href": "ch01_foundations/2.stacks.html#making-grids",
+    "title": "4  Layout Building Blocks (Stacks)",
+    "section": "4.2 Making Grids",
+    "text": "4.2 Making Grids\nFact: In React, creating a responsive grid requires verbose CSS Grid definitions (grid-template-columns, gap, fr fractions). In Swift, wrappers like LazyVGrid naturally handle the complex fractional mathematics cleanly at compile-time.\nWhy are they called Lazy? - Because they only evaluate identically when elements physically overlap the viewable screen. If you inject 10,000 items in a grid manually, Swift only physically renders the 10 that the user is currently looking at, guaranteeing flawless performance automatically.\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React using bulky CSS Grid\n&lt;div style={{ \n    display: 'grid', \n    gridTemplateColumns: 'repeat(2, 1fr)', \n    gap: '16px' \n}}&gt;\n    &lt;div&gt;Item 1&lt;/div&gt;\n    &lt;div&gt;Item 2&lt;/div&gt;\n    &lt;div&gt;Item 3&lt;/div&gt;\n    &lt;div&gt;Item 4&lt;/div&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// ⬇️ 1. Define the grid spacing mathematically (Two identically flexible columns)\nlet columns = [\n    GridItem(.flexible()),\n    GridItem(.flexible())\n]\n\nvar body: some View {\n    // ⬇️ 2. Apply it cleanly to the Lazy wrapper\n    LazyVGrid(columns: columns, spacing: 16) {\n        Text(\"Item 1\")\n        Text(\"Item 2\")\n        Text(\"Item 3\")\n        Text(\"Item 4\")\n    }\n}\nFact vs Verbosity Conclusion: Notice exactly how much less verbose the SwiftUI wrapper visually acts. You explicitly define the mechanical structure of your layouts once as pure data (let columns), and inject them into the standard logical Grid components—entirely avoiding manual CSS string-map configuration.",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/6.view-builder.html",
+    "href": "ch01_foundations/6.view-builder.html",
+    "title": "8  @ViewBuilder",
+    "section": "",
+    "text": "A @ViewBuilder is a list of Views. The reason for using it is to group together functional code.\nThe official Apple documentation (Apple Inc. 2026) states it is “A custom parameter attribute that constructs views from closures.”\n\na property wrapper that allows for lets, ifs, switches etc. within a view.\n\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        return Text(\"1\")\n    } else {\n        return Text(\"2\")\n    }\n    return Circle().fill(.red) \n}\nadding ‘(ViewBuilder?)’ to the following function transforms it to no longer need return\n\n@ViewBuilder\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        Text(\"1\")\n    } else {\n        Text(\"2\")\n    }\n    Circle().fill(.red) \n}\n\n\n\n\nApple Inc. 2026. “ViewBuilder | Apple Developer Documentation.” 2026. https://developer.apple.com/documentation/swiftui/viewbuilder.",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>`@ViewBuilder`</span>"
+    ]
+  },
+  {
+    "objectID": "ch04_interview/interview-prep.html",
+    "href": "ch04_interview/interview-prep.html",
+    "title": "11  Interview Prep: Swift & iOS Architecture",
+    "section": "",
+    "text": "11.1 Quick-Fire Questions & Answers\nWelcome to the interview prep zone. After absorbing structural knowledge, here is a literal, rapid-fire breakdown of the questions you are highly likely to encounter when interviewing for an iOS role—especially if they know you are transitioning from web development.\nNo fluff. Just the raw architectural facts wrapped in clear answers, heavily visualizing what you actually say out loud.",
+    "crumbs": [
+      "Part IV: Interview Prep",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Interview Prep: Swift & iOS Architecture</span>"
+    ]
+  },
+  {
+    "objectID": "ch04_interview/interview-prep.html#quick-fire-questions-answers",
+    "href": "ch04_interview/interview-prep.html#quick-fire-questions-answers",
+    "title": "11  Interview Prep: Swift & iOS Architecture",
+    "section": "",
+    "text": "1. “What is the difference between @State and @Binding?”\nThe Fact: @State physically owns the data locally. @Binding physically creates a reference to data owned by someone else.\n\nAnswer Structure: “In SwiftUI, @State is used to create and explicitly own local data inside a specific view. When you use @Binding inside a child view, you are simply passing down direct, two-way access to that parent’s @State variable without duplicating the physical data.”\nReact Parallel: “It is functionally identical to passing down a useState’s setter function (setCount) via props to a child component, allowing the child to mutate the parent’s data.”\n\n\n\n2. “Why use a Struct instead of a Class for SwiftUI views?”\nThe Fact: Structs are “Value Types” and strictly immutable. Classes are “Reference Types” and require complex memory tracking.\n\nAnswer Structure: “SwiftUI Views are explicitly built using Structs because they are lightweight. This means every time the layout state changes, the system can instantly destroy and seamlessly recreate the view virtually cost-free. If we used Classes, tracking physical state differences would be slow because Classes live on the explicit memory heap and require complex reference tracking.”\n\n\n\n3. “Explain the MVVM Architecture.”\nThe Fact: MVVM cleanly isolates visual UI logic from raw data execution.\n\nAnswer Structure: “MVVM strictly splits logic into three boxes.\n\nModel: The raw physical data shape (like a JSON struct).\nView: The purely visual SwiftUI component you see on screen.\nViewModel: The operational brain. This is an ObservableObject class that securely fetches the data, processes it, and cleanly hands it to the View.”\n\nVisual Rule: The View should fundamentally never make a direct API call itself. It explicitly explicitly asks the ViewModel to execute the work.\n\n\n\n4. “Is Swift Pass-by-Value or Pass-by-Reference?”\nThe Fact: Swift execution fundamentally depends on exactly what physical structure you are sending out.\n\nAnswer Structure: “It depends strictly on the Type. Structs and Enums are passed by value (they are literally physically duplicated when passed). Classes are explicitly passed by reference (a memory pointer to the exact identical location is shared).”\n\n\n\n5. “What is Protocol-Oriented Programming (POP)?”\nThe Fact: POP forcibly requires developers to standardize what objects can do rather than what objects inherit from.\n\nAnswer Structure: “Instead of creating massive fragile, inherited Class trees (like Vehicle -&gt; Car -&gt; ElectricCar), Swift uses Protocols. A Protocol acts identically to an Interface in TypeScript. You give a Struct a protocol (like Drivable), natively guaranteeing it possesses specific functions, completely bypassing the massive structural nightmares typical iteration inheritance creates.”\n\n\n\n6. “How does SwiftUI handle the Main Thread?”\nThe Fact: Any code that updates the user interface visually absolutely must occur on the explicit Main Thread.\n\nAnswer Structure: “UI updates always run exclusively on the Main Thread to guarantee an unbreakable 60fps frame rate. If I pull data from the internet, I explicitly forceful move that heavy processing to a Background Thread. Once the data completely arrives, I strategically inject it back onto the Main Thread using @MainActor or DispatchQueue.main.async so the screen visually updates without stuttering.”",
+    "crumbs": [
+      "Part IV: Interview Prep",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Interview Prep: Swift & iOS Architecture</span>"
     ]
   }
 ]

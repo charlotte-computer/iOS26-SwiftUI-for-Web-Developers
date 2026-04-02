@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Stacks – iOS26 SwiftUI for Web Developers</title>
+<title>4&nbsp; Stacks – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../ch01_foundations/2.functions.html" rel="next">
-<link href="../intro.html" rel="prev">
+<link href="../ch01_foundations/1b.syntax.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Stacks</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stacks</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,32 +133,50 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/0.swift-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Thinking in Swift</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/1.anatomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a Basic App</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/1b.syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/1.stacks.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Stacks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stacks</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/2.functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2.functions.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">2.functions.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/3.model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">3.model.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">3.model.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/4.loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">4.loops.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">4.loops.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/5.view-builder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ViewBuilder</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -175,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch02_data/state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
   </div>
 </li>
       </ul>
@@ -192,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch03_advanced/navigation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -219,19 +237,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#zstack" id="toc-zstack" class="nav-link active" data-scroll-target="#zstack"><span class="header-section-number">1.1</span> ZStack</a></li>
-  <li><a href="#vstack" id="toc-vstack" class="nav-link" data-scroll-target="#vstack"><span class="header-section-number">1.2</span> VStack</a></li>
-  <li><a href="#hstack" id="toc-hstack" class="nav-link" data-scroll-target="#hstack"><span class="header-section-number">1.3</span> HStack</a></li>
-  <li><a href="#making-grids-with-stacks" id="toc-making-grids-with-stacks" class="nav-link" data-scroll-target="#making-grids-with-stacks"><span class="header-section-number">1.4</span> Making Grids with Stacks</a></li>
+  <li><a href="#zstack" id="toc-zstack" class="nav-link active" data-scroll-target="#zstack"><span class="header-section-number">4.1</span> ZStack</a></li>
+  <li><a href="#vstack" id="toc-vstack" class="nav-link" data-scroll-target="#vstack"><span class="header-section-number">4.2</span> VStack</a></li>
+  <li><a href="#hstack" id="toc-hstack" class="nav-link" data-scroll-target="#hstack"><span class="header-section-number">4.3</span> HStack</a></li>
+  <li><a href="#making-grids-with-stacks" id="toc-making-grids-with-stacks" class="nav-link" data-scroll-target="#making-grids-with-stacks"><span class="header-section-number">4.4</span> Making Grids with Stacks</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Stacks</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stacks</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Stacks</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Stacks</span></h1>
 </div>
 
 
@@ -249,20 +267,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Think of a stack like a <code>&lt;div</code> with extra styling baked in</p>
-<section id="zstack" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="zstack"><span class="header-section-number">1.1</span> ZStack</h2>
+<section id="zstack" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="zstack"><span class="header-section-number">4.1</span> ZStack</h2>
 <p>Topmost Stack</p>
 </section>
-<section id="vstack" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="vstack"><span class="header-section-number">1.2</span> VStack</h2>
+<section id="vstack" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="vstack"><span class="header-section-number">4.2</span> VStack</h2>
 <p>Vertical-Stack</p>
 </section>
-<section id="hstack" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="hstack"><span class="header-section-number">1.3</span> HStack</h2>
+<section id="hstack" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="hstack"><span class="header-section-number">4.3</span> HStack</h2>
 <p>Horizontal-Stack</p>
 </section>
-<section id="making-grids-with-stacks" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="making-grids-with-stacks"><span class="header-section-number">1.4</span> Making Grids with Stacks</h2>
+<section id="making-grids-with-stacks" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="making-grids-with-stacks"><span class="header-section-number">4.4</span> Making Grids with Stacks</h2>
 
 
 </section>
@@ -670,13 +688,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../ch01_foundations/1b.syntax.html" class="pagination-link" aria-label="Swift Syntax &amp; Lexical Rules">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../ch01_foundations/2.functions.html" class="pagination-link" aria-label="2.functions.html">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2.functions.html</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">2.functions.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

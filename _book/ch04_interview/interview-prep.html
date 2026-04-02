@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Navigation and Routing – iOS26 SwiftUI for Web Developers</title>
+<title>11&nbsp; Interview Prep: Swift &amp; iOS Architecture – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../summary.html" rel="next">
-<link href="../ch02_data/state.html" rel="prev">
+<link href="../ch03_advanced/navigation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch03_advanced/navigation.html">Part III: Advanced iOS Interfaces</a></li><li class="breadcrumb-item"><a href="../ch03_advanced/navigation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch04_interview/interview-prep.html">Part IV: Interview Prep</a></li><li class="breadcrumb-item"><a href="../ch04_interview/interview-prep.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -209,8 +209,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch03_advanced/navigation.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ch03_advanced/navigation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: Interview Prep</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch04_interview/interview-prep.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></span></a>
   </div>
 </li>
       </ul>
@@ -218,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -232,15 +249,29 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quick-fire-questions-answers" id="toc-quick-fire-questions-answers" class="nav-link active" data-scroll-target="#quick-fire-questions-answers"><span class="header-section-number">11.1</span> Quick-Fire Questions &amp; Answers</a>
+  <ul class="collapse">
+  <li><a href="#what-is-the-difference-between-state-and-binding" id="toc-what-is-the-difference-between-state-and-binding" class="nav-link" data-scroll-target="#what-is-the-difference-between-state-and-binding">1. “What is the difference between <code>@State</code> and <code>@Binding</code>?”</a></li>
+  <li><a href="#why-use-a-struct-instead-of-a-class-for-swiftui-views" id="toc-why-use-a-struct-instead-of-a-class-for-swiftui-views" class="nav-link" data-scroll-target="#why-use-a-struct-instead-of-a-class-for-swiftui-views">2. “Why use a Struct instead of a Class for SwiftUI views?”</a></li>
+  <li><a href="#explain-the-mvvm-architecture." id="toc-explain-the-mvvm-architecture." class="nav-link" data-scroll-target="#explain-the-mvvm-architecture.">3. “Explain the MVVM Architecture.”</a></li>
+  <li><a href="#is-swift-pass-by-value-or-pass-by-reference" id="toc-is-swift-pass-by-value-or-pass-by-reference" class="nav-link" data-scroll-target="#is-swift-pass-by-value-or-pass-by-reference">4. “Is Swift Pass-by-Value or Pass-by-Reference?”</a></li>
+  <li><a href="#what-is-protocol-oriented-programming-pop" id="toc-what-is-protocol-oriented-programming-pop" class="nav-link" data-scroll-target="#what-is-protocol-oriented-programming-pop">5. “What is Protocol-Oriented Programming (POP)?”</a></li>
+  <li><a href="#how-does-swiftui-handle-the-main-thread" id="toc-how-does-swiftui-handle-the-main-thread" class="nav-link" data-scroll-target="#how-does-swiftui-handle-the-main-thread">6. “How does SwiftUI handle the Main Thread?”</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch03_advanced/navigation.html">Part III: Advanced iOS Interfaces</a></li><li class="breadcrumb-item"><a href="../ch03_advanced/navigation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch04_interview/interview-prep.html">Part IV: Interview Prep</a></li><li class="breadcrumb-item"><a href="../ch04_interview/interview-prep.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></h1>
 </div>
 
 
@@ -257,9 +288,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>.</p>
+<p>Welcome to the interview prep zone. After absorbing structural knowledge, here is a literal, rapid-fire breakdown of the questions you are highly likely to encounter when interviewing for an iOS role—especially if they know you are transitioning from web development.</p>
+<p>No fluff. Just the raw architectural facts wrapped in clear answers, heavily visualizing what you actually say out loud.</p>
+<section id="quick-fire-questions-answers" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="quick-fire-questions-answers"><span class="header-section-number">11.1</span> Quick-Fire Questions &amp; Answers</h2>
+<section id="what-is-the-difference-between-state-and-binding" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-difference-between-state-and-binding">1. “What is the difference between <code>@State</code> and <code>@Binding</code>?”</h3>
+<p><strong>The Fact:</strong> <code>@State</code> physically <em>owns</em> the data locally. <code>@Binding</code> physically creates a <em>reference</em> to data owned by someone else.</p>
+<ul>
+<li><strong>Answer Structure:</strong> “In SwiftUI, <code>@State</code> is used to create and explicitly own local data inside a specific view. When you use <code>@Binding</code> inside a child view, you are simply passing down direct, two-way access to that parent’s <code>@State</code> variable without duplicating the physical data.”</li>
+<li><strong>React Parallel:</strong> “It is functionally identical to passing down a <code>useState</code>’s setter function (<code>setCount</code>) via props to a child component, allowing the child to mutate the parent’s data.”</li>
+</ul>
+</section>
+<section id="why-use-a-struct-instead-of-a-class-for-swiftui-views" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-a-struct-instead-of-a-class-for-swiftui-views">2. “Why use a Struct instead of a Class for SwiftUI views?”</h3>
+<p><strong>The Fact:</strong> Structs are “Value Types” and strictly immutable. Classes are “Reference Types” and require complex memory tracking.</p>
+<ul>
+<li><strong>Answer Structure:</strong> “SwiftUI Views are explicitly built using Structs because they are lightweight. This means every time the layout state changes, the system can instantly destroy and seamlessly recreate the view virtually cost-free. If we used Classes, tracking physical state differences would be slow because Classes live on the explicit memory heap and require complex reference tracking.”</li>
+</ul>
+</section>
+<section id="explain-the-mvvm-architecture." class="level3">
+<h3 class="anchored" data-anchor-id="explain-the-mvvm-architecture.">3. “Explain the MVVM Architecture.”</h3>
+<p><strong>The Fact:</strong> MVVM cleanly isolates visual UI logic from raw data execution.</p>
+<ul>
+<li><strong>Answer Structure:</strong> “MVVM strictly splits logic into three boxes.
+<ol type="1">
+<li><strong>M</strong>odel: The raw physical data shape (like a JSON struct).</li>
+<li><strong>V</strong>iew: The purely visual SwiftUI component you see on screen.</li>
+<li><strong>V</strong>iew<strong>M</strong>odel: The operational brain. This is an <code>ObservableObject</code> class that securely fetches the data, processes it, and cleanly hands it to the View.”</li>
+</ol></li>
+<li><strong>Visual Rule:</strong> The View should fundamentally never make a direct API call itself. It explicitly explicitly asks the ViewModel to execute the work.</li>
+</ul>
+</section>
+<section id="is-swift-pass-by-value-or-pass-by-reference" class="level3">
+<h3 class="anchored" data-anchor-id="is-swift-pass-by-value-or-pass-by-reference">4. “Is Swift Pass-by-Value or Pass-by-Reference?”</h3>
+<p><strong>The Fact:</strong> Swift execution fundamentally depends on exactly what physical structure you are sending out.</p>
+<ul>
+<li><strong>Answer Structure:</strong> “It depends strictly on the Type. Structs and Enums are passed by <strong>value</strong> (they are literally physically duplicated when passed). Classes are explicitly passed by <strong>reference</strong> (a memory pointer to the exact identical location is shared).”</li>
+</ul>
+</section>
+<section id="what-is-protocol-oriented-programming-pop" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-protocol-oriented-programming-pop">5. “What is Protocol-Oriented Programming (POP)?”</h3>
+<p><strong>The Fact:</strong> POP forcibly requires developers to standardize what objects <em>can do</em> rather than what objects <em>inherit</em> from.</p>
+<ul>
+<li><strong>Answer Structure:</strong> “Instead of creating massive fragile, inherited Class trees (like <code>Vehicle</code> -&gt; <code>Car</code> -&gt; <code>ElectricCar</code>), Swift uses Protocols. A Protocol acts identically to an Interface in TypeScript. You give a Struct a protocol (like <code>Drivable</code>), natively guaranteeing it possesses specific functions, completely bypassing the massive structural nightmares typical iteration inheritance creates.”</li>
+</ul>
+</section>
+<section id="how-does-swiftui-handle-the-main-thread" class="level3">
+<h3 class="anchored" data-anchor-id="how-does-swiftui-handle-the-main-thread">6. “How does SwiftUI handle the Main Thread?”</h3>
+<p><strong>The Fact:</strong> Any code that updates the user interface visually absolutely must occur on the explicit Main Thread.</p>
+<ul>
+<li><strong>Answer Structure:</strong> “UI updates always run exclusively on the Main Thread to guarantee an unbreakable 60fps frame rate. If I pull data from the internet, I explicitly forceful move that heavy processing to a Background Thread. Once the data completely arrives, I strategically inject it back onto the Main Thread using <code>@MainActor</code> or <code>DispatchQueue.main.async</code> so the screen visually updates without stuttering.”</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -664,13 +748,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch02_data/state.html" class="pagination-link" aria-label="State and Data Flow">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span>
+      <a href="../ch03_advanced/navigation.html" class="pagination-link" aria-label="Navigation and Routing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,48 @@
+# Interview Prep: Swift & iOS Architecture
+
+Welcome to the interview prep zone. After absorbing structural knowledge, here is a literal, rapid-fire breakdown of the questions you are highly likely to encounter when interviewing for an iOS role—especially if they know you are transitioning from web development.
+
+No fluff. Just the raw architectural facts wrapped in clear answers, heavily visualizing what you actually say out loud.
+
+## Quick-Fire Questions & Answers
+
+### 1. "What is the difference between `@State` and `@Binding`?"
+
+**The Fact:** `@State` physically *owns* the data locally. `@Binding` physically creates a *reference* to data owned by someone else.
+
+- **Answer Structure:** "In SwiftUI, `@State` is used to create and explicitly own local data inside a specific view. When you use `@Binding` inside a child view, you are simply passing down direct, two-way access to that parent's `@State` variable without duplicating the physical data."
+- **React Parallel:** "It is functionally identical to passing down a `useState`'s setter function (`setCount`) via props to a child component, allowing the child to mutate the parent's data."
+
+### 2. "Why use a Struct instead of a Class for SwiftUI views?"
+
+**The Fact:** Structs are "Value Types" and strictly immutable. Classes are "Reference Types" and require complex memory tracking.
+
+- **Answer Structure:** "SwiftUI Views are explicitly built using Structs because they are lightweight. This means every time the layout state changes, the system can instantly destroy and seamlessly recreate the view virtually cost-free. If we used Classes, tracking physical state differences would be slow because Classes live on the explicit memory heap and require complex reference tracking."
+
+### 3. "Explain the MVVM Architecture."
+
+**The Fact:** MVVM cleanly isolates visual UI logic from raw data execution. 
+
+- **Answer Structure:** "MVVM strictly splits logic into three boxes. 
+    1. **M**odel: The raw physical data shape (like a JSON struct). 
+    2. **V**iew: The purely visual SwiftUI component you see on screen. 
+    3. **V**iew**M**odel: The operational brain. This is an `ObservableObject` class that securely fetches the data, processes it, and cleanly hands it to the View."
+- **Visual Rule:** The View should fundamentally never make a direct API call itself. It explicitly explicitly asks the ViewModel to execute the work.
+
+### 4. "Is Swift Pass-by-Value or Pass-by-Reference?"
+
+**The Fact:** Swift execution fundamentally depends on exactly what physical structure you are sending out.
+
+- **Answer Structure:** "It depends strictly on the Type. Structs and Enums are passed by **value** (they are literally physically duplicated when passed). Classes are explicitly passed by **reference** (a memory pointer to the exact identical location is shared)."
+
+### 5. "What is Protocol-Oriented Programming (POP)?"
+
+**The Fact:** POP forcibly requires developers to standardize what objects *can do* rather than what objects *inherit* from.
+
+- **Answer Structure:** "Instead of creating massive fragile, inherited Class trees (like `Vehicle` -> `Car` -> `ElectricCar`), Swift uses Protocols. A Protocol acts identically to an Interface in TypeScript. You give a Struct a protocol (like `Drivable`), natively guaranteeing it possesses specific functions, completely bypassing the massive structural nightmares typical iteration inheritance creates."
+
+### 6. "How does SwiftUI handle the Main Thread?"
+
+**The Fact:** Any code that updates the user interface visually absolutely must occur on the explicit Main Thread.
+
+- **Answer Structure:** "UI updates always run exclusively on the Main Thread to guarantee an unbreakable 60fps frame rate. If I pull data from the internet, I explicitly forceful move that heavy processing to a Background Thread. Once the data completely arrives, I strategically inject it back onto the Main Thread using `@MainActor` or `DispatchQueue.main.async` so the screen visually updates without stuttering."

@@ -1,0 +1,127 @@
+# Layout Building Blocks (Stacks)
+
+Welcome to SwiftUI layouts. In HTML and React, developers reach for native `<div>` elements and CSS Flexbox to physically position items on the screen. In Swift, you explicitly use **Stacks**, which are structurally safer and highly optimized pre-configured wrappers.
+
+## The `<div>` Equivalent
+
+**Fact:** Stacks act conceptually identically to `div` tags, but they come with pre-baked flexbox styles specifically tailored for mobile and desktop screens.
+- In React, a `div` is structurally dumb. You must explicitly apply `display: flex; flex-direction: column` just to format items sequentially.
+- In Swift, Stacks are inherently intelligent and are implicitly pre-configured to handle flexible layout distribution and alignment.
+
+### 1. VStack (Vertical Stack)
+
+::: {.callout-note collapse="true"}
+#### What does this look like in React?
+```javascript
+// React equivalent using inline Flexbox styles
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+    <h1>Top Item</h1>
+    <p>Bottom Item</p>
+</div>
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// Swift automatically stacks vertically and injects a default Apple-standard gap
+VStack {
+    Text("Top Item")
+        .font(.title)
+    Text("Bottom Item")
+}
+```
+
+### 2. HStack (Horizontal Stack)
+
+::: {.callout-note collapse="true"}
+#### What does this look like in React?
+```javascript
+// React equivalent using inline Flexbox styles
+<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}>
+    <span>Left Item</span>
+    <span>Right Item</span>
+</div>
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// Swift automatically links them horizontally
+HStack {
+    Text("Left Item")
+    Text("Right Item")
+}
+```
+
+### 3. ZStack (Depth Stack)
+
+**Fact:** `ZStack` physically stacks visual elements on top of each other strictly along the Z-axis (depth). 
+- **Rule:** The first item written systematically in the code is placed at the mathematical bottom, and subsequent items visually stack sequentially on top of it.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in React?
+```javascript
+// React typically overrides standard flow using relative and absolute positioning
+<div style={{ position: 'relative', width: '200px', height: '200px' }}>
+    <img src="background.jpg" style={{ position: 'absolute', width: '100%', zIndex: 0 }} />
+    <h1 style={{ position: 'absolute', zIndex: 10 }}>Text on top</h1>
+</div>
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// No manual CSS absolute positioning required
+ZStack {
+    Image("background") // Bottom physical layer
+        .resizable()
+
+    Text("Text on top") // Top physical layer
+        .foregroundColor(.white)
+}
+```
+
+## Making Grids
+
+**Fact:** In React, creating a responsive grid requires verbose CSS Grid definitions (`grid-template-columns`, `gap`, `fr` fractions). In Swift, wrappers like `LazyVGrid` naturally handle the complex fractional mathematics cleanly at compile-time.
+
+**Why are they called Lazy?**
+- Because they only evaluate identically when elements physically overlap the viewable screen. If you inject 10,000 items in a grid manually, Swift only physically renders the 10 that the user is currently looking at, guaranteeing flawless performance automatically.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in React?
+```javascript
+// React using bulky CSS Grid
+<div style={{ 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(2, 1fr)', 
+    gap: '16px' 
+}}>
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+    <div>Item 4</div>
+</div>
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// ⬇️ 1. Define the grid spacing mathematically (Two identically flexible columns)
+let columns = [
+    GridItem(.flexible()),
+    GridItem(.flexible())
+]
+
+var body: some View {
+    // ⬇️ 2. Apply it cleanly to the Lazy wrapper
+    LazyVGrid(columns: columns, spacing: 16) {
+        Text("Item 1")
+        Text("Item 2")
+        Text("Item 3")
+        Text("Item 4")
+    }
+}
+```
+
+**Fact vs Verbosity Conclusion:** Notice exactly how much less verbose the SwiftUI wrapper visually acts. You explicitly define the mechanical structure of your layouts once as pure data (`let columns`), and inject them into the standard logical Grid components—entirely avoiding manual CSS string-map configuration.

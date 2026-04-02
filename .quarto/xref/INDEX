@@ -49,5 +49,23 @@
   },
   "ch01_foundations/1b.syntax.qmd": {
     "1b.syntax.html": "67e8d408"
+  },
+  "ch01_foundations/2.stacks.qmd": {
+    "2.stacks.html": "c29296d1"
+  },
+  "ch01_foundations/3.functions.qmd": {
+    "3.functions.html": "94644341"
+  },
+  "ch01_foundations/4.model.qmd": {
+    "4.model.html": "649f7648"
+  },
+  "ch01_foundations/5.loops.qmd": {
+    "5.loops.html": "585f2386"
+  },
+  "ch01_foundations/6.view-builder.qmd": {
+    "6.view-builder.html": "b54b0e0d"
+  },
+  "ch04_interview/interview-prep.qmd": {
+    "interview-prep.html": "c3adc636"
   }
 }
