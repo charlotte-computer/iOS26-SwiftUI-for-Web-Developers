@@ -1,9 +1,10 @@
-# ViewBuilder
+# `@ViewBuilder`
 
 
-A @ViewBuilder is a list of Views. The reason for using it is to group together functional code.
+A `@ViewBuilder` is a list of Views. The reason for using it is to group together functional code.
 
-- [ViewBuilder](https://developer.apple.com/documentation/swiftui/viewbuilder) 
+The official Apple documentation [@appleViewBuilder] states it is "A custom parameter attribute that constructs views from closures."
+
 
 
 - a property wrapper that allows for `lets`, `ifs`, `switches` etc. within a view. 

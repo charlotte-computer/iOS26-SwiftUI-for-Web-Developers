@@ -1,0 +1,118 @@
+# Thinking in Swift
+
+Welcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS and macOS development. 
+
+## What is Swift?
+
+Swift is Apple's primary programming language for building iOS and macOS applications. 
+
+**Key facts about Swift:**
+- **Introduced:** 2014 by Apple.
+- **Purpose:** To replace Objective-C with a safer, faster, and more modern language.
+- **Creator:** Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.
+
+## Why was it built?
+
+Before 2014, developers used Objective-C to build Apple apps using the Cocoa and Cocoa Touch frameworks. Objective-C was powerful but had a complicated syntax. Swift was designed to be cleaner and safer while maintaining full compatibility with the older Objective-C codebases.
+
+Here is a direct comparison of how you display "Hello, World!" on a screen in three different languages.
+
+**How it looked in Objective-C (before 2014):**
+```objective-c
+#import <UIKit/UIKit.h>
+
+@interface ViewController : UIViewController
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"Hello, World!";
+    [label sizeToFit];
+    label.center = self.view.center;
+    
+    [self.view addSubview:label];
+}
+
+@end
+```
+
+**How it looks now in Swift (specifically using SwiftUI):**
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
+```
+
+**How that same concept looks in React (JavaScript):**
+```javascript
+import React from 'react';
+
+export default function App() {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <h1>Hello, World!</h1>
+    </div>
+  );
+}
+```
+
+## Two Core Concepts of Swift
+
+When transitioning from JavaScript to Swift, these are the two most important differences to understand:
+
+### 1. Swift is Object and Protocol-Oriented
+
+::: {.callout-important collapse="false"}
+**Fact:** Everything in Swift is an object. Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.
+
+```swift
+let age = 30
+// 'age' is an Int object. We can call methods directly on it:
+let isMultiple = age.isMultiple(of: 5) // returns true
+```
+:::
+
+**Why is Swift designed this way?**
+- **Interoperability:** The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem.
+- **Protocol-Oriented Programming:** Swift expands on traditional OOP. Instead of focusing only on what objects *are* (via inheritance), Swift places a heavy emphasis on what objects *can do* using Protocols (similar to Interfaces in TypeScript).
+
+### 2. Swift is Strongly and Statically Typed
+
+::: {.callout-important collapse="false"}
+**Fact:** Everything in Swift has a specific type (e.g., Integer, String, View). The compiler enforces these types before the app can run.
+
+```swift
+var name = "Charlotte" // The compiler infers this is a String
+
+// The compiler immediately flags this as an error before the app ever runs:
+// name = 42 
+```
+:::
+
+**How this differs from JavaScript:**
+- **JavaScript:** You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes.
+- **Swift:** Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production.
+- **Type Inference:** Swift's compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.
+
+## Comparing Swift & SwiftUI to JavaScript & React
+
+Here is a direct mapping of concepts between the two ecosystems.
+
+| Concept | Swift & SwiftUI | JavaScript & React |
+| :--- | :--- | :--- |
+| **Language Paradigm** | Strongly typed, Protocol-Oriented | Dynamically typed, Functional/Prototype-based |
+| **Execution** | Compiled directly to machine code | Interpreted / JIT compiled by the browser |
+| **Error Checking** | Caught at compile-time | Caught at runtime (unless using TypeScript) |
+| **Core UI Component** | `View` structs | React Components (Functions returning JSX) |
+| **Syntax Style** | Declarative Swift | Declarative JSX |
+| **Local Component State** | `@State private var count = 0` | `const [count, setCount] = useState(0)` |
+| **Passing State (Props)** | `let title: String` or `@Binding` | Component `props` |
+| **Global State** | `@EnvironmentObject` or `@Observable` | Context API, Redux, or Zustand |

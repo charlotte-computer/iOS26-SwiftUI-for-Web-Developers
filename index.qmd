@@ -6,3 +6,5 @@
 
 This is a book aimed at others on a similar journey of specialisation in Swift - from the world of React and web development. 
 
+This is ***not** a legitimate Oreilly publishing, I **hope it is one day**.
+

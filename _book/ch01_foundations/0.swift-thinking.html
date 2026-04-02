@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>functions – iOS26 SwiftUI for Web Developers</title>
+<title>1&nbsp; Thinking in Swift – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ch01_foundations/3.model.html" rel="next">
-<link href="../ch01_foundations/1.stacks.html" rel="prev">
+<link href="../ch01_foundations/1.stacks.html" rel="next">
+<link href="../intro.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -74,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/2.functions.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2.functions.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Thinking in Swift</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,32 +168,38 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/1.stacks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Stacks</span></span></a>
+  <a href="../ch01_foundations/0.swift-thinking.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Thinking in Swift</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/2.functions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2.functions.html</span></span></a>
+  <a href="../ch01_foundations/1.stacks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stacks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/2.functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">2.functions.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/3.model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">3.model.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">3.model.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/4.loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">4.loops.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4.loops.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/5.view-builder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -175,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch02_data/state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
   </div>
 </li>
       </ul>
@@ -192,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch03_advanced/navigation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -214,15 +255,206 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-swift" id="toc-what-is-swift" class="nav-link active" data-scroll-target="#what-is-swift"><span class="header-section-number">1.1</span> What is Swift?</a></li>
+  <li><a href="#why-was-it-built" id="toc-why-was-it-built" class="nav-link" data-scroll-target="#why-was-it-built"><span class="header-section-number">1.2</span> Why was it built?</a></li>
+  <li><a href="#two-core-concepts-of-swift" id="toc-two-core-concepts-of-swift" class="nav-link" data-scroll-target="#two-core-concepts-of-swift"><span class="header-section-number">1.3</span> Two Core Concepts of Swift</a>
+  <ul class="collapse">
+  <li><a href="#swift-is-object-and-protocol-oriented" id="toc-swift-is-object-and-protocol-oriented" class="nav-link" data-scroll-target="#swift-is-object-and-protocol-oriented">1. Swift is Object and Protocol-Oriented</a></li>
+  <li><a href="#swift-is-strongly-and-statically-typed" id="toc-swift-is-strongly-and-statically-typed" class="nav-link" data-scroll-target="#swift-is-strongly-and-statically-typed">2. Swift is Strongly and Statically Typed</a></li>
+  </ul></li>
+  <li><a href="#comparing-swift-swiftui-to-javascript-react" id="toc-comparing-swift-swiftui-to-javascript-react" class="nav-link" data-scroll-target="#comparing-swift-swiftui-to-javascript-react"><span class="header-section-number">1.4</span> Comparing Swift &amp; SwiftUI to JavaScript &amp; React</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/1.stacks.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/2.functions.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2.functions.html</span></a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Thinking in Swift</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Thinking in Swift</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p>Welcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS and macOS development.</p>
+<section id="what-is-swift" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-swift"><span class="header-section-number">1.1</span> What is Swift?</h2>
+<p>Swift is Apple’s primary programming language for building iOS and macOS applications.</p>
+<p><strong>Key facts about Swift:</strong> - <strong>Introduced:</strong> 2014 by Apple. - <strong>Purpose:</strong> To replace Objective-C with a safer, faster, and more modern language. - <strong>Creator:</strong> Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.</p>
+</section>
+<section id="why-was-it-built" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="why-was-it-built"><span class="header-section-number">1.2</span> Why was it built?</h2>
+<p>Before 2014, developers used Objective-C to build Apple apps using the Cocoa and Cocoa Touch frameworks. Objective-C was powerful but had a complicated syntax. Swift was designed to be cleaner and safer while maintaining full compatibility with the older Objective-C codebases.</p>
+<p>Here is a direct comparison of how you display “Hello, World!” on a screen in three different languages.</p>
+<p><strong>How it looked in Objective-C (before 2014):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode objectivec code-with-copy"><code class="sourceCode objectivec"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#import </span><span class="im">&lt;UIKit/UIKit.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">@interface</span> ViewController <span class="op">:</span> UIViewController</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">@end</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">@implementation</span> ViewController</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> <span class="op">(</span><span class="dt">void</span><span class="op">)</span>viewDidLoad <span class="op">{</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span><span class="kw">super</span> viewDidLoad<span class="op">];</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    UILabel <span class="op">*</span>label <span class="op">=</span> <span class="op">[[</span>UILabel alloc<span class="op">]</span> init<span class="op">];</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    label<span class="op">.</span>text <span class="op">=</span> <span class="st">@"Hello, World!"</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>label sizeToFit<span class="op">];</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    label<span class="op">.</span>center <span class="op">=</span> <span class="kw">self</span><span class="op">.</span>view<span class="op">.</span>center<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span><span class="kw">self</span><span class="op">.</span>view addSubview<span class="op">:</span>label<span class="op">];</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="kw">@end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>How it looks now in Swift (specifically using SwiftUI):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> ContentView<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>How that same concept looks in React (JavaScript):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div style<span class="op">=</span>{{ <span class="dt">display</span><span class="op">:</span> <span class="st">'flex'</span><span class="op">,</span> <span class="dt">justifyContent</span><span class="op">:</span> <span class="st">'center'</span><span class="op">,</span> <span class="dt">alignItems</span><span class="op">:</span> <span class="st">'center'</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="st">'100vh'</span> }}<span class="op">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> World<span class="op">!&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="two-core-concepts-of-swift" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="two-core-concepts-of-swift"><span class="header-section-number">1.3</span> Two Core Concepts of Swift</h2>
+<p>When transitioning from JavaScript to Swift, these are the two most important differences to understand:</p>
+<section id="swift-is-object-and-protocol-oriented" class="level3">
+<h3 class="anchored" data-anchor-id="swift-is-object-and-protocol-oriented">1. Swift is Object and Protocol-Oriented</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Fact:</strong> Everything in Swift is an object. Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">age</span> <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">// 'age' is an Int object. We can call methods directly on it:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">isMultiple</span> <span class="op">=</span> age<span class="op">.</span>isMultiple<span class="op">(</span>of<span class="op">:</span> <span class="dv">5</span><span class="op">)</span> <span class="co">// returns true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><strong>Why is Swift designed this way?</strong> - <strong>Interoperability:</strong> The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem. - <strong>Protocol-Oriented Programming:</strong> Swift expands on traditional OOP. Instead of focusing only on what objects <em>are</em> (via inheritance), Swift places a heavy emphasis on what objects <em>can do</em> using Protocols (similar to Interfaces in TypeScript).</p>
+</section>
+<section id="swift-is-strongly-and-statically-typed" class="level3">
+<h3 class="anchored" data-anchor-id="swift-is-strongly-and-statically-typed">2. Swift is Strongly and Statically Typed</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Fact:</strong> Everything in Swift has a specific type (e.g., Integer, String, View). The compiler enforces these types before the app can run.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> <span class="va">name</span> <span class="op">=</span> <span class="st">"Charlotte"</span> <span class="co">// The compiler infers this is a String</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">// The compiler immediately flags this as an error before the app ever runs:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">// name = 42 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><strong>How this differs from JavaScript:</strong> - <strong>JavaScript:</strong> You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes. - <strong>Swift:</strong> Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production. - <strong>Type Inference:</strong> Swift’s compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.</p>
+</section>
+</section>
+<section id="comparing-swift-swiftui-to-javascript-react" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="comparing-swift-swiftui-to-javascript-react"><span class="header-section-number">1.4</span> Comparing Swift &amp; SwiftUI to JavaScript &amp; React</h2>
+<p>Here is a direct mapping of concepts between the two ecosystems.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Swift &amp; SwiftUI</th>
+<th style="text-align: left;">JavaScript &amp; React</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Language Paradigm</strong></td>
+<td style="text-align: left;">Strongly typed, Protocol-Oriented</td>
+<td style="text-align: left;">Dynamically typed, Functional/Prototype-based</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Execution</strong></td>
+<td style="text-align: left;">Compiled directly to machine code</td>
+<td style="text-align: left;">Interpreted / JIT compiled by the browser</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Error Checking</strong></td>
+<td style="text-align: left;">Caught at compile-time</td>
+<td style="text-align: left;">Caught at runtime (unless using TypeScript)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Core UI Component</strong></td>
+<td style="text-align: left;"><code>View</code> structs</td>
+<td style="text-align: left;">React Components (Functions returning JSX)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Syntax Style</strong></td>
+<td style="text-align: left;">Declarative Swift</td>
+<td style="text-align: left;">Declarative JSX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Local Component State</strong></td>
+<td style="text-align: left;"><code>@State private var count = 0</code></td>
+<td style="text-align: left;"><code>const [count, setCount] = useState(0)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Passing State (Props)</strong></td>
+<td style="text-align: left;"><code>let title: String</code> or <code>@Binding</code></td>
+<td style="text-align: left;">Component <code>props</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Global State</strong></td>
+<td style="text-align: left;"><code>@EnvironmentObject</code> or <code>@Observable</code></td>
+<td style="text-align: left;">Context API, Redux, or Zustand</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -627,13 +859,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch01_foundations/1.stacks.html" class="pagination-link" aria-label="Stacks">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Stacks</span></span>
+      <a href="../intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ch01_foundations/3.model.html" class="pagination-link" aria-label="3.model.html">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">3.model.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ch01_foundations/1.stacks.html" class="pagination-link" aria-label="Stacks">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stacks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

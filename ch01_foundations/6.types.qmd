@@ -1,0 +1,7 @@
+# Types
+
+we use type inference most of the time. 
+
+`opt + click` on the variable to see the inferred type. 
+
+

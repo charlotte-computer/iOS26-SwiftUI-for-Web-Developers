@@ -10,6 +10,7 @@ book:
     - intro.qmd
     - part: "Part I: Foundations"
       chapters:
+        - ch01_foundations/0.swift-thinking.qmd
         - ch01_foundations/1.stacks.qmd
         - ch01_foundations/2.functions.qmd
         - ch01_foundations/3.model.qmd
