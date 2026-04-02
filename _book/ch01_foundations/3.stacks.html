@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Anatomy of a Basic App – iOS26 SwiftUI for Web Developers</title>
+<title>4&nbsp; Layout Building Blocks (Stacks) – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ch01_foundations/1b.syntax.html" rel="next">
-<link href="../ch01_foundations/0.swift-thinking.html" rel="prev">
+<link href="../ch01_foundations/4.functions.html" rel="next">
+<link href="../ch01_foundations/1b.syntax.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1.anatomy.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a Basic App</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/3.stacks.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/1.anatomy.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ch01_foundations/1.anatomy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a Basic App</span></span></a>
   </div>
 </li>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch01_foundations/3.stacks.html" class="sidebar-item-text sidebar-link">
+  <a href="../ch01_foundations/3.stacks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></span></a>
   </div>
 </li>
@@ -330,24 +330,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-folder-structure" id="toc-the-folder-structure" class="nav-link active" data-scroll-target="#the-folder-structure"><span class="header-section-number">2.1</span> The Folder Structure</a></li>
-  <li><a href="#the-root-entry-point" id="toc-the-root-entry-point" class="nav-link" data-scroll-target="#the-root-entry-point"><span class="header-section-number">2.2</span> The Root Entry Point</a></li>
-  <li><a href="#how-screens-work-views" id="toc-how-screens-work-views" class="nav-link" data-scroll-target="#how-screens-work-views"><span class="header-section-number">2.3</span> How Screens Work (Views)</a></li>
-  <li><a href="#answering-core-architectural-questions" id="toc-answering-core-architectural-questions" class="nav-link" data-scroll-target="#answering-core-architectural-questions"><span class="header-section-number">2.4</span> Answering Core Architectural Questions</a>
+  <li><a href="#the-div-equivalent" id="toc-the-div-equivalent" class="nav-link active" data-scroll-target="#the-div-equivalent"><span class="header-section-number">4.1</span> The <code>&lt;div&gt;</code> Equivalent</a>
   <ul class="collapse">
-  <li><a href="#is-this-single-threaded" id="toc-is-this-single-threaded" class="nav-link" data-scroll-target="#is-this-single-threaded">1. Is this single-threaded?</a></li>
-  <li><a href="#when-does-the-render-happen" id="toc-when-does-the-render-happen" class="nav-link" data-scroll-target="#when-does-the-render-happen">2. When does the render happen?</a></li>
-  <li><a href="#where-is-the-data-stored" id="toc-where-is-the-data-stored" class="nav-link" data-scroll-target="#where-is-the-data-stored">3. Where is the data stored?</a></li>
+  <li><a href="#vstack-vertical-stack" id="toc-vstack-vertical-stack" class="nav-link" data-scroll-target="#vstack-vertical-stack">1. VStack (Vertical Stack)</a></li>
+  <li><a href="#hstack-horizontal-stack" id="toc-hstack-horizontal-stack" class="nav-link" data-scroll-target="#hstack-horizontal-stack">2. HStack (Horizontal Stack)</a></li>
+  <li><a href="#zstack-depth-stack" id="toc-zstack-depth-stack" class="nav-link" data-scroll-target="#zstack-depth-stack">3. ZStack (Depth Stack)</a></li>
   </ul></li>
+  <li><a href="#making-grids" id="toc-making-grids" class="nav-link" data-scroll-target="#making-grids"><span class="header-section-number">4.2</span> Making Grids</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/1.anatomy.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a Basic App</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/3.stacks.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a Basic App</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></h1>
 </div>
 
 
@@ -364,17 +362,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Welcome to the anatomy of an iOS application. In this chapter, we break down exactly how a Swift app functions at a high level.</p>
-<section id="the-folder-structure" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="the-folder-structure"><span class="header-section-number">2.1</span> The Folder Structure</h2>
-<p>Every iOS project natively uses Xcode as the development environment. The folder structure relies on specific files existing in order for the application to compile correctly.</p>
-<p><strong>High-Level Xcode Structure:</strong></p>
-<ul>
-<li><code>App.swift</code> — The root entry point of the app.</li>
-<li><code>ContentView.swift</code> — The first screen the user actually sees.</li>
-<li><code>Assets.xcassets</code> — Where you store images, custom colors, and app icons.</li>
-<li><code>Info.plist</code> — Configuration file containing hardware permissions and app rules.</li>
-</ul>
+<p>Welcome to SwiftUI layouts. In HTML and React, developers reach for native <code>&lt;div&gt;</code> elements and CSS Flexbox to physically position items on the screen. In Swift, you explicitly use <strong>Stacks</strong>, which are structurally safer and highly optimized pre-configured wrappers.</p>
+<section id="the-div-equivalent" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-div-equivalent"><span class="header-section-number">4.1</span> The <code>&lt;div&gt;</code> Equivalent</h2>
+<p><strong>Fact:</strong> Stacks act conceptually identically to <code>div</code> tags, but they come with pre-baked flexbox styles specifically tailored for mobile and desktop screens. - In React, a <code>div</code> is structurally dumb. You must explicitly apply <code>display: flex; flex-direction: column</code> just to format items sequentially. - In Swift, Stacks are inherently intelligent and are implicitly pre-configured to handle flexible layout distribution and alignment.</p>
+<section id="vstack-vertical-stack" class="level3">
+<h3 class="anchored" data-anchor-id="vstack-vertical-stack">1. VStack (Vertical Stack)</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -387,114 +380,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>React projects are more flexible, but generally map similarly:</p>
-<ul>
-<li><code>index.js</code> (Root Entry)</li>
-<li><code>App.js</code> (Main Router/Screen)</li>
-<li><code>public/</code> or <code>src/assets/</code> (Images/Icons)</li>
-<li><code>package.json</code> (Configuration)</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// React equivalent using inline Flexbox styles</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div style<span class="op">=</span>{{ <span class="dt">display</span><span class="op">:</span> <span class="st">'flex'</span><span class="op">,</span> <span class="dt">flexDirection</span><span class="op">:</span> <span class="st">'column'</span><span class="op">,</span> <span class="dt">alignItems</span><span class="op">:</span> <span class="st">'center'</span><span class="op">,</span> <span class="dt">gap</span><span class="op">:</span> <span class="st">'8px'</span> }}<span class="op">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>h1<span class="op">&gt;</span>Top Item<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>p<span class="op">&gt;</span>Bottom Item<span class="op">&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+<p><strong>Swift Equivalent:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Swift automatically stacks vertically and injects a default Apple-standard gap</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>VStack <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    Text<span class="op">(</span><span class="st">"Top Item"</span><span class="op">)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    Text<span class="op">(</span><span class="st">"Bottom Item"</span><span class="op">)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="the-root-entry-point" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="the-root-entry-point"><span class="header-section-number">2.2</span> The Root Entry Point</h2>
-<p>When a user taps an app icon on their iPhone, iOS looks for the <code>@main</code> attribute to know strictly where the app officially starts executing.</p>
-<p><strong>Here is the Swift Entry Point (<code>App.swift</code>):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">@main</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> MyApp<span class="op">:</span> <span class="dt">App</span> <span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some Scene <span class="op">{</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        WindowGroup <span class="op">{</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            ContentView<span class="op">()</span> <span class="co">// ⬅️ Points to the first Screen</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="hstack-horizontal-stack" class="level3">
+<h3 class="anchored" data-anchor-id="hstack-horizontal-stack">2. HStack (Horizontal Stack)</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>React Equivalent (<code>index.js</code>)
+<span class="screen-reader-only">Note</span>What does this look like in React?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ReactDOM <span class="im">from</span> <span class="st">'react-dom/client'</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> App <span class="im">from</span> <span class="st">'./App'</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> <span class="bu">root</span> <span class="op">=</span> ReactDOM<span class="op">.</span><span class="fu">createRoot</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'root'</span>))<span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">root</span><span class="op">.</span><span class="fu">render</span>(</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>React<span class="op">.</span><span class="at">StrictMode</span><span class="op">&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>App <span class="op">/&gt;</span> {<span class="co">/* ⬅️ Points to the first Screen */</span>}</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;/</span>React<span class="op">.</span><span class="at">StrictMode</span><span class="op">&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// React equivalent using inline Flexbox styles</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div style<span class="op">=</span>{{ <span class="dt">display</span><span class="op">:</span> <span class="st">'flex'</span><span class="op">,</span> <span class="dt">flexDirection</span><span class="op">:</span> <span class="st">'row'</span><span class="op">,</span> <span class="dt">alignItems</span><span class="op">:</span> <span class="st">'center'</span><span class="op">,</span> <span class="dt">gap</span><span class="op">:</span> <span class="st">'8px'</span> }}<span class="op">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>span<span class="op">&gt;</span>Left Item<span class="op">&lt;/</span>span<span class="op">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>span<span class="op">&gt;</span>Right Item<span class="op">&lt;/</span>span<span class="op">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+<p><strong>Swift Equivalent:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Swift automatically links them horizontally</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>HStack <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    Text<span class="op">(</span><span class="st">"Left Item"</span><span class="op">)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    Text<span class="op">(</span><span class="st">"Right Item"</span><span class="op">)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="how-screens-work-views" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="how-screens-work-views"><span class="header-section-number">2.3</span> How Screens Work (Views)</h2>
-<p>In Swift, there is no generic <code>&lt;div&gt;</code>. A screen is always built strictly as a <code>Struct</code> conforming to the <code>View</code> protocol.</p>
-<p>Here is what <code>ContentView.swift</code> looks like. Keep an eye out for exactly how the answers to your common architectural questions map directly onto the code structure:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> ContentView<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ⬇️ Q3: Where is the data? </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Data is held explicitly inside the struct instance using Property Wrappers like @State.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">userName</span><span class="op">:</span> String <span class="op">=</span> <span class="st">"Charlotte"</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ⬇️ Q2: When does render happen? </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ANY time the property marked as @State explicitly changes, the 'body' automatically re-renders.</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">"Hello, </span><span class="er">\(</span><span class="st">userName)"</span><span class="op">)</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span><span class="st">"Change Name"</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                <span class="co">// ⬇️ Q1: Is this single-threaded?</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                <span class="co">// Yes. By default, ALL UI code executes strictly on the Main Thread.</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                userName <span class="op">=</span> <span class="st">"Swift Developer"</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="zstack-depth-stack" class="level3">
+<h3 class="anchored" data-anchor-id="zstack-depth-stack">3. ZStack (Depth Stack)</h3>
+<p><strong>Fact:</strong> <code>ZStack</code> physically stacks visual elements on top of each other strictly along the Z-axis (depth). - <strong>Rule:</strong> The first item written systematically in the code is placed at the mathematical bottom, and subsequent items visually stack sequentially on top of it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What does this look like in React?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// React typically overrides standard flow using relative and absolute positioning</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div style<span class="op">=</span>{{ <span class="dt">position</span><span class="op">:</span> <span class="st">'relative'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="st">'200px'</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="st">'200px'</span> }}<span class="op">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>img src<span class="op">=</span><span class="st">"background.jpg"</span> style<span class="op">=</span>{{ <span class="dt">position</span><span class="op">:</span> <span class="st">'absolute'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="st">'100%'</span><span class="op">,</span> <span class="dt">zIndex</span><span class="op">:</span> <span class="dv">0</span> }} <span class="op">/&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>h1 style<span class="op">=</span>{{ <span class="dt">position</span><span class="op">:</span> <span class="st">'absolute'</span><span class="op">,</span> <span class="dt">zIndex</span><span class="op">:</span> <span class="dv">10</span> }}<span class="op">&gt;</span><span class="bu">Text</span> on top<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><strong>Swift Equivalent:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// No manual CSS absolute positioning required</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ZStack <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    Image<span class="op">(</span><span class="st">"background"</span><span class="op">)</span> <span class="co">// Bottom physical layer</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>resizable<span class="op">()</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    Text<span class="op">(</span><span class="st">"Text on top"</span><span class="op">)</span> <span class="co">// Top physical layer</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="answering-core-architectural-questions" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="answering-core-architectural-questions"><span class="header-section-number">2.4</span> Answering Core Architectural Questions</h2>
-<p>It’s common to wonder how the environment handles processing work under the hood. Here are the clear, factual answers mapped from the code above.</p>
-<section id="is-this-single-threaded" class="level3">
-<h3 class="anchored" data-anchor-id="is-this-single-threaded">1. Is this single-threaded?</h3>
-<p><strong>Fact:</strong> <strong>UI rendering</strong> in Swift is purely single-threaded.</p>
-<ul>
-<li>All interface rendering runs on what Apple calls the <strong>Main Thread</strong>.</li>
-<li>In the code block above, when you tap the button, that line of code immediately executes on the Main Thread to guarantee a buttery-smooth 60 to 120 frames per second response.</li>
-<li><strong>Rule:</strong> If you fetch data from the internet (which is slow), you must explicitly push that task to a “Background Thread” to avoid freezing the screen.</li>
-</ul>
 </section>
-<section id="when-does-the-render-happen" class="level3">
-<h3 class="anchored" data-anchor-id="when-does-the-render-happen">2. When does the render happen?</h3>
-<p><strong>Fact:</strong> Rendering is reactive, triggered purely by a change in State.</p>
-<ul>
-<li>When the button is tapped and <code>userName</code> changes from “Charlotte” to “Swift Developer”, SwiftUI detects the change in <code>@State</code> and immediately invalidates the current <code>body</code>.</li>
-<li>SwiftUI then re-computes the physical screen to match the updated state. This is highly optimized and functionally matching how React triggers a re-render when you call <code>setState()</code>.</li>
-</ul>
-</section>
-<section id="where-is-the-data-stored" class="level3">
-<h3 class="anchored" data-anchor-id="where-is-the-data-stored">3. Where is the data stored?</h3>
-<p><strong>Fact:</strong> Local state data is stored specifically inside the Struct instance using Property Wrappers.</p>
-<ul>
-<li>Structs are highly efficient, temporary data structures.</li>
-<li>The data (<code>userName</code>) only exists for as long as this specific screen is visually alive on the device.</li>
-<li>If you have global data (state you want to share across multiple screens), you store it in classes called <code>ObservableObjects</code>, which act very much like React Context or an overarching Redux Store.</li>
-</ul>
+<section id="making-grids" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="making-grids"><span class="header-section-number">4.2</span> Making Grids</h2>
+<p><strong>Fact:</strong> In React, creating a responsive grid requires verbose CSS Grid definitions (<code>grid-template-columns</code>, <code>gap</code>, <code>fr</code> fractions). In Swift, wrappers like <code>LazyVGrid</code> naturally handle the complex fractional mathematics cleanly at compile-time.</p>
+<p><strong>Why are they called Lazy?</strong> - Because they only evaluate identically when elements physically overlap the viewable screen. If you inject 10,000 items in a grid manually, Swift only physically renders the 10 that the user is currently looking at, guaranteeing flawless performance automatically.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What does this look like in React?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// React using bulky CSS Grid</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div style<span class="op">=</span>{{ </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">display</span><span class="op">:</span> <span class="st">'grid'</span><span class="op">,</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">gridTemplateColumns</span><span class="op">:</span> <span class="st">'repeat(2, 1fr)'</span><span class="op">,</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">gap</span><span class="op">:</span> <span class="st">'16px'</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>}}<span class="op">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span>Item <span class="dv">1</span><span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span>Item <span class="dv">2</span><span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span>Item <span class="dv">3</span><span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span>Item <span class="dv">4</span><span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><strong>Swift Equivalent:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// ⬇️ 1. Define the grid spacing mathematically (Two identically flexible columns)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">columns</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    GridItem<span class="op">(.</span>flexible<span class="op">()),</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    GridItem<span class="op">(.</span>flexible<span class="op">())</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ⬇️ 2. Apply it cleanly to the Lazy wrapper</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    LazyVGrid<span class="op">(</span>columns<span class="op">:</span> columns<span class="op">,</span> spacing<span class="op">:</span> <span class="dv">16</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"Item 1"</span><span class="op">)</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"Item 2"</span><span class="op">)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"Item 3"</span><span class="op">)</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">"Item 4"</span><span class="op">)</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Fact vs Verbosity Conclusion:</strong> Notice exactly how much less verbose the SwiftUI wrapper visually acts. You explicitly define the mechanical structure of your layouts once as pure data (<code>let columns</code>), and inject them into the standard logical Grid components—entirely avoiding manual CSS string-map configuration.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -900,13 +913,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch01_foundations/0.swift-thinking.html" class="pagination-link" aria-label="Thinking in Swift">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Thinking in Swift</span></span>
+      <a href="../ch01_foundations/1b.syntax.html" class="pagination-link" aria-label="Swift Syntax &amp; Lexical Rules">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ch01_foundations/1b.syntax.html" class="pagination-link" aria-label="Swift Syntax &amp; Lexical Rules">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ch01_foundations/4.functions.html" class="pagination-link" aria-label="4.functions.html">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4.functions.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

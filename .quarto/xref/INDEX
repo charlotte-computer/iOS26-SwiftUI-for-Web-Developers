@@ -67,5 +67,44 @@
   },
   "ch04_interview/interview-prep.qmd": {
     "interview-prep.html": "c3adc636"
+  },
+  "ch01_foundations/3.stacks.qmd": {
+    "3.stacks.html": "a2ad96c4"
+  },
+  "ch01_foundations/4.functions.qmd": {
+    "4.functions.html": "e82cd40a"
+  },
+  "ch01_foundations/5.model.qmd": {
+    "5.model.html": "df8c8d16"
+  },
+  "ch01_foundations/6.loops.qmd": {
+    "6.loops.html": "185566cf"
+  },
+  "ch01_foundations/7.view-builder.qmd": {
+    "7.view-builder.html": "32fac873"
+  },
+  "ch02_Xcode/intro-to-xcode.qmd": {
+    "intro-to-xcode.html": "4c70fab1"
+  },
+  "ch02_Xcode/hotkeys-and-quick-actions.qmd": {
+    "hotkeys-and-quick-actions.html": "ec1dbd25"
+  },
+  "ch02_Xcode/dont-panic.qmd": {
+    "dont-panic.html": "c081784a"
+  },
+  "ch03_data/state.qmd": {
+    "state.html": "cbb75e19"
+  },
+  "ch03_data/xcdatamodeld.qmd": {
+    "xcdatamodeld.html": "1c269216"
+  },
+  "ch04_advanced/navigation.qmd": {
+    "navigation.html": "54ac8a2b"
+  },
+  "ch04_advanced/enterprise-folder-structure.qmd": {
+    "enterprise-folder-structure.html": "c6bb916e"
+  },
+  "ch06_interview/interview-prep.qmd": {
+    "interview-prep.html": "a1db3f01"
   }
 }

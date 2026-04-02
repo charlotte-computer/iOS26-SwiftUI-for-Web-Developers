@@ -10,8 +10,12 @@ No fluff. Just the raw architectural facts wrapped in clear answers, heavily vis
 
 **The Fact:** `@State` physically *owns* the data locally. `@Binding` physically creates a *reference* to data owned by someone else.
 
-- **Answer Structure:** "In SwiftUI, `@State` is used to create and explicitly own local data inside a specific view. When you use `@Binding` inside a child view, you are simply passing down direct, two-way access to that parent's `@State` variable without duplicating the physical data."
-- **React Parallel:** "It is functionally identical to passing down a `useState`'s setter function (`setCount`) via props to a child component, allowing the child to mutate the parent's data."
+- **Is the binding reactive?** Yes. Because `@Binding` is a direct two-way structural tunnel to the parent's `@State`, any changes made by the child instantly mutate the parent's data, natively triggering a reactive update.
+- **What happens to the view?** The moment the underlying `@State` mutates (whether altered by the parent or flipped via the child's `@Binding`), SwiftUI instantly invalidates both views and seamlessly re-renders them to reflect the new data visually.
+- **Explicit React Equivalents:**
+  - `@State` = `const [count, setCount] = useState()`.
+  - `@Binding` = Passing the `setCount` mutating function down as a physical prop: `<Child increment={setCount} />`.
+- **Answer Structure:** "In SwiftUI, `@State` is used to firmly create and own local data inside a specific view. When you use `@Binding` inside a child view, you are simply passing down direct, two-way reactive access to that parent's `@State` variable without ever duplicating the physical memory."
 
 ### 2. "Why use a Struct instead of a Class for SwiftUI views?"
 
