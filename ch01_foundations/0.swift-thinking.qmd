@@ -6,7 +6,7 @@ Welcome to Swift. If you are coming from JavaScript and React like me, this guid
 
 Swift is Apple's primary programming language for building iOS and macOS applications. 
 
-**Key facts about Swift:**
+###### Key facts about Swift:
 - **Introduced:** 2014 by Apple.
 - **Purpose:** To replace Objective-C with a safer, faster, and more modern language.
 - **Creator:** Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.

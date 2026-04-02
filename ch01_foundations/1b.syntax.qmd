@@ -1,0 +1,175 @@
+# Swift Syntax & Lexical Rules
+
+Welcome to the lexical breakdown of Swift. When transitioning from JavaScript, you will notice Swift is structurally cleaner, strictly enforced by the compiler, and relies heavily on minimizing visual clutter.
+
+## The Rules of Syntax
+
+Here is a fast, factual rundown of the core lexical rules in Swift.
+
+### 1. Semicolons are Dead
+**Fact:** Swift does not require semicolons `;` at the end of statements.
+
+- In modern JavaScript, semicolons are technically optional but are widely enforced by linters (like Prettier/ESLint) to prevent interpreter errors.
+- In Swift, semicolons are genuinely discouraged by the compiler. 
+- **Rule:** Only use a semicolon if you are writing two completely separate statements on the exact same line (which you should rarely ever do).
+
+```swift
+// Correct Swift
+let name = "Charlotte"
+let age = 28
+
+// Discouraged Swift (Do not do this)
+let name = "Charlotte"; let age = 28;
+```
+
+### 2. Variables and Constants (let vs var)
+**Fact:** `let` in Swift is functionally identical to `const` in JavaScript. `var` in Swift is identical to `let` in JavaScript.
+
+- **Rule:** Always default to using `let` when declaring new data. Only change it to `var` if the Swift compiler explicitly throws an error telling you that the value needs to mutate later.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in JavaScript?
+```javascript
+// JavaScript
+const name = "Charlotte" // Immutable
+let age = 28 // Mutable
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// Swift
+let name = "Charlotte" // Immutable (Use this default)
+var age = 28 // Mutable (Use only if changing)
+```
+
+### 3. Writing Functions
+**Fact:** Swift functions use the `func` keyword, enforce strict types on both the arguments and the output, and explicitly mandate how you call them.
+
+**Key differences compared to JavaScript:**
+
+- Arguments require explicit types (e.g., `name: String`).
+- A function's return type is declared with a right-facing arrow `->`.
+- When invoking a function, you **must explicitly write out the parameter's name** to make the code highly legible.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in JavaScript & React?
+```javascript
+// 1. Standard JavaScript Function
+function greet(name) {
+    return "Hello " + name;
+}
+
+greet("Charlotte"); // Called without explicitly naming the parameters
+
+
+// 2. React Functional Component (Returns UI)
+export default function Greet({ name }) {
+    return <h1>Hello {name}</h1>;
+}
+
+// Called using JSX, where props act similarly to named parameters
+<Greet name="Charlotte" />
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// 1. Standard Swift Function
+func greet(name: String) -> String {
+    return "Hello \(name)" // Notice string interpolation uses \( ) not ${ }
+}
+
+let message = greet(name: "Charlotte") // ⬅️ MUST explicitly write 'name:' 
+
+
+// 2. SwiftUI View (Struct returning UI)
+struct Greet: View {
+    let name: String
+    
+    var body: some View {
+        Text("Hello \(name)")
+    }
+}
+
+// ⬇️ Called exactly like a function using named parameters!
+Greet(name: "Charlotte")
+```
+
+**Function Parameter Omitting:**
+If you want Swift to behave exactly like JavaScript and let you omit the parameter name when calling a function, you explicitly place an underscore `_` before the parameter name in the definition.
+
+```swift
+func fastGreet(_ name: String) -> String {
+    return "Hey \(name)"
+}
+
+// Now it looks exactly like JavaScript when invoked:
+let fastMessage = fastGreet("Charlotte")
+```
+
+### 4. String Interpolation
+**Fact:** Swift uses `\()` to inject variables into strings.
+- In JavaScript, you switch to backticks and use `${variable}`.
+- In Swift, you keep standard double quotes `""` and inject the variable natively using a backslash and parentheses `\(variable)`.
+
+### 5. Parentheses in Control Flow
+**Fact:** Swift deliberately drops the parentheses `()` around `if`, `guard`, and `switch` statements.
+- **Rule:** The curly braces `{}` encompassing the block are strictly mandatory, but the parentheses holding the boolean condition are entirely omitted to reduce visual noise.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in JavaScript?
+```javascript
+if (age > 18) {
+    console.log("Adult");
+}
+```
+:::
+
+**Swift Equivalent:**
+```swift
+// ⬇️ No parenthesis needed around 'age > 18'
+if age > 18 { 
+    print("Adult")
+}
+```
+
+### 6. Multi-Line Dot Syntax (Modifier Chaining)
+**Fact:** Swift heavily relies on chaining methods together using dot `.` notation. For readability in enterprise applications, these chains are almost always broken across multiple vertical lines.
+- **Rule:** The dot `.` must start on the new line, typically aligned directly beneath the object it modifies.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in JavaScript & React?
+```javascript
+// JavaScript Method Chaining (Data Handling)
+const activeUsers = users
+    .filter(user => user.isActive)
+    .sort((a, b) => a.id - b.id);
+
+// React UI Equivalent (Applying styles/actions)
+// React rarely uses dot-chaining for components; instead, you stack physical props or merge class strings:
+<button 
+    className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+    onClick={handleTap}
+>
+    Enter Dashboard
+</button>
+```
+:::
+
+**Swift Equivalent (SwiftUI Modifiers):**
+In SwiftUI, you strictly apply styles and behaviors using "View Modifiers", which are just functions chained vertically via dot notation.
+
+```swift
+// Enterprise App Snippet: Structuring a styled button
+Button(action: handleTap) {
+    Text("Enter Dashboard")
+}
+.font(.headline)
+.fontWeight(.bold)
+.foregroundColor(.white)
+.padding(.vertical, 12)
+.padding(.horizontal, 24)
+.background(Color.blue)
+.cornerRadius(8)
+```

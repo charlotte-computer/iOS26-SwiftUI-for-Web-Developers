@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "iOS26 SwiftUI for Web Developers",
     "section": "",
-    "text": "Preface\n\n\n\nThis is a book aimed at others on a similar journey of specialisation in Swift - from the world of React and web development.\nThis is *not a legitimate Oreilly publishing, I hope it is one day",
+    "text": "Preface\n\n\n\nThis is a book aimed at others on a similar journey of specialisation in Swift - from the world of React and web development.\nThis is *not a legitimate Oreilly publishing, I hope it is one day.",
     "crumbs": [
       "Preface"
     ]
@@ -231,7 +231,7 @@
     "href": "ch01_foundations/0.swift-thinking.html",
     "title": "1  Thinking in Swift",
     "section": "",
-    "text": "1.1 What is Swift?\nWelcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS and macOS development.\nSwift is Apple’s primary programming language for building iOS and macOS applications.\nKey facts about Swift: - Introduced: 2014 by Apple. - Purpose: To replace Objective-C with a safer, faster, and more modern language. - Creator: Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.",
+    "text": "1.1 What is Swift?\nWelcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS and macOS development.\nSwift is Apple’s primary programming language for building iOS and macOS applications.",
     "crumbs": [
       "Part I: Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
@@ -279,6 +279,94 @@
     "crumbs": [
       "Part I: Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/0.swift-thinking.html#what-is-swift",
+    "href": "ch01_foundations/0.swift-thinking.html#what-is-swift",
+    "title": "1  Thinking in Swift",
+    "section": "",
+    "text": "Key facts about Swift:\n\nIntroduced: 2014 by Apple.\nPurpose: To replace Objective-C with a safer, faster, and more modern language.\nCreator: Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.anatomy.html",
+    "href": "ch01_foundations/1.anatomy.html",
+    "title": "2  Anatomy of a Basic App",
+    "section": "",
+    "text": "2.1 The Folder Structure\nWelcome to the anatomy of an iOS application. In this chapter, we break down exactly how a Swift app functions at a high level.\nEvery iOS project natively uses Xcode as the development environment. The folder structure relies on specific files existing in order for the application to compile correctly.\nHigh-Level Xcode Structure:",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.anatomy.html#the-folder-structure",
+    "href": "ch01_foundations/1.anatomy.html#the-folder-structure",
+    "title": "2  Anatomy of a Basic App",
+    "section": "",
+    "text": "App.swift — The root entry point of the app.\nContentView.swift — The first screen the user actually sees.\nAssets.xcassets — Where you store images, custom colors, and app icons.\nInfo.plist — Configuration file containing hardware permissions and app rules.\n\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\nReact projects are more flexible, but generally map similarly:\n\nindex.js (Root Entry)\nApp.js (Main Router/Screen)\npublic/ or src/assets/ (Images/Icons)\npackage.json (Configuration)",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.anatomy.html#the-root-entry-point",
+    "href": "ch01_foundations/1.anatomy.html#the-root-entry-point",
+    "title": "2  Anatomy of a Basic App",
+    "section": "2.2 The Root Entry Point",
+    "text": "2.2 The Root Entry Point\nWhen a user taps an app icon on their iPhone, iOS looks for the @main attribute to know strictly where the app officially starts executing.\nHere is the Swift Entry Point (App.swift):\nimport SwiftUI\n\n@main\nstruct MyApp: App {\n    var body: some Scene {\n        WindowGroup {\n            ContentView() // ⬅️ Points to the first Screen\n        }\n    }\n}\n\n\n\n\n\n\nNoteReact Equivalent (index.js)\n\n\n\n\n\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  &lt;React.StrictMode&gt;\n    &lt;App /&gt; {/* ⬅️ Points to the first Screen */}\n  &lt;/React.StrictMode&gt;\n);",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.anatomy.html#how-screens-work-views",
+    "href": "ch01_foundations/1.anatomy.html#how-screens-work-views",
+    "title": "2  Anatomy of a Basic App",
+    "section": "2.3 How Screens Work (Views)",
+    "text": "2.3 How Screens Work (Views)\nIn Swift, there is no generic &lt;div&gt;. A screen is always built strictly as a Struct conforming to the View protocol.\nHere is what ContentView.swift looks like. Keep an eye out for exactly how the answers to your common architectural questions map directly onto the code structure:\nimport SwiftUI\n\nstruct ContentView: View {\n    // ⬇️ Q3: Where is the data? \n    // Data is held explicitly inside the struct instance using Property Wrappers like @State.\n    @State private var userName: String = \"Charlotte\" \n\n    // ⬇️ Q2: When does render happen? \n    // ANY time the property marked as @State explicitly changes, the 'body' automatically re-renders.\n    var body: some View {\n        VStack {\n            Text(\"Hello, \\(userName)\")\n            \n            Button(\"Change Name\") {\n                // ⬇️ Q1: Is this single-threaded?\n                // Yes. By default, ALL UI code executes strictly on the Main Thread.\n                userName = \"Swift Developer\"\n            }\n        }\n    }\n}",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1.anatomy.html#answering-core-architectural-questions",
+    "href": "ch01_foundations/1.anatomy.html#answering-core-architectural-questions",
+    "title": "2  Anatomy of a Basic App",
+    "section": "2.4 Answering Core Architectural Questions",
+    "text": "2.4 Answering Core Architectural Questions\nIt’s common to wonder how the environment handles processing work under the hood. Here are the clear, factual answers mapped from the code above.\n\n1. Is this single-threaded?\nFact: UI rendering in Swift is purely single-threaded.\n\nAll interface rendering runs on what Apple calls the Main Thread.\nIn the code block above, when you tap the button, that line of code immediately executes on the Main Thread to guarantee a buttery-smooth 60 to 120 frames per second response.\nRule: If you fetch data from the internet (which is slow), you must explicitly push that task to a “Background Thread” to avoid freezing the screen.\n\n\n\n2. When does the render happen?\nFact: Rendering is reactive, triggered purely by a change in State.\n\nWhen the button is tapped and userName changes from “Charlotte” to “Swift Developer”, SwiftUI detects the change in @State and immediately invalidates the current body.\nSwiftUI then re-computes the physical screen to match the updated state. This is highly optimized and functionally matching how React triggers a re-render when you call setState().\n\n\n\n3. Where is the data stored?\nFact: Local state data is stored specifically inside the Struct instance using Property Wrappers.\n\nStructs are highly efficient, temporary data structures.\nThe data (userName) only exists for as long as this specific screen is visually alive on the device.\nIf you have global data (state you want to share across multiple screens), you store it in classes called ObservableObjects, which act very much like React Context or an overarching Redux Store.",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1b.syntax.html",
+    "href": "ch01_foundations/1b.syntax.html",
+    "title": "3  Swift Syntax & Lexical Rules",
+    "section": "",
+    "text": "3.1 The Rules of Syntax\nWelcome to the lexical breakdown of Swift. When transitioning from JavaScript, you will notice Swift is structurally cleaner, strictly enforced by the compiler, and relies heavily on minimizing visual clutter.\nHere is a fast, factual rundown of the core lexical rules in Swift.",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Swift Syntax & Lexical Rules</span>"
+    ]
+  },
+  {
+    "objectID": "ch01_foundations/1b.syntax.html#the-rules-of-syntax",
+    "href": "ch01_foundations/1b.syntax.html#the-rules-of-syntax",
+    "title": "3  Swift Syntax & Lexical Rules",
+    "section": "",
+    "text": "1. Semicolons are Dead\nFact: Swift does not require semicolons ; at the end of statements.\n\nIn modern JavaScript, semicolons are technically optional but are widely enforced by linters (like Prettier/ESLint) to prevent interpreter errors.\nIn Swift, semicolons are genuinely discouraged by the compiler.\nRule: Only use a semicolon if you are writing two completely separate statements on the exact same line (which you should rarely ever do).\n\n// Correct Swift\nlet name = \"Charlotte\"\nlet age = 28\n\n// Discouraged Swift (Do not do this)\nlet name = \"Charlotte\"; let age = 28;\n\n\n2. Variables and Constants (let vs var)\nFact: let in Swift is functionally identical to const in JavaScript. var in Swift is identical to let in JavaScript.\n\nRule: Always default to using let when declaring new data. Only change it to var if the Swift compiler explicitly throws an error telling you that the value needs to mutate later.\n\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript?\n\n\n\n\n\n// JavaScript\nconst name = \"Charlotte\" // Immutable\nlet age = 28 // Mutable\n\n\n\nSwift Equivalent:\n// Swift\nlet name = \"Charlotte\" // Immutable (Use this default)\nvar age = 28 // Mutable (Use only if changing)\n\n\n3. Writing Functions\nFact: Swift functions use the func keyword, enforce strict types on both the arguments and the output, and explicitly mandate how you call them.\nKey differences compared to JavaScript:\n\nArguments require explicit types (e.g., name: String).\nA function’s return type is declared with a right-facing arrow -&gt;.\nWhen invoking a function, you must explicitly write out the parameter’s name to make the code highly legible.\n\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript & React?\n\n\n\n\n\n// 1. Standard JavaScript Function\nfunction greet(name) {\n    return \"Hello \" + name;\n}\n\ngreet(\"Charlotte\"); // Called without explicitly naming the parameters\n\n\n// 2. React Functional Component (Returns UI)\nexport default function Greet({ name }) {\n    return &lt;h1&gt;Hello {name}&lt;/h1&gt;;\n}\n\n// Called using JSX, where props act similarly to named parameters\n&lt;Greet name=\"Charlotte\" /&gt;\n\n\n\nSwift Equivalent:\n// 1. Standard Swift Function\nfunc greet(name: String) -&gt; String {\n    return \"Hello \\(name)\" // Notice string interpolation uses \\( ) not ${ }\n}\n\nlet message = greet(name: \"Charlotte\") // ⬅️ MUST explicitly write 'name:' \n\n\n// 2. SwiftUI View (Struct returning UI)\nstruct Greet: View {\n    let name: String\n    \n    var body: some View {\n        Text(\"Hello \\(name)\")\n    }\n}\n\n// ⬇️ Called exactly like a function using named parameters!\nGreet(name: \"Charlotte\")\nFunction Parameter Omitting: If you want Swift to behave exactly like JavaScript and let you omit the parameter name when calling a function, you explicitly place an underscore _ before the parameter name in the definition.\nfunc fastGreet(_ name: String) -&gt; String {\n    return \"Hey \\(name)\"\n}\n\n// Now it looks exactly like JavaScript when invoked:\nlet fastMessage = fastGreet(\"Charlotte\")\n\n\n4. String Interpolation\nFact: Swift uses \\() to inject variables into strings. - In JavaScript, you switch to backticks and use ${variable}. - In Swift, you keep standard double quotes \"\" and inject the variable natively using a backslash and parentheses \\(variable).\n\n\n5. Parentheses in Control Flow\nFact: Swift deliberately drops the parentheses () around if, guard, and switch statements. - Rule: The curly braces {} encompassing the block are strictly mandatory, but the parentheses holding the boolean condition are entirely omitted to reduce visual noise.\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript?\n\n\n\n\n\nif (age &gt; 18) {\n    console.log(\"Adult\");\n}\n\n\n\nSwift Equivalent:\n// ⬇️ No parenthesis needed around 'age &gt; 18'\nif age &gt; 18 { \n    print(\"Adult\")\n}\n\n\n6. Multi-Line Dot Syntax (Modifier Chaining)\nFact: Swift heavily relies on chaining methods together using dot . notation. For readability in enterprise applications, these chains are almost always broken across multiple vertical lines. - Rule: The dot . must start on the new line, typically aligned directly beneath the object it modifies.\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript & React?\n\n\n\n\n\n// JavaScript Method Chaining (Data Handling)\nconst activeUsers = users\n    .filter(user =&gt; user.isActive)\n    .sort((a, b) =&gt; a.id - b.id);\n\n// React UI Equivalent (Applying styles/actions)\n// React rarely uses dot-chaining for components; instead, you stack physical props or merge class strings:\n&lt;button \n    className=\"bg-blue-500 text-white font-bold py-2 px-4 rounded\"\n    onClick={handleTap}\n&gt;\n    Enter Dashboard\n&lt;/button&gt;\n\n\n\nSwift Equivalent (SwiftUI Modifiers): In SwiftUI, you strictly apply styles and behaviors using “View Modifiers”, which are just functions chained vertically via dot notation.\n// Enterprise App Snippet: Structuring a styled button\nButton(action: handleTap) {\n    Text(\"Enter Dashboard\")\n}\n.font(.headline)\n.fontWeight(.bold)\n.foregroundColor(.white)\n.padding(.vertical, 12)\n.padding(.horizontal, 24)\n.background(Color.blue)\n.cornerRadius(8)",
+    "crumbs": [
+      "Part I: Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Swift Syntax & Lexical Rules</span>"
     ]
   }
 ]

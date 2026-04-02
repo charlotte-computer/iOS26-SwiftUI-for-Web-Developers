@@ -43,5 +43,11 @@
   },
   "ch01_foundations/0.swift-thinking.qmd": {
     "0.swift-thinking.html": "8c55c320"
+  },
+  "ch01_foundations/1.anatomy.qmd": {
+    "1.anatomy.html": "e6bb25e1"
+  },
+  "ch01_foundations/1b.syntax.qmd": {
+    "1b.syntax.html": "67e8d408"
   }
 }

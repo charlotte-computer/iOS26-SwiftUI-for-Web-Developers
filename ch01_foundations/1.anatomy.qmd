@@ -1,0 +1,112 @@
+# Anatomy of a Basic App
+
+Welcome to the anatomy of an iOS application. In this chapter, we break down exactly how a Swift app functions at a high level.
+
+## The Folder Structure
+
+Every iOS project natively uses Xcode as the development environment. The folder structure relies on specific files existing in order for the application to compile correctly.
+
+**High-Level Xcode Structure:**
+
+- `App.swift` — The root entry point of the app.
+- `ContentView.swift` — The first screen the user actually sees.
+- `Assets.xcassets` — Where you store images, custom colors, and app icons.
+- `Info.plist` — Configuration file containing hardware permissions and app rules.
+
+::: {.callout-note collapse="true"}
+#### What does this look like in React?
+React projects are more flexible, but generally map similarly:
+
+- `index.js` (Root Entry)
+- `App.js` (Main Router/Screen)
+- `public/` or `src/assets/` (Images/Icons)
+- `package.json` (Configuration)
+:::
+
+## The Root Entry Point
+
+When a user taps an app icon on their iPhone, iOS looks for the `@main` attribute to know strictly where the app officially starts executing.
+
+**Here is the Swift Entry Point (`App.swift`):**
+```swift
+import SwiftUI
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView() // ⬅️ Points to the first Screen
+        }
+    }
+}
+```
+
+::: {.callout-note collapse="true"}
+#### React Equivalent (`index.js`)
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App /> {/* ⬅️ Points to the first Screen */}
+  </React.StrictMode>
+);
+```
+:::
+
+## How Screens Work (Views)
+
+In Swift, there is no generic `<div>`. A screen is always built strictly as a `Struct` conforming to the `View` protocol. 
+
+Here is what `ContentView.swift` looks like. Keep an eye out for exactly how the answers to your common architectural questions map directly onto the code structure:
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    // ⬇️ Q3: Where is the data? 
+    // Data is held explicitly inside the struct instance using Property Wrappers like @State.
+    @State private var userName: String = "Charlotte" 
+
+    // ⬇️ Q2: When does render happen? 
+    // ANY time the property marked as @State explicitly changes, the 'body' automatically re-renders.
+    var body: some View {
+        VStack {
+            Text("Hello, \(userName)")
+            
+            Button("Change Name") {
+                // ⬇️ Q1: Is this single-threaded?
+                // Yes. By default, ALL UI code executes strictly on the Main Thread.
+                userName = "Swift Developer"
+            }
+        }
+    }
+}
+```
+
+## Answering Core Architectural Questions
+
+It's common to wonder how the environment handles processing work under the hood. Here are the clear, factual answers mapped from the code above.
+
+### 1. Is this single-threaded?
+**Fact:** **UI rendering** in Swift is purely single-threaded. 
+
+- All interface rendering runs on what Apple calls the **Main Thread**. 
+- In the code block above, when you tap the button, that line of code immediately executes on the Main Thread to guarantee a buttery-smooth 60 to 120 frames per second response.
+- **Rule:** If you fetch data from the internet (which is slow), you must explicitly push that task to a "Background Thread" to avoid freezing the screen. 
+
+### 2. When does the render happen?
+**Fact:** Rendering is reactive, triggered purely by a change in State.
+
+- When the button is tapped and `userName` changes from "Charlotte" to "Swift Developer", SwiftUI detects the change in `@State` and immediately invalidates the current `body`.
+- SwiftUI then re-computes the physical screen to match the updated state. This is highly optimized and functionally matching how React triggers a re-render when you call `setState()`.
+
+### 3. Where is the data stored?
+**Fact:** Local state data is stored specifically inside the Struct instance using Property Wrappers.
+
+- Structs are highly efficient, temporary data structures. 
+- The data (`userName`) only exists for as long as this specific screen is visually alive on the device. 
+- If you have global data (state you want to share across multiple screens), you store it in classes called `ObservableObjects`, which act very much like React Context or an overarching Redux Store.
