@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Don’t Panic – iOS26 SwiftUI for Web Developers</title>
+<title>15&nbsp; Model View ViewModel (MVVM) – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ch03_data/state.html" rel="next">
-<link href="../ch02_Xcode/hotkeys-and-quick-actions.html" rel="prev">
+<link href="../ch06_interview/interview-prep.html" rel="next">
+<link href="../ch04_advanced/navigation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -90,6 +70,9 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -103,7 +86,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch02_Xcode/intro-to-xcode.html">Part II: Xcode Essentials</a></li><li class="breadcrumb-item"><a href="../ch02_Xcode/dont-panic.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch04_advanced/navigation.html">Part IV: Advanced iOS Interfaces</a></li><li class="breadcrumb-item"><a href="../ch04_advanced/mvvm.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -218,7 +201,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch02_Xcode/dont-panic.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ch02_Xcode/dont-panic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></span></a>
   </div>
 </li>
@@ -264,8 +247,8 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch04_advanced/enterprise-folder-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Enterprise Swift Architecture</span></span></a>
+  <a href="../ch04_advanced/mvvm.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,16 +286,28 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ghost-files---files-that-are-hidden" id="toc-ghost-files---files-that-are-hidden" class="nav-link active" data-scroll-target="#ghost-files---files-that-are-hidden">Ghost Files - Files that are hidden</a></li>
+  <li><a href="#dependency-direction" id="toc-dependency-direction" class="nav-link active" data-scroll-target="#dependency-direction">Dependency Direction</a></li>
+  <li><a href="#domain-layer" id="toc-domain-layer" class="nav-link" data-scroll-target="#domain-layer">1. Domain Layer</a></li>
+  <li><a href="#presentation-layer" id="toc-presentation-layer" class="nav-link" data-scroll-target="#presentation-layer">2. Presentation Layer</a></li>
+  <li><a href="#data-layer" id="toc-data-layer" class="nav-link" data-scroll-target="#data-layer">3. Data Layer</a></li>
+  <li><a href="#infrastructure-layer-network" id="toc-infrastructure-layer-network" class="nav-link" data-scroll-target="#infrastructure-layer-network">4. Infrastructure Layer (Network)</a></li>
+  <li><a href="#the-data-flow-lifecycle" id="toc-the-data-flow-lifecycle" class="nav-link" data-scroll-target="#the-data-flow-lifecycle">The Data Flow Lifecycle</a></li>
+  <li><a href="#case-study-the-movies-app" id="toc-case-study-the-movies-app" class="nav-link" data-scroll-target="#case-study-the-movies-app"><span class="header-section-number">15.1</span> Case Study: “The Movies App”</a>
+  <ul class="collapse">
+  <li><a href="#domain-layer-in-action" id="toc-domain-layer-in-action" class="nav-link" data-scroll-target="#domain-layer-in-action">1. Domain Layer in Action</a></li>
+  <li><a href="#presentation-layer-in-action" id="toc-presentation-layer-in-action" class="nav-link" data-scroll-target="#presentation-layer-in-action">2. Presentation Layer in Action</a></li>
+  <li><a href="#data-layer-in-action" id="toc-data-layer-in-action" class="nav-link" data-scroll-target="#data-layer-in-action">3. Data Layer in Action</a></li>
+  <li><a href="#what-is-a-dicontainer" id="toc-what-is-a-dicontainer" class="nav-link" data-scroll-target="#what-is-a-dicontainer">What is a DIContainer?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch02_Xcode/intro-to-xcode.html">Part II: Xcode Essentials</a></li><li class="breadcrumb-item"><a href="../ch02_Xcode/dont-panic.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch04_advanced/navigation.html">Part IV: Advanced iOS Interfaces</a></li><li class="breadcrumb-item"><a href="../ch04_advanced/mvvm.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></h1>
 </div>
 
 
@@ -329,21 +324,179 @@ div.csl-indent {
 </header>
 
 
-<p>Xcode has so many ways it can make you feel so anxious, frustrated, and upset. Let’s go through them so you know what is a usual issue.</p>
-<section id="ghost-files---files-that-are-hidden" class="level3">
-<h3 class="anchored" data-anchor-id="ghost-files---files-that-are-hidden">Ghost Files - Files that are hidden</h3>
-<p>Sometimes you can see files in your IDE (VScode / Antigravity) that do not exist in the xcode same exact project.</p>
-<p>Right click on a folder in Xcode and click <code>"Add Files"</code> to see non greyed out files that are in the same folder as your project. make sure that the files are added to the project.</p>
-<p>Even though the file is in the correct folder, Xcode won’t acknowledge it until you manually re-link it inside the IDE via <code>File &gt; Add Files To "YourProject"</code>.</p>
-<p>— ## References</p>
-<p>For an official deeper dive into exactly how Xcode manages literal file maps versus physical folder mappings: - <a href="https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project"><strong>Managing Files and Folders in Your Xcode Project</strong></a> <span class="citation" data-cites="appleXcodeFiles">(<a href="../references.html#ref-appleXcodeFiles" role="doc-biblioref">Apple Inc. 2026</a>)</span></p>
+<p>This is based on this wonderful repository by <span class="citation" data-cites="kudoleh">(<a href="../references.html#ref-kudoleh" role="doc-biblioref"><strong>kudoleh?</strong></a>)</span> <a href="https://github.com/kudoleh/iOS-Clean-Architecture-MVVM">iOS Clean Architecture MVVM</a>. Let’s systematically break down Clean Architecture and MVVM on iOS, layer by layer. The goal is complete separation of concerns.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;
+    subgraph Presentation[Presentation Layer]
+        UI[Views / UI]
+        VM[ViewModels]
+    end
+    style Presentation fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
 
+    subgraph Domain[Domain Layer]
+        UC[Use Cases]
+        E[Entities]
+        RI[Repository Interfaces]
+    end
+    style Domain fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-appleXcodeFiles" class="csl-entry" role="listitem">
-Apple Inc. 2026. <span>“Managing Files and Folders in Your Xcode Project.”</span> 2026. <a href="https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project">https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project</a>.
+    subgraph Data[Data Layer]
+        RI_Impl[Repository Implementations]
+        API[API / Network]
+        DB[Local DB / CoreData]
+    end
+    style Data fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+    
+    UI &lt;--&gt;|Observes/Actions| VM
+    VM --&gt;|Executes| UC
+    UC --&gt;|Uses| E
+    UC --&gt;|Requests from| RI
+    RI_Impl -.-&gt;|Implements| RI
+    RI_Impl --&gt; API
+    RI_Impl --&gt; DB
+</pre>
+</div>
+<p></p></figure><p></p>
 </div>
 </div>
+</div>
+<section id="dependency-direction" class="level3">
+<h3 class="anchored" data-anchor-id="dependency-direction">Dependency Direction</h3>
+<p>The most important rule in Clean Architecture: <strong>Inner layers do not depend on outer layers.</strong></p>
+<p><code>Presentation Layer -&gt; Domain Layer &lt;- Data Layer</code></p>
+<ul>
+<li><strong>Presentation Layer</strong> depends on the Domain Layer.</li>
+<li><strong>Data Layer</strong> depends on the Domain Layer.</li>
+<li><strong>Domain Layer</strong> depends on <em>nothing</em> outside of itself. It is the isolated core containing your business rules.</li>
+</ul>
+<hr>
+</section>
+<section id="domain-layer" class="level3">
+<h3 class="anchored" data-anchor-id="domain-layer">1. Domain Layer</h3>
+<p>The Domain Layer is the conceptual heart of your application. It contains the core business rules and logic. It must <strong>not</strong> import any UI frameworks (like <code>UIKit</code> or <code>SwiftUI</code>) or data frameworks (like <code>CoreData</code> or <code>Alamofire</code>).</p>
+<ul>
+<li><strong>Entities:</strong> Pure Swift structs or classes representing the raw data models of your business (e.g., <code>Movie</code>, <code>User</code>).</li>
+<li><strong>Use Cases (Interactors):</strong> Classes that define specific application actions (e.g., <code>SearchMoviesUseCase</code>, <code>FetchRecentQueriesUseCase</code>). They combine data from entities and repositories.</li>
+<li><strong>Repository Interfaces (Protocols):</strong> Protocols that define how data should be fetched or saved. By defining these here, the Domain Layer dictates <em>what</em> data it needs without caring <em>how</em> it is retrieved (Dependency Inversion).</li>
+</ul>
+</section>
+<section id="presentation-layer" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-layer">2. Presentation Layer</h3>
+<p>The Presentation Layer is responsible for what the user sees and interacts with. It uses the MVVM (Model-View-ViewModel) pattern to separate UI rendering from UI logic.</p>
+<ul>
+<li><strong>Views (UI):</strong> SwiftUI Views or <code>UIViewController</code>s. They display data and capture user input. They have no business logic.</li>
+<li><strong>ViewModels:</strong> They handle presentation logic. They take input from the View, execute Domain Use Cases, and expose observable state back to the View. They should be completely independent of UI frameworks, making them easily testable and reusable across UIKit and SwiftUI replacements.</li>
+<li><strong>Flow Coordinators:</strong> Usually placed here to manage navigation between views, reducing the burden on individual views and view models.</li>
+</ul>
+</section>
+<section id="data-layer" class="level3">
+<h3 class="anchored" data-anchor-id="data-layer">3. Data Layer</h3>
+<p>The Data Layer implements the interfaces defined by the Domain Layer. It handles data retrieval, storage, and mapping.</p>
+<ul>
+<li><strong>Repository Implementations:</strong> Conforms to the Domain Layer’s repository interfaces. This is where you decide where the data actually comes from (e.g., fetching from an API first, then falling back to a cached local database).</li>
+<li><strong>Data Transfer Objects (DTOs):</strong> Intermediate models used for parsing JSON (e.g., <code>Decodable</code>) or mapping to local databases (<code>NSManagedObject</code>). They are strictly part of this layer and are mapped to pure Domain Entities before returning to the Domain Layer.</li>
+</ul>
+</section>
+<section id="infrastructure-layer-network" class="level3">
+<h3 class="anchored" data-anchor-id="infrastructure-layer-network">4. Infrastructure Layer (Network)</h3>
+<p>Often considered a part of (or a supporting boundary for) the Data Layer.</p>
+<ul>
+<li><strong>Network Wrapper:</strong> A wrapper around your networking engine (like <code>Alamofire</code> or <code>URLSession</code>). It manages endpoints, base URLs, and raw data mapping. By isolating networking here, you can easily swap out networking libraries without rewriting your data repositories.</li>
+</ul>
+</section>
+<section id="the-data-flow-lifecycle" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-flow-lifecycle">The Data Flow Lifecycle</h3>
+<ol type="1">
+<li><strong>View</strong> receives a user interaction (e.g., tapping a search button).</li>
+<li><strong>View</strong> calls a method on the <strong>ViewModel</strong>.</li>
+<li><strong>ViewModel</strong> executes a <strong>Use Case</strong> from the Domain Layer.</li>
+<li><strong>Use Case</strong> requests data via a <strong>Repository Interface</strong>.</li>
+<li><strong>Repository Implementation</strong> (Data Layer) fetches data from a remote API or local database (Infrastructure Layer).</li>
+<li><strong>Data Layer</strong> maps the raw response (DTO) into a clean <strong>Entity</strong> and returns it.</li>
+<li><strong>Use Case</strong> applies business rules and returns the result to the ViewModel.</li>
+<li><strong>ViewModel</strong> updates its observable state.</li>
+<li><strong>View</strong> observes the state change and automatically re-renders the UI.</li>
+</ol>
+<hr>
+</section>
+<section id="case-study-the-movies-app" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="case-study-the-movies-app"><span class="header-section-number">15.1</span> Case Study: “The Movies App”</h2>
+<p>To make this concrete, let’s look at the “Movies App” example from the reference repository. The goal of the app is simple: it allows a user to search for movies, see a list of results, and view details about a selected movie. It also caches recent searches so they work offline.</p>
+<p>Let’s map our abstract layer concepts directly to the actual code structures in this app.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;
+    
+    subgraph Presentation[Presentation Layer]
+        UI[MoviesListView&lt;br&gt;MoviesListViewController]
+        VM[MoviesListViewModel]
+        Coord[MoviesSearchFlowCoordinator]
+    end
+    style Presentation fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+
+    subgraph Domain[Domain Layer]
+        UC[SearchMoviesUseCase]
+        E[Movie&lt;br&gt;MovieQuery]
+        RI[MoviesRepository Protocol]
+    end
+    style Domain fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+
+    subgraph Data[Data Layer]
+        RI_Impl[DefaultMoviesRepository]
+        API[MoviesResponseDTO]
+        DB[MoviesResponseEntity&lt;br&gt;CoreData]
+    end
+    style Data fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+    
+    UI &lt;--&gt;|Observes/Actions| VM
+    Coord -.-&gt;|Listens for Routing| VM
+    VM --&gt;|Executes| UC
+    UC --&gt;|Uses| E
+    UC --&gt;|Requests from| RI
+    RI_Impl -.-&gt;|Implements| RI
+    RI_Impl --&gt; API
+    RI_Impl --&gt; DB
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="domain-layer-in-action" class="level3">
+<h3 class="anchored" data-anchor-id="domain-layer-in-action">1. Domain Layer in Action</h3>
+<p>The Domain Layer sets the rules. Here we define <code>Movie</code> as a simple struct. We define <code>SearchMoviesUseCase</code>, which expects a search query and returns a list of Movies. Crucially, the Use Case doesn’t know <em>how</em> to fetch movies. It just talks to a protocol: <code>MoviesRepository</code>. The Domain says: <em>“I need a repository that can fulfill this protocol.”</em></p>
+</section>
+<section id="presentation-layer-in-action" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-layer-in-action">2. Presentation Layer in Action</h3>
+<p>The Presentation Layer drives the UI. We have <code>MoviesListView</code> which handles the visual layout (e.g., a search bar and list). This view observes <code>MoviesListViewModel</code>. When the user types “Inception”, the View tells the ViewModel. The ViewModel calls <code>SearchMoviesUseCase.start(query: "Inception")</code>. When the Use Case returns an array of <code>Movie</code> structs, the ViewModel updates its observable state, and the View automatically updates the screen. Meanwhile, <code>MoviesSearchFlowCoordinator</code> observes the ViewModel to know when it should push the Movie Detail screen onto the navigation stack.</p>
+</section>
+<section id="data-layer-in-action" class="level3">
+<h3 class="anchored" data-anchor-id="data-layer-in-action">3. Data Layer in Action</h3>
+<p>The Data Layer does the dirty work. <code>DefaultMoviesRepository</code> implements the <code>MoviesRepository</code> protocol from the Domain Layer. When asked for movies, it first checks its persistent storage (like CoreData, using <code>MoviesResponseEntity</code>). If it doesn’t have the data, it asks the API. It receives JSON, decodes it using <code>MoviesResponseDTO</code> (Data Transfer Object), maps it cleanly into our pure Swift <code>Movie</code> struct, and passes it back up to the Domain Layer. Because of this separation, if we decided to swap CoreData for Realm, the UI and Domain wouldn’t need to change a single line of code!</p>
+<hr>
+</section>
+<section id="what-is-a-dicontainer" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-dicontainer">What is a DIContainer?</h3>
+<p>In Clean Architecture, because inner layers (like the Domain) cannot know about outer layers (like Network or Data Repositories), we rely heavily on <strong>Dependency Inversion</strong>. The Domain simply says: <em>“I need something that conforms to <code>MoviesRepository</code>.”</em> But who actually creates the <code>DefaultMoviesRepository</code> and hands it to the Domain?</p>
+<p>This is the job of the <strong>Dependency Injection Container (DIContainer)</strong>.</p>
+<p>A DIContainer is a central factory object that wires your entire app together. It usually lives at the very top level of your app (often in an <code>AppDIContainer</code> or <code>SceneDIContainer</code>). Its responsibilities are to:</p>
+<ol type="1">
+<li><strong>Hold Shared Resources:</strong> Keep track of long-lived dependencies (like a single <code>APIClient</code> instance or a shared <code>CoreDataStorage</code>).</li>
+<li><strong>Build the Dependency Graph:</strong> When a View needs a ViewModel, the DIContainer builds the ViewModel. To do that, it builds the required Use Case. To do that, it builds the required Repository.</li>
+</ol>
+<p>By keeping all setup and instantiation logic inside a DIContainer, your Views and ViewModels don’t need to know how to build their own dependencies. This keeps your layers loosely coupled and makes your code incredibly easy to test (because you can simply inject a “Mock” repository instead of the real one during a test).</p>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -749,13 +902,13 @@ Apple Inc. 2026. <span>“Managing Files and Folders in Your Xcode Project.”</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch02_Xcode/hotkeys-and-quick-actions.html" class="pagination-link" aria-label="hotkeys-and-quick-actions.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">hotkeys-and-quick-actions.html</span></span>
+      <a href="../ch04_advanced/navigation.html" class="pagination-link" aria-label="Navigation and Routing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ch03_data/state.html" class="pagination-link" aria-label="State and Data Flow">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ch06_interview/interview-prep.html" class="pagination-link" aria-label="Interview Prep: Swift &amp; iOS Architecture">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

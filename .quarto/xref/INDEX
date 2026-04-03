@@ -106,5 +106,14 @@
   },
   "ch06_interview/interview-prep.qmd": {
     "interview-prep.html": "a1db3f01"
+  },
+  "ch04_advanced/mvvm.qmd": {
+    "mvvm.html": "6ace5b39"
+  },
+  "ch04_advanced/domain-driven-design.qmd": {
+    "domain-driven-design.html": "e9d52eca"
+  },
+  "ch04_advanced/modern-clean-architecture.qmd": {
+    "modern-clean-architecture.html": "55b22883"
   }
 }

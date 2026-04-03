@@ -1,0 +1,160 @@
+# Model View ViewModel (MVVM)
+
+This is based on this wonderful repository by @kudoleh [iOS Clean Architecture MVVM](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM). Let's systematically break down Clean Architecture and MVVM on iOS, layer by layer. The goal is complete separation of concerns.
+
+```{mermaid}
+flowchart TD
+    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;
+    subgraph Presentation[Presentation Layer]
+        UI[Views / UI]
+        VM[ViewModels]
+    end
+    style Presentation fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+
+    subgraph Domain[Domain Layer]
+        UC[Use Cases]
+        E[Entities]
+        RI[Repository Interfaces]
+    end
+    style Domain fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+
+    subgraph Data[Data Layer]
+        RI_Impl[Repository Implementations]
+        API[API / Network]
+        DB[Local DB / CoreData]
+    end
+    style Data fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+    
+    UI <-->|Observes/Actions| VM
+    VM -->|Executes| UC
+    UC -->|Uses| E
+    UC -->|Requests from| RI
+    RI_Impl -.->|Implements| RI
+    RI_Impl --> API
+    RI_Impl --> DB
+```
+
+### Dependency Direction
+
+The most important rule in Clean Architecture: **Inner layers do not depend on outer layers.**
+
+`Presentation Layer -> Domain Layer <- Data Layer`
+
+*   **Presentation Layer** depends on the Domain Layer.
+*   **Data Layer** depends on the Domain Layer.
+*   **Domain Layer** depends on *nothing* outside of itself. It is the isolated core containing your business rules.
+
+---
+
+### 1. Domain Layer
+
+The Domain Layer is the conceptual heart of your application. It contains the core business rules and logic. It must **not** import any UI frameworks (like `UIKit` or `SwiftUI`) or data frameworks (like `CoreData` or `Alamofire`).
+
+*   **Entities:** Pure Swift structs or classes representing the raw data models of your business (e.g., `Movie`, `User`).
+*   **Use Cases (Interactors):** Classes that define specific application actions (e.g., `SearchMoviesUseCase`, `FetchRecentQueriesUseCase`). They combine data from entities and repositories.
+*   **Repository Interfaces (Protocols):** Protocols that define how data should be fetched or saved. By defining these here, the Domain Layer dictates *what* data it needs without caring *how* it is retrieved (Dependency Inversion).
+
+### 2. Presentation Layer
+
+The Presentation Layer is responsible for what the user sees and interacts with. It uses the MVVM (Model-View-ViewModel) pattern to separate UI rendering from UI logic.
+
+*   **Views (UI):** SwiftUI Views or `UIViewController`s. They display data and capture user input. They have no business logic.
+*   **ViewModels:** They handle presentation logic. They take input from the View, execute Domain Use Cases, and expose observable state back to the View. They should be completely independent of UI frameworks, making them easily testable and reusable across UIKit and SwiftUI replacements.
+*   **Flow Coordinators:** Usually placed here to manage navigation between views, reducing the burden on individual views and view models.
+
+### 3. Data Layer
+
+The Data Layer implements the interfaces defined by the Domain Layer. It handles data retrieval, storage, and mapping.
+
+*   **Repository Implementations:** Conforms to the Domain Layer's repository interfaces. This is where you decide where the data actually comes from (e.g., fetching from an API first, then falling back to a cached local database).
+*   **Data Transfer Objects (DTOs):** Intermediate models used for parsing JSON (e.g., `Decodable`) or mapping to local databases (`NSManagedObject`). They are strictly part of this layer and are mapped to pure Domain Entities before returning to the Domain Layer.
+
+### 4. Infrastructure Layer (Network)
+
+Often considered a part of (or a supporting boundary for) the Data Layer.
+
+*   **Network Wrapper:** A wrapper around your networking engine (like `Alamofire` or `URLSession`). It manages endpoints, base URLs, and raw data mapping. By isolating networking here, you can easily swap out networking libraries without rewriting your data repositories.
+
+### The Data Flow Lifecycle
+
+1.  **View** receives a user interaction (e.g., tapping a search button).
+2.  **View** calls a method on the **ViewModel**.
+3.  **ViewModel** executes a **Use Case** from the Domain Layer.
+4.  **Use Case** requests data via a **Repository Interface**.
+5.  **Repository Implementation** (Data Layer) fetches data from a remote API or local database (Infrastructure Layer).
+6.  **Data Layer** maps the raw response (DTO) into a clean **Entity** and returns it.
+7.  **Use Case** applies business rules and returns the result to the ViewModel.
+8.  **ViewModel** updates its observable state.
+9.  **View** observes the state change and automatically re-renders the UI.
+
+---
+
+## Case Study: "The Movies App"
+
+To make this concrete, let's look at the "Movies App" example from the reference repository. The goal of the app is simple: it allows a user to search for movies, see a list of results, and view details about a selected movie. It also caches recent searches so they work offline.
+
+Let's map our abstract layer concepts directly to the actual code structures in this app.
+
+```{mermaid}
+flowchart TD
+    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;
+    
+    subgraph Presentation[Presentation Layer]
+        UI[MoviesListView<br>MoviesListViewController]
+        VM[MoviesListViewModel]
+        Coord[MoviesSearchFlowCoordinator]
+    end
+    style Presentation fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+
+    subgraph Domain[Domain Layer]
+        UC[SearchMoviesUseCase]
+        E[Movie<br>MovieQuery]
+        RI[MoviesRepository Protocol]
+    end
+    style Domain fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+
+    subgraph Data[Data Layer]
+        RI_Impl[DefaultMoviesRepository]
+        API[MoviesResponseDTO]
+        DB[MoviesResponseEntity<br>CoreData]
+    end
+    style Data fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+    
+    UI <-->|Observes/Actions| VM
+    Coord -.->|Listens for Routing| VM
+    VM -->|Executes| UC
+    UC -->|Uses| E
+    UC -->|Requests from| RI
+    RI_Impl -.->|Implements| RI
+    RI_Impl --> API
+    RI_Impl --> DB
+```
+
+### 1. Domain Layer in Action
+The Domain Layer sets the rules. Here we define `Movie` as a simple struct. We define `SearchMoviesUseCase`, which expects a search query and returns a list of Movies. 
+Crucially, the Use Case doesn't know *how* to fetch movies. It just talks to a protocol: `MoviesRepository`. The Domain says: *"I need a repository that can fulfill this protocol."*
+
+### 2. Presentation Layer in Action
+The Presentation Layer drives the UI. We have `MoviesListView` which handles the visual layout (e.g., a search bar and list). This view observes `MoviesListViewModel`. 
+When the user types "Inception", the View tells the ViewModel. The ViewModel calls `SearchMoviesUseCase.start(query: "Inception")`. When the Use Case returns an array of `Movie` structs, the ViewModel updates its observable state, and the View automatically updates the screen.
+Meanwhile, `MoviesSearchFlowCoordinator` observes the ViewModel to know when it should push the Movie Detail screen onto the navigation stack.
+
+### 3. Data Layer in Action
+The Data Layer does the dirty work. `DefaultMoviesRepository` implements the `MoviesRepository` protocol from the Domain Layer. 
+When asked for movies, it first checks its persistent storage (like CoreData, using `MoviesResponseEntity`). If it doesn't have the data, it asks the API. It receives JSON, decodes it using `MoviesResponseDTO` (Data Transfer Object), maps it cleanly into our pure Swift `Movie` struct, and passes it back up to the Domain Layer. 
+Because of this separation, if we decided to swap CoreData for Realm, the UI and Domain wouldn't need to change a single line of code!
+
+---
+
+### What is a DIContainer?
+
+In Clean Architecture, because inner layers (like the Domain) cannot know about outer layers (like Network or Data Repositories), we rely heavily on **Dependency Inversion**. The Domain simply says: *"I need something that conforms to `MoviesRepository`."* But who actually creates the `DefaultMoviesRepository` and hands it to the Domain?
+
+This is the job of the **Dependency Injection Container (DIContainer)**.
+
+A DIContainer is a central factory object that wires your entire app together. It usually lives at the very top level of your app (often in an `AppDIContainer` or `SceneDIContainer`). Its responsibilities are to:
+
+1. **Hold Shared Resources:** Keep track of long-lived dependencies (like a single `APIClient` instance or a shared `CoreDataStorage`).
+2. **Build the Dependency Graph:** When a View needs a ViewModel, the DIContainer builds the ViewModel. To do that, it builds the required Use Case. To do that, it builds the required Repository. 
+
+By keeping all setup and instantiation logic inside a DIContainer, your Views and ViewModels don't need to know how to build their own dependencies. This keeps your layers loosely coupled and makes your code incredibly easy to test (because you can simply inject a "Mock" repository instead of the real one during a test).

@@ -1,0 +1,15 @@
+# Resources
+
+
+
+### SwiftUI
+
+- [WWDC25 Explore SwiftUI visually](https://exploreswiftui.com)
+
+
+
+#### Courses 
+
+- [Apple Developer](https://developer.apple.com/tutorials/develop-in-swift/welcome-to-app-development) build simple views
+
+- [Kodeco](https://www.kodeco.com/ios) a hands on course to build out a game

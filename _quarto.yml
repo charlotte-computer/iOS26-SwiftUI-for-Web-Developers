@@ -7,7 +7,6 @@ book:
   date: "3/26/2026"
   chapters:
     - index.qmd
-    - intro.qmd
     - part: "Part I: Foundations"
       chapters:
         - ch01_foundations/0.swift-thinking.qmd
@@ -30,11 +29,13 @@ book:
     - part: "Part IV: Advanced iOS Interfaces"
       chapters:
         - ch04_advanced/navigation.qmd
-        - ch04_advanced/enterprise-folder-structure.qmd
+        - ch04_advanced/mvvm.qmd
+        - ch04_advanced/domain-driven-design.qmd
+        - ch04_advanced/modern-clean-architecture.qmd
+        - ch04_advanced/practical-project-structure.qmd
     - part: "Part V: Interview Prep"
       chapters:
         - ch06_interview/interview-prep.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib

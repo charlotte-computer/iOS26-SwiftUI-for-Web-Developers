@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Don’t Panic – iOS26 SwiftUI for Web Developers</title>
+<title>16&nbsp; Domain Driven Design (DDD) – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ch03_data/state.html" rel="next">
-<link href="../ch02_Xcode/hotkeys-and-quick-actions.html" rel="prev">
+<link href="../ch04_advanced/modern-clean-architecture.html" rel="next">
+<link href="../ch04_advanced/mvvm.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -90,6 +70,9 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -103,7 +86,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch02_Xcode/intro-to-xcode.html">Part II: Xcode Essentials</a></li><li class="breadcrumb-item"><a href="../ch02_Xcode/dont-panic.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch04_advanced/navigation.html">Part IV: Advanced iOS Interfaces</a></li><li class="breadcrumb-item"><a href="../ch04_advanced/domain-driven-design.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Domain Driven Design (DDD)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -218,7 +201,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch02_Xcode/dont-panic.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ch02_Xcode/dont-panic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></span></a>
   </div>
 </li>
@@ -264,8 +247,20 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch04_advanced/enterprise-folder-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Enterprise Swift Architecture</span></span></a>
+  <a href="../ch04_advanced/mvvm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch04_advanced/domain-driven-design.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Domain Driven Design (DDD)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch04_advanced/modern-clean-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Modern Clean Architecture</span></span></a>
   </div>
 </li>
       </ul>
@@ -282,7 +277,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch06_interview/interview-prep.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,16 +298,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ghost-files---files-that-are-hidden" id="toc-ghost-files---files-that-are-hidden" class="nav-link active" data-scroll-target="#ghost-files---files-that-are-hidden">Ghost Files - Files that are hidden</a></li>
+  <li><a href="#the-4-core-concepts" id="toc-the-4-core-concepts" class="nav-link active" data-scroll-target="#the-4-core-concepts">The 4 Core Concepts</a></li>
+  <li><a href="#how-ddd-shapes-your-folders" id="toc-how-ddd-shapes-your-folders" class="nav-link" data-scroll-target="#how-ddd-shapes-your-folders">How DDD Shapes Your Folders</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch02_Xcode/intro-to-xcode.html">Part II: Xcode Essentials</a></li><li class="breadcrumb-item"><a href="../ch02_Xcode/dont-panic.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch04_advanced/navigation.html">Part IV: Advanced iOS Interfaces</a></li><li class="breadcrumb-item"><a href="../ch04_advanced/domain-driven-design.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Domain Driven Design (DDD)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Don’t Panic</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Domain Driven Design (DDD)</span></h1>
 </div>
 
 
@@ -329,21 +325,101 @@ div.csl-indent {
 </header>
 
 
-<p>Xcode has so many ways it can make you feel so anxious, frustrated, and upset. Let’s go through them so you know what is a usual issue.</p>
-<section id="ghost-files---files-that-are-hidden" class="level3">
-<h3 class="anchored" data-anchor-id="ghost-files---files-that-are-hidden">Ghost Files - Files that are hidden</h3>
-<p>Sometimes you can see files in your IDE (VScode / Antigravity) that do not exist in the xcode same exact project.</p>
-<p>Right click on a folder in Xcode and click <code>"Add Files"</code> to see non greyed out files that are in the same folder as your project. make sure that the files are added to the project.</p>
-<p>Even though the file is in the correct folder, Xcode won’t acknowledge it until you manually re-link it inside the IDE via <code>File &gt; Add Files To "YourProject"</code>.</p>
-<p>— ## References</p>
-<p>For an official deeper dive into exactly how Xcode manages literal file maps versus physical folder mappings: - <a href="https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project"><strong>Managing Files and Folders in Your Xcode Project</strong></a> <span class="citation" data-cites="appleXcodeFiles">(<a href="../references.html#ref-appleXcodeFiles" role="doc-biblioref">Apple Inc. 2026</a>)</span></p>
+<p>If MVVM tells you <em>how to separate your UI from your logic</em>, Domain Driven Design (DDD) tells you <em>how to structure the logic itself</em>.</p>
+<p>DDD is an approach to building software centered entirely around the business domain. The primary goal is that your code must speak the exact same language as your business experts. No artificial developer translation layers.</p>
+<p>Let’s look at the core building blocks of DDD in an iOS context.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;
+    
+    subgraph BoundedContextA [Bounded Context: Checkout]
+        AggA[Aggregate: Order]
+        EntA[Entity: OrderItem]
+        VOA[Value Object: Currency]
+        
+        AggA --&gt; EntA
+        EntA --&gt; VOA
+    end
+    style BoundedContextA fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
 
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-appleXcodeFiles" class="csl-entry" role="listitem">
-Apple Inc. 2026. <span>“Managing Files and Folders in Your Xcode Project.”</span> 2026. <a href="https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project">https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project</a>.
+    subgraph BoundedContextB [Bounded Context: Profile]
+        AggB[Aggregate: Customer]
+        EntB[Entity: CustomerRecord]
+        VOB[Value Object: MailingAddress]
+        
+        AggB --&gt; EntB
+        EntB --&gt; VOB
+    end
+    style BoundedContextB fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5
+    
+    BoundedContextA -.-&gt;|Strictly Isolated| BoundedContextB
+</pre>
+</div>
+<p></p></figure><p></p>
 </div>
 </div>
+</div>
+<section id="the-4-core-concepts" class="level3">
+<h3 class="anchored" data-anchor-id="the-4-core-concepts">The 4 Core Concepts</h3>
+<section id="ubiquitous-language" class="level4">
+<h4 class="anchored" data-anchor-id="ubiquitous-language">1. Ubiquitous Language</h4>
+<p>Stop using developer jargon (<code>UserDataManager</code>, <code>NetworkHandler</code>) when talking to subject matter experts. Use the exact vocabulary they use. If the business calls it a “Customer Profile”, your struct must be named <code>CustomerProfile</code>. If they call the checkout process “Fulfillment”, your Swift module must be named <code>Fulfillment</code>.</p>
+</section>
+<section id="bounded-contexts" class="level4">
+<h4 class="anchored" data-anchor-id="bounded-contexts">2. Bounded Contexts</h4>
+<p>Don’t build one massive, tangled app-wide data model. Treat completely separate features of your app as distinct universes (Bounded Contexts). A <code>User</code> in the Profile context needs fields like <code>bio</code> and <code>avatar</code>. But a <code>User</code> in the Checkout context only needs a <code>paymentToken</code> and <code>shippingAddress</code>. Instead of creating a giant <code>User</code> struct packed with unused optional fields, create two separate distinct models within their own Bounded Context folders.</p>
+</section>
+<section id="entities-vs-value-objects" class="level4">
+<h4 class="anchored" data-anchor-id="entities-vs-value-objects">3. Entities vs Value Objects</h4>
+<p>When designing your raw data structures, categorize them strictly into two buckets:</p>
+<ul>
+<li><strong>Entities:</strong> Defined by their <strong>Identity</strong>. They change over time, but their ID remains the same.
+<ul>
+<li><em>Example:</em> A <code>Customer(id: 123, name: "Alice")</code>. If Alice changes her name to Bob, it’s still the exact same customer because the ID is <code>123</code>.</li>
+<li><em>iOS execution:</em> Often a <code>class</code> or a <code>struct</code> explicitly conforming to <code>Identifiable</code>.</li>
+</ul></li>
+<li><strong>Value Objects:</strong> Defined entirely by their <strong>Attributes</strong>. They have no ID. They are perfectly interchangeable and strictly immutable.
+<ul>
+<li><em>Example:</em> An <code>Address(zip: "90210")</code>. If the zip code changes, it is not the same address anymore. It is a completely new <code>Address</code>.</li>
+<li><em>iOS execution:</em> Pure, immutable <code>let</code> only <code>struct</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="aggregates" class="level4">
+<h4 class="anchored" data-anchor-id="aggregates">4. Aggregates</h4>
+<p>An Aggregate is a cluster of Entities and Value Objects treated as a single unit or boundary. For example, an <code>Order</code> (Aggregate Root) contains <code>OrderItems</code> (Entities) and a <code>ShippingAddress</code> (Value Object). You should never interact with an <code>OrderItem</code> directly from outside the aggregate. You must go through the <code>Order</code>. If you want to modify an item, you tell the aggregate root: <code>order.updateItem(...)</code>.</p>
+<hr>
+</section>
+</section>
+<section id="how-ddd-shapes-your-folders" class="level3">
+<h3 class="anchored" data-anchor-id="how-ddd-shapes-your-folders">How DDD Shapes Your Folders</h3>
+<p>The most immediate practical impact DDD has on your Xcode project is folder structure. Instead of grouping files by their “Type” (like MVC does), you group them by their Feature or “Bounded Context”.</p>
+<p><strong>The Wrong Way (Grouped by File Type)</strong></p>
+<pre class="text"><code>Models/
+  - Product.swift
+  - User.swift
+Views/
+  - ProductList.swift
+  - UserProfile.swift</code></pre>
+<p><strong>The DDD Way (Grouped by Feature / Bounded Context)</strong></p>
+<pre class="text"><code>Catalog/ (Bounded Context)
+  - Domain/
+    - Product.swift
+  - Presentation/
+    - ProductList.swift
+
+Account/ (Bounded Context)
+  - Domain/
+    - User.swift
+  - Presentation/
+    - UserProfile.swift</code></pre>
+<p>By structuring your codebase by feature, you natively isolate your domains. You could easily drag and drop the entire <code>Catalog</code> folder into a completely different app prototype, because it doesn’t hopelessly tangle itself with the <code>Account</code> logic!</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -749,13 +825,13 @@ Apple Inc. 2026. <span>“Managing Files and Folders in Your Xcode Project.”</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch02_Xcode/hotkeys-and-quick-actions.html" class="pagination-link" aria-label="hotkeys-and-quick-actions.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">hotkeys-and-quick-actions.html</span></span>
+      <a href="../ch04_advanced/mvvm.html" class="pagination-link" aria-label="Model View ViewModel (MVVM)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ch03_data/state.html" class="pagination-link" aria-label="State and Data Flow">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ch04_advanced/modern-clean-architecture.html" class="pagination-link" aria-label="Modern Clean Architecture">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Modern Clean Architecture</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

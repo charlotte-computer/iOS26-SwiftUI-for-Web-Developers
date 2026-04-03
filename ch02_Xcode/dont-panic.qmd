@@ -1,0 +1,17 @@
+# Don't Panic
+
+Xcode has so many ways it can make you feel so anxious, frustrated, and upset. Let's go through them so you know what is a usual issue.
+
+### Ghost Files - Files that are hidden 
+
+Sometimes you can see files in your IDE (VScode / Antigravity) that do not exist in the xcode same exact project. 
+
+Right click on a folder in Xcode and click `"Add Files"` to see non greyed out files that are in the same folder as your project. make sure that the files are added to the project.
+
+Even though the file is in the correct folder, Xcode won't acknowledge it until you manually re-link it inside the IDE via `File > Add Files To "YourProject"`.
+
+---\n
+## References
+
+For an official deeper dive into exactly how Xcode manages literal file maps versus physical folder mappings:
+- [**Managing Files and Folders in Your Xcode Project**](https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project) [@appleXcodeFiles]
