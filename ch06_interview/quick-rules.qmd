@@ -1,0 +1,19 @@
+# Quick Swift Rules
+
+For reading, and not needing to understand yet fully as we will cover in depth
+
+
+- variables defined anywhere (not ones scoped inside functions or other blocks) are available **everywhere** in the codebase
+
+- Swift is Object orientated,
+
+- Swift compiles all files into a single module, so you don't need to import your own files.
+
+    - All structs, classes, variables, and functions defined broadly in a file are automatically injected into this shared Module Namespace at compile time
+    - Swift compiler essentially flattens all of your files and reads your codebase as one giant, master dictionary of definitions.
+
+- internal / private / fileprivate / public are used to control the visibility of variables and functions
+    - internal (default) - accessible anywhere within your entire app (the Module). You do not need to write this word; it is the default state.
+    - private - accessible *only* within the exact same `{ }` code block where it is defined.
+    - fileprivate - accessible *only* within the exact physical `.swift` file you are currently looking at.
+    - public - accessible to other Modules entirely. This is rarely used unless you are physically separating your app into multiple internal frameworks or writing an open-source library.

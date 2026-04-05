@@ -1,0 +1,67 @@
+# Modules and the Global Namespace
+
+Welcome to one of the most initially jarring transitions from web development. A few seconds into writing Swift, you will quickly ask: *"Where are all the import statements?"*
+
+In JavaScript and React, every single file is entirely isolated. If you need a function, a component, or a variable from another file, you must explicitly import it, complete with a strict relative or absolute file path.
+
+```javascript
+// React/JS Import Example
+import { PrimaryButton } from "../../components/ui/PrimaryButton";
+import { formatDate } from "../../../utils/dateHelpers";
+import { UserContext } from "../context/UserContext";
+```
+
+In Swift, you will almost never write an import statement connecting your own files.
+
+## 1. The Module Namespace
+
+Swift uses a compiler-level architectural concept called a **Module**. 
+
+By default, every single `.swift` file you create inside your Xcode project is compiled together into one single unified Module (your App target). 
+
+All structs, classes, variables, and functions defined broadly in a file are automatically injected into this shared Module Namespace at compile time. 
+
+Because they all exist in the exact same Module, they are instantly accessible from any other file in your project. Zero import statements are required.
+
+```swift
+// FileA.swift
+struct User {
+    let name: String
+}
+
+// FileB.swift
+// No imports needed! The compiler already knows 'User' exists in the shared Module.
+let currentUser = User(name: "Charlotte") 
+```
+
+## 2. Where do definitions "live"?
+
+In JavaScript, a function "lives" strictly inside the physical file it is defined in. It must be explicitly exported from that source file to be seen by the rest of the application.
+
+In Swift, the physical file is nothing more than a visually convenient folder for human developers. The Swift compiler essentially flattens all of your files and reads your codebase as one giant, master dictionary of definitions. The file boundary itself does not exist to the compiler unless you explicitly invoke access control modifiers.
+
+### Access Control Modifiers
+If you want to hide a variable or function so it cannot be accessed globally across the namespace, you explicitly restrict it:
+
+- **`internal` (Default)**: Accessible anywhere within your entire app (the Module). You do not need to write this word; it is the default state.
+- **`private`**: Accessible *only* within the exact same `{ }` code block where it is defined.
+- **`fileprivate`**: Accessible *only* within the exact physical `.swift` file you are currently looking at.
+- **`public`**: Accessible to other Modules entirely. This is rarely used unless you are physically separating your app into multiple internal frameworks or writing an open-source library.
+
+## 3. When DO you write "import"?
+
+You only ever use the `import` keyword in Swift when you need an entirely different, external Module. 
+
+For example, when you need Apple's UI framework, or Apple's Bluetooth framework, you are importing a massive, pre-compiled binary library from entirely outside your local app space. 
+
+```swift
+import SwiftUI // Apple's External UI Framework
+import CoreBluetooth // Apple's External Bluetooth Framework
+import Foundation // Apple's Core Operating System Utilities
+
+struct MyView: View {
+    // You now have access to SwiftUI structs, like Text and Button
+}
+```
+
+**Summary**: Your own files belong to a single family (the Module) and talk to each other directly without formal introductions. External frameworks are strangers, and must be formally imported.

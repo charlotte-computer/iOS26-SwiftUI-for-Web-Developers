@@ -115,5 +115,14 @@
   },
   "ch04_advanced/modern-clean-architecture.qmd": {
     "modern-clean-architecture.html": "55b22883"
+  },
+  "ch01_foundations/1c.namespace.qmd": {
+    "1c.namespace.html": "7bf9e38b"
+  },
+  "ch01_foundations/8.objects.qmd": {
+    "8.objects.html": "9dae0e37"
+  },
+  "ch06_interview/quick-rules.qmd": {
+    "quick-rules.html": "c5b32979"
   }
 }

@@ -1,0 +1,41 @@
+# Xcode Hotkeys and Quick Actions for VSCode Developers
+
+Welcome. If you are accustomed to VSCode, your muscle memory will need minor adjustments for Xcode. 
+
+The following tables map standard VSCode hotkeys to their exact Xcode equivalents. Use the visual references to locate the keys quickly.
+
+### Key Legend
+- `⌘` : Command
+- `⇧` : Shift
+- `⌥` : Option
+- `⌃` : Control
+
+## Core Navigation
+
+| Objective | VSCode | Xcode | Note |
+|:---|:---|:---|:---|
+| **Find/Open a File** | `⌘` `P` | `⇧` `⌘` `O` | Xcode calls this "Open Quickly". |
+| **Command Palette** | `⇧` `⌘` `P` | `⇧` `⌘` `A` | Xcode calls this "Quick Actions". Type to find application commands. |
+| **Toggle Left Sidebar** | `⌘` `B` | `⌘` `0` | Toggles the "Navigator" panel. |
+| **Toggle Right Sidebar** | - | `⌥` `⌘` `0` | Toggles the "Inspectors" panel. |
+| **Toggle Bottom Panel** | `⌘` `J` | `⇧` `⌘` `Y` | Toggles the "Debug Area" (console). |
+
+## Search and Editing
+
+| Objective | VSCode | Xcode | Note |
+|:---|:---|:---|:---|
+| **Save File** | `⌘` `S` | `⌘` `S` | Identical behavior. |
+| **Find Text in File** | `⌘` `F` | `⌘` `F` | Identical behavior. |
+| **Find Text in Project** | `⇧` `⌘` `F` | `⇧` `⌘` `F` | Identical behavior. Opens the Find Navigator. |
+| **Toggle Comment** | `⌘` `/` | `⌘` `/` | Identical behavior. |
+| **Format Code** | `⇧` `⌥` `F` | `⌃` `I` | Select text first (e.g., `⌘` `A`), then `⌃` `I` to "Re-Indent". |
+| **Rename Symbol** | `F2` | `⌃` `⌘` `E` | "Edit All in Scope". Safely renames all instances. |
+| **Go to Definition** | `F12` or `⌘` Click | `⌃` `⌘` `J` | Alternatively, `⌘` Click on a symbol to open a context menu. |
+
+## The Quick Action Menu (`⇧` `⌘` `A`)
+
+In VSCode, the Command Palette (`⇧` `⌘` `P`) is the primary way to execute tasks. In Xcode, Quick Actions (`⇧` `⌘` `A`) serves the exact same purpose. It provides a visual search overlay for all available Xcode menu commands. 
+
+## The Action Menu (`⌘` Click)
+
+In Xcode, holding `⌘` and clicking on any code symbol (struct, variable, view) opens a visual Action Menu. This is a primary visual interaction method in Xcode for refactoring, extracting subviews, or jumping to definitions.

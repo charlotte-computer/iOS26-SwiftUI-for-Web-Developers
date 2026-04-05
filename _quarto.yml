@@ -12,11 +12,13 @@ book:
         - ch01_foundations/0.swift-thinking.qmd
         - ch01_foundations/1.anatomy.qmd
         - ch01_foundations/1b.syntax.qmd
+        - ch01_foundations/1c.namespace.qmd
         - ch01_foundations/3.stacks.qmd
         - ch01_foundations/4.functions.qmd
         - ch01_foundations/5.model.qmd
         - ch01_foundations/6.loops.qmd
         - ch01_foundations/7.view-builder.qmd
+        - ch01_foundations/8.objects.qmd
     - part: "Part II: Xcode Essentials"
       chapters:
         - ch02_Xcode/intro-to-xcode.qmd
@@ -32,10 +34,10 @@ book:
         - ch04_advanced/mvvm.qmd
         - ch04_advanced/domain-driven-design.qmd
         - ch04_advanced/modern-clean-architecture.qmd
-        - ch04_advanced/practical-project-structure.qmd
     - part: "Part V: Interview Prep"
       chapters:
         - ch06_interview/interview-prep.qmd
+        - ch06_interview/quick-rules.qmd
     - references.qmd
 
 bibliography: references.bib

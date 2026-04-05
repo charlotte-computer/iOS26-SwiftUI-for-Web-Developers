@@ -1,0 +1,111 @@
+# Data Structures: Classes, Structs, Enums, and Actors
+
+In JavaScript, almost everything is a mutable `Object`. In Swift, you must choose the specific data structure that explicitly matches your memory and concurrency requirements.
+
+## Structs (Value Types)
+
+In Swift, `struct` is the default choice for data modeling and SwiftUI views.
+
+::: {.callout}
+#### **JS/React Comparison**: 
+React developers are used to treating state as immutable (e.g., you never mutate React state directly; you use `setState`). A Swift `struct` enforces this at the compiler level. When you pass a struct to a new variable or function, Swift creates a complete copy (Value Type). 
+:::
+
+```swift
+struct User {
+    var name: String
+    var role: String
+}
+
+var admin = User(name: "Alice", role: "Admin")
+var backupAdmin = admin // Creates a distinct, physical copy in memory
+backupAdmin.name = "Bob"
+
+// admin.name remains "Alice"
+```
+
+**Key Facts**:
+- **Default choice**: Always start with a struct.
+- **Value type**: Copied when passed around. Safely prevents unintended side effects.
+- **No inheritance**: Structs cannot inherit from other structs. Use Protocols for shared behavior instead.
+
+## 2. Classes (Reference Types)
+
+Classes exist in Swift but are used far less frequently than in older object-oriented languages. Since SwiftUI is entirely struct-based, you primarily use classes for shared state (like a ViewModel) or when interfacing with legacy Objective-C frameworks.
+
+**JS/React Comparison**: 
+A Swift `class` behaves exactly like a JavaScript Object or ES6 Class. When passed around, you are passing a pointer to the exact same instance in memory (Reference Type).
+
+```swift
+class DatabaseConnection {
+    var isConnected: Bool = false
+}
+
+let db1 = DatabaseConnection()
+let db2 = db1 // Points to the exact same memory address
+db2.isConnected = true
+
+// db1.isConnected is now also true
+```
+
+**Key Facts**:
+- **Reference type**: Points to shared memory.
+- **Inheritance**: Can inherit behavior from a superclass.
+- **Usage limit**: Use when you explicitly need shared, mutable state that multiple parts of your app observe concurrently (e.g., `@Observable` ViewModels).
+
+## 3. Enums (Enumerations)
+
+An `enum` in Swift is a first-class citizen. They are incredibly powerful, stringently typed, and safe.
+
+**JS/React Comparison**: 
+In TypeScript, you often use union string types (`type Status = "success" | "error" | "loading"`). Swift enums are explicitly defined, memory-safe structures that can also carry associated varying values.
+
+```swift
+enum LoadingState {
+    case idle
+    case loading
+    case success([String]) // Associated data attached directly to the case
+    case error(Error)
+}
+
+let currentState = LoadingState.success(["Item 1", "Item 2"])
+```
+
+**Key Facts**:
+- Defines a common type for a group of related values.
+- Highly preferable over "magic strings" or boolean flags.
+- Enums can have computed properties and functions entirely within themselves.
+
+## 4. Actors (Concurrency Safe Reference Types)
+
+Actors are a modern addition to Swift designed exclusively to solve multi-threading concurrency issues (Data Races).
+
+**JS/React Comparison**: 
+JavaScript is fundamentally single-threaded. Concurrency is handled by the Event Loop, so you rarely worry about two threads entirely rewriting the same variable at the exact same millisecond. 
+
+Swift apps natively run parallel code across multiple threads. An `actor` solves thread-safety without requiring manual lock management.
+
+```swift
+actor SafeCounter {
+    var count = 0
+    
+    func increment() {
+        count += 1
+    }
+}
+
+let counter = SafeCounter()
+// Accessing an actor requires you to "await" 
+// because the actor forces safe, sequential access.
+// await counter.increment() 
+```
+
+**Key Facts**:
+- Operates identically to a `class` (it is a **reference type**).
+- **Automatically thread-safe**: It isolates its internal state, ensuring only one thread can access its mutable state at a given time.
+- Prevents Data Races natively at compile time.
+
+---
+
+### Reference
+[Swift Programming Language: Classes and Structures](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/classesandstructures/)
