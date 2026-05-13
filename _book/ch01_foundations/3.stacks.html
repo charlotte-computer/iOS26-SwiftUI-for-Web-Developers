@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Layout Building Blocks (Stacks) – iOS26 SwiftUI for Web Developers</title>
+<title>5&nbsp; Layout Building Blocks (Stacks) – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../ch01_foundations/4.functions.html" rel="next">
-<link href="../ch01_foundations/1b.syntax.html" rel="prev">
+<link href="../ch01_foundations/1c.namespace.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/3.stacks.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/3.stacks.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,12 +151,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -186,32 +180,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/1c.namespace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules and the Global Namespace</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/3.stacks.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/4.functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4.functions.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/5.model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5.model.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">5.model.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/6.loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6.loops.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">6.loops.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch01_foundations/7.view-builder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><code>@ViewBuilder</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch01_foundations/8.objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Object Types: Classes, Structs, Enums, and Actors</span></span></a>
   </div>
 </li>
       </ul>
@@ -228,19 +234,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch02_Xcode/intro-to-xcode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">intro-to-xcode.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Why is Xcode Different from VSCode?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch02_Xcode/hotkeys-and-quick-actions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">hotkeys-and-quick-actions.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Xcode Hotkeys and Quick Actions for VSCode Developers</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch02_Xcode/dont-panic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">dont-panic.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Don’t Panic</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,13 +263,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch03_data/state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">State and Data Flow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch03_data/xcdatamodeld.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Persistent Storage (<code>.xcdatamodeld</code>)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Persistent Storage (<code>.xcdatamodeld</code>)</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,13 +286,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch04_advanced/navigation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Navigation and Routing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ch04_advanced/enterprise-folder-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Enterprise Swift Architecture</span></span></a>
+  <a href="../ch04_advanced/mvvm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Model View ViewModel (MVVM)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch04_advanced/domain-driven-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Domain Driven Design (DDD)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch04_advanced/modern-clean-architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Modern Clean Architecture for mobile applications</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,17 +321,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ch06_interview/interview-prep.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Interview Prep: Swift &amp; iOS Architecture</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ch06_interview/quick-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Quick Swift Rules</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
@@ -330,22 +348,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-div-equivalent" id="toc-the-div-equivalent" class="nav-link active" data-scroll-target="#the-div-equivalent"><span class="header-section-number">4.1</span> The <code>&lt;div&gt;</code> Equivalent</a>
+  <li><a href="#the-div-equivalent" id="toc-the-div-equivalent" class="nav-link active" data-scroll-target="#the-div-equivalent"><span class="header-section-number">5.1</span> The <code>&lt;div&gt;</code> Equivalent</a>
   <ul class="collapse">
   <li><a href="#vstack-vertical-stack" id="toc-vstack-vertical-stack" class="nav-link" data-scroll-target="#vstack-vertical-stack">1. VStack (Vertical Stack)</a></li>
   <li><a href="#hstack-horizontal-stack" id="toc-hstack-horizontal-stack" class="nav-link" data-scroll-target="#hstack-horizontal-stack">2. HStack (Horizontal Stack)</a></li>
   <li><a href="#zstack-depth-stack" id="toc-zstack-depth-stack" class="nav-link" data-scroll-target="#zstack-depth-stack">3. ZStack (Depth Stack)</a></li>
   </ul></li>
-  <li><a href="#making-grids" id="toc-making-grids" class="nav-link" data-scroll-target="#making-grids"><span class="header-section-number">4.2</span> Making Grids</a></li>
+  <li><a href="#making-grids" id="toc-making-grids" class="nav-link" data-scroll-target="#making-grids"><span class="header-section-number">5.2</span> Making Grids</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/3.stacks.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ch01_foundations/0.swift-thinking.html">Part I: Foundations</a></li><li class="breadcrumb-item"><a href="../ch01_foundations/3.stacks.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Layout Building Blocks (Stacks)</span></h1>
 </div>
 
 
@@ -363,8 +381,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Welcome to SwiftUI layouts. In HTML and React, developers reach for native <code>&lt;div&gt;</code> elements and CSS Flexbox to physically position items on the screen. In Swift, you explicitly use <strong>Stacks</strong>, which are structurally safer and highly optimized pre-configured wrappers.</p>
-<section id="the-div-equivalent" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="the-div-equivalent"><span class="header-section-number">4.1</span> The <code>&lt;div&gt;</code> Equivalent</h2>
+<section id="the-div-equivalent" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-div-equivalent"><span class="header-section-number">5.1</span> The <code>&lt;div&gt;</code> Equivalent</h2>
 <p><strong>Fact:</strong> Stacks act conceptually identically to <code>div</code> tags, but they come with pre-baked flexbox styles specifically tailored for mobile and desktop screens. - In React, a <code>div</code> is structurally dumb. You must explicitly apply <code>display: flex; flex-direction: column</code> just to format items sequentially. - In Swift, Stacks are inherently intelligent and are implicitly pre-configured to handle flexible layout distribution and alignment.</p>
 <section id="vstack-vertical-stack" class="level3">
 <h3 class="anchored" data-anchor-id="vstack-vertical-stack">1. VStack (Vertical Stack)</h3>
@@ -459,8 +477,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="making-grids" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="making-grids"><span class="header-section-number">4.2</span> Making Grids</h2>
+<section id="making-grids" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="making-grids"><span class="header-section-number">5.2</span> Making Grids</h2>
 <p><strong>Fact:</strong> In React, creating a responsive grid requires verbose CSS Grid definitions (<code>grid-template-columns</code>, <code>gap</code>, <code>fr</code> fractions). In Swift, wrappers like <code>LazyVGrid</code> naturally handle the complex fractional mathematics cleanly at compile-time.</p>
 <p><strong>Why are they called Lazy?</strong> - Because they only evaluate identically when elements physically overlap the viewable screen. If you inject 10,000 items in a grid manually, Swift only physically renders the 10 that the user is currently looking at, guaranteeing flawless performance automatically.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -913,13 +931,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../ch01_foundations/1b.syntax.html" class="pagination-link" aria-label="Swift Syntax &amp; Lexical Rules">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Swift Syntax &amp; Lexical Rules</span></span>
+      <a href="../ch01_foundations/1c.namespace.html" class="pagination-link" aria-label="Modules and the Global Namespace">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules and the Global Namespace</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ch01_foundations/4.functions.html" class="pagination-link" aria-label="4.functions.html">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4.functions.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ch01_foundations/4.functions.html" class="pagination-link" aria-label="Functions">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

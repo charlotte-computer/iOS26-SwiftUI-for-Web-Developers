@@ -1,0 +1,12 @@
+# Multi Languages Guide
+
+
+- patterns in most languages
+    - primitives: strings, numbers, booleans, arrays
+    - control flow: loops, conditionals
+    - functions
+    - error handling
+    - oop: classes, interfaces, abstraction, encapsulation, inheritance, polymorphism
+    - functional programming: immutability, pure functions
+- core parts to familiarise yourself with 
+

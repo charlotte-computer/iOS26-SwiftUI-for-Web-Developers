@@ -1,15 +1,22 @@
-# Data Structures: Classes, Structs, Enums, and Actors
+# Object Types: Classes, Structs, Enums, and Actors
 
-In JavaScript, almost everything is a mutable `Object`. In Swift, you must choose the specific data structure that explicitly matches your memory and concurrency requirements.
+In JavaScript, almost everything is a mutable `Object`. In Swift, you must choose the specific data structure that explicitly **matches your memory and concurrency requirements**.
+
+- `struct` is a **value** type (**copied** when passed around).
+- `class` is a **reference** type (**shared** when passed around).
+- `enum` is a **value** type that can have **associated values**.
+- `actor` is a **reference** type that is **thread-safe**.
+
+
+![Scenario A: sending a copy — two completely independent memory allocations (Value Types)](../public/images/value-types.png)
+
+![Scenario B: sending a link — both variables point to the same memory location (Reference Types)](../public/images/reference-types.png)
+
+
+
+
 
 ## Structs (Value Types)
-
-In Swift, `struct` is the default choice for data modeling and SwiftUI views.
-
-::: {.callout}
-#### **JS/React Comparison**: 
-React developers are used to treating state as immutable (e.g., you never mutate React state directly; you use `setState`). A Swift `struct` enforces this at the compiler level. When you pass a struct to a new variable or function, Swift creates a complete copy (Value Type). 
-:::
 
 ```swift
 struct User {
@@ -24,7 +31,19 @@ backupAdmin.name = "Bob"
 // admin.name remains "Alice"
 ```
 
+
+
+In Swift, `struct` is the default choice for data modeling and SwiftUI views.
+
+::: {.callout}
+#### **JS/React Comparison**: 
+React developers are used to treating state as immutable (e.g., you never mutate React state directly; you use `setState`). A Swift `struct` enforces this at the compiler level. When you pass a struct to a new variable or function, Swift creates a complete copy (Value Type). 
+:::
+
+
+
 **Key Facts**:
+
 - **Default choice**: Always start with a struct.
 - **Value type**: Copied when passed around. Safely prevents unintended side effects.
 - **No inheritance**: Structs cannot inherit from other structs. Use Protocols for shared behavior instead.
@@ -47,6 +66,8 @@ db2.isConnected = true
 
 // db1.isConnected is now also true
 ```
+
+
 
 **Key Facts**:
 - **Reference type**: Points to shared memory.
@@ -107,5 +128,4 @@ let counter = SafeCounter()
 
 ---
 
-### Reference
-[Swift Programming Language: Classes and Structures](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/classesandstructures/)
+

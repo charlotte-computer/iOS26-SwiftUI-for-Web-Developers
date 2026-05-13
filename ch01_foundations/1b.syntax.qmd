@@ -30,85 +30,25 @@ let name = "Charlotte"; let age = 28;
 ::: {.callout-note collapse="true"}
 #### What does this look like in JavaScript?
 ```javascript
-// JavaScript
 const name = "Charlotte" // Immutable
 let age = 28 // Mutable
 ```
 :::
 
-**Swift Equivalent:**
+
 ```swift
-// Swift
 let name = "Charlotte" // Immutable (Use this default)
 var age = 28 // Mutable (Use only if changing)
 ```
 
-### 3. Writing Functions
-**Fact:** Swift functions use the `func` keyword, enforce strict types on both the arguments and the output, and explicitly mandate how you call them.
+![](../public/images/let-var.png)
 
-**Key differences compared to JavaScript:**
+Variables have a type which is established when the variable is declared and cannot be changed later. 
 
-- Arguments require explicit types (e.g., `name: String`).
-- A function's return type is declared with a right-facing arrow `->`.
-- When invoking a function, you **must explicitly write out the parameter's name** to make the code highly legible.
-
-::: {.callout-note collapse="true"}
-#### What does this look like in JavaScript & React?
-```javascript
-// 1. Standard JavaScript Function
-function greet(name) {
-    return "Hello " + name;
-}
-
-greet("Charlotte"); // Called without explicitly naming the parameters
+The type of the variable is derived from the first value that is assigned to it. For example, `let name = "Charlotte"` is a String, and `let age = 28` is an Int. 
 
 
-// 2. React Functional Component (Returns UI)
-export default function Greet({ name }) {
-    return <h1>Hello {name}</h1>;
-}
-
-// Called using JSX, where props act similarly to named parameters
-<Greet name="Charlotte" />
-```
-:::
-
-**Swift Equivalent:**
-```swift
-// 1. Standard Swift Function
-func greet(name: String) -> String {
-    return "Hello \(name)" // Notice string interpolation uses \( ) not ${ }
-}
-
-let message = greet(name: "Charlotte") // ⬅️ MUST explicitly write 'name:' 
-
-
-// 2. SwiftUI View (Struct returning UI)
-struct Greet: View {
-    let name: String
-    
-    var body: some View {
-        Text("Hello \(name)")
-    }
-}
-
-// ⬇️ Called exactly like a function using named parameters!
-Greet(name: "Charlotte")
-```
-
-**Function Parameter Omitting:**
-If you want Swift to behave exactly like JavaScript and let you omit the parameter name when calling a function, you explicitly place an underscore `_` before the parameter name in the definition.
-
-```swift
-func fastGreet(_ name: String) -> String {
-    return "Hey \(name)"
-}
-
-// Now it looks exactly like JavaScript when invoked:
-let fastMessage = fastGreet("Charlotte")
-```
-
-### 4. String Interpolation
+### 3. String Interpolation
 **Fact:** Swift uses `\()` to inject variables into strings.
 - In JavaScript, you switch to backticks and use `${variable}`.
 - In Swift, you keep standard double quotes `""` and inject the variable natively using a backslash and parentheses `\(variable)`.

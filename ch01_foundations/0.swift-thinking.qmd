@@ -1,21 +1,23 @@
 # Thinking in Swift
 
-Welcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS and macOS development. 
+Welcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS development. 
 
 ## What is Swift?
 
-Swift is Apple's primary programming language for building iOS and macOS applications. 
+Swift is Apple's primary programming language for building iOS applications. 
 
 ###### Key facts about Swift:
 - **Introduced:** 2014 by Apple.
 - **Purpose:** To replace Objective-C with a safer, faster, and more modern language.
 - **Creator:** Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.
 
+![](../public/images/swiftie.png)
+
 ## Why was it built?
 
 Before 2014, developers used Objective-C to build Apple apps using the Cocoa and Cocoa Touch frameworks. Objective-C was powerful but had a complicated syntax. Swift was designed to be cleaner and safer while maintaining full compatibility with the older Objective-C codebases.
 
-Here is a direct comparison of how you display "Hello, World!" on a screen in three different languages.
+#### Comparison of how you display "Hello, World!" in C, Swift and React.
 
 **How it looked in Objective-C (before 2014):**
 ```objective-c
@@ -64,25 +66,33 @@ export default function App() {
 }
 ```
 
+- Note the styling in Swift is inbuilt, whereas in React everything is unstyled by default.
+
 ## Two Core Concepts of Swift
 
-When transitioning from JavaScript to Swift, these are the two most important differences to understand:
+When transitioning from JavaScript to Swift thinking, these are the two most important differences to understand: 
 
 ### 1. Swift is Object and Protocol-Oriented
 
 ::: {.callout-important}
 #### Everything in Swift is an object.
 
-**Fact:** Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.
+Basic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.
 
 ```swift
-let age = 30
-// 'age' is an Int object. We can call methods directly on it:
+let age = 30 // age is an object. 
+
+// We can call methods directly on it:
 let isMultiple = age.isMultiple(of: 5) // returns true
 ```
 :::
 
 **Why is Swift designed this way?**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8nyg_IXfnvs?si=1bhxAc7ONEEwxOgW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+> **So much of computing is about defining mutable state and managing it**. Functional programming says 'cool, you can do that...' and the way it does that is making an entire copy of the data structure with the changes and then you copy the data struture - this is generally what people mean by functional programming; although you could define it in multiple different ways. Purely functional means there is **no in-place mutation**. Here's a problem...computers are all bags of mutabale state. So if you saying you're going to re-allocate and copy the entire data structure to make a change somewhere in the tree...it's just extremely slow. - Chris Lattner
+
 - **Interoperability:** The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem.
 - **Protocol-Oriented Programming:** Swift expands on traditional OOP. Instead of focusing only on what objects *are* (via inheritance), Swift places a heavy emphasis on what objects *can do* using Protocols (similar to Interfaces in TypeScript).
 
@@ -91,22 +101,31 @@ let isMultiple = age.isMultiple(of: 5) // returns true
 ::: {.callout-important}
 #### Everything in Swift has a specific type.
 
-**Fact:** The compiler enforces these types before the app can run.
+The compiler enforces these types before the app can run.
 
 ```swift
 var name = "Charlotte" // The compiler infers this is a String
 
-// The compiler immediately flags this as an error before the app ever runs:
-// name = 42 
+name = 42  // The compiler immediately flags this as an error before the app ever runs
 ```
 :::
 
-**How this differs from JavaScript:**
-- **JavaScript:** You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes.
-- **Swift:** Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production.
-- **Type Inference:** Swift's compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.
+**Type Inference:** Swift's compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.
 
-### 3. The Compile Cycle: What happens when you hit build?
+![Swift type inference](/public/images/type-inference.png){fig-align="center"}
+
+**How this differs from JavaScript and TypeScript:**
+
+- **JavaScript:** You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes.
+- **TypeScript:** TypeScript adds a compile-time type checker on top of JavaScript and uses the exact same philosophy as Swift here. The compiler will flag `name = 42` as an error before the code runs. The key difference is that TypeScript compiles *down to JavaScript* — it still ships interpreted JS to the browser.
+
+  -  **Swift compiles to native machine code — a fundamentally different runtime from TypeScript's interpreted JavaScript, and a significantly faster one.**
+
+
+- **Swift:** Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production.
+
+
+### The Compile Cycle: What happens when you hit build?
 
 **Fact:** Swift compiles directly down to native machine code (binary). Unlike React, which is shipped as raw text (JavaScript) to be read and interpreted by a user's web browser at runtime, an iOS app is fully "pre-baked" before it ever leaves your computer.
 
@@ -116,6 +135,18 @@ var name = "Charlotte" // The compiler infers this is a String
 2. **LLVM Compiler engages.** It strictly checks for type-errors, missing variables, or syntactic anomalies. If it finds even one error, the build forcibly halts.
 3. **Translation into Machine Code.** If your code passes all checks, LLVM translates your logic directly into highly optimized 1s and 0s (ARM Machine Code) specifically tailored for an iPhone's processor.
 4. **Packaging into an `.ipa`.** This compiled binary, alongside your images and configuration files, is securely zipped into an `.ipa` (iOS App Store Package) file.
+
+
+```
+hello world in Swift
+
+```
+
+```
+after LLVM compilation in Swift
+
+```
+
 
 **What actually ships to the App Store?**
 
