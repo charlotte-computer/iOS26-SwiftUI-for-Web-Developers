@@ -5,40 +5,47 @@ book:
   title: "iOS26 SwiftUI for Web Developers"
   author: "Charlotte Bondarev"
   date: "3/26/2026"
+  search: false
+  sidebar:
+    logo: cover.png
   chapters:
     - index.qmd
-    - part: "Part I: Foundations"
-      chapters:
-        - ch01_foundations/0.swift-thinking.qmd
-        - ch01_foundations/1.anatomy.qmd
-        - ch01_foundations/1b.syntax.qmd
-        - ch01_foundations/1c.namespace.qmd
-        - ch01_foundations/3.stacks.qmd
-        - ch01_foundations/4.functions.qmd
-        - ch01_foundations/5.model.qmd
-        - ch01_foundations/6.loops.qmd
-        - ch01_foundations/7.view-builder.qmd
-        - ch01_foundations/8.objects.qmd
-    - part: "Part II: Xcode Essentials"
-      chapters:
-        - ch02_Xcode/intro-to-xcode.qmd
-        - ch02_Xcode/hotkeys-and-quick-actions.qmd
-        - ch02_Xcode/dont-panic.qmd
-    - part: "Part III: Data Flow and Architecture"
-      chapters:
-        - ch03_data/state.qmd
-        - ch03_data/xcdatamodeld.qmd
-    - part: "Part IV: Advanced iOS Interfaces"
-      chapters:
-        - ch04_advanced/navigation.qmd
-        - ch04_advanced/mvvm.qmd
-        - ch04_advanced/domain-driven-design.qmd
-        - ch04_advanced/modern-clean-architecture.qmd
-    - part: "Part V: Interview Prep"
-      chapters:
-        - ch06_interview/interview-prep.qmd
-        - ch06_interview/quick-rules.qmd
-    - references.qmd
+    - chapters/anatomy.qmd
+    - chapters/objects.qmd
+    - chapters/variables.qmd
+    - chapters/functions.qmd
+    - chapters/scope.qmd
+    - chapters/global-namespace.qmd
+    - chapters/optionals.qmd
+    # - part: "Part I: Foundations"
+    #   chapters:
+    #     - ch01_foundations/0.swift-thinking.qmd
+    #     - ch01_foundations/1.anatomy.qmd
+    #     - ch01_foundations/1b.syntax.qmd
+    #     - ch01_foundations/1c.namespace.qmd
+    #     - ch01_foundations/3.stacks.qmd
+    #     - ch01_foundations/4.functions.qmd
+    #     - ch01_foundations/5.model.qmd
+    #     - ch01_foundations/6.loops.qmd
+    #     - ch01_foundations/7.view-builder.qmd
+    #     - ch01_foundations/8.objects.qmd
+    # - part: "Part II: Xcode Essentials"
+    #   chapters:
+    #     - ch02_Xcode/intro-to-xcode.qmd
+    #     - ch02_Xcode/hotkeys-and-quick-actions.qmd
+    #     - ch02_Xcode/dont-panic.qmd
+    # - part: "Part III: Data Flow and Architecture"
+    #   chapters:
+    #     - ch03_data/state.qmd
+    #     - ch03_data/xcdatamodeld.qmd
+    # - part: "Part IV: Advanced iOS Interfaces"
+    #   chapters:
+    #     - ch04_advanced/navigation.qmd
+
+    # - part: "Part V: Interview Prep"
+    #   chapters:
+    #     - ch06_interview/interview-prep.qmd
+    #     - ch06_interview/quick-rules.qmd
 
 bibliography: references.bib
 
@@ -50,8 +57,7 @@ crossref:
   tbl-prefix: Table
   eq-prefix: Equation
 
-number-sections: true
-number-depth: 2
+number-sections: false
 
 format:
   html:

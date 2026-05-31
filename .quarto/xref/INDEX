@@ -124,5 +124,29 @@
   },
   "ch06_interview/quick-rules.qmd": {
     "quick-rules.html": "c5b32979"
+  },
+  "optionals.qmd": {
+    "optionals.html": "25386b51"
+  },
+  "chapters/optionals.qmd": {
+    "optionals.html": "e86b9219"
+  },
+  "chapters/objects.qmd": {
+    "objects.html": "f117ea1d"
+  },
+  "chapters/variables.qmd": {
+    "variables.html": "363358ca"
+  },
+  "chapters/functions.qmd": {
+    "functions.html": "97344e7c"
+  },
+  "chapters/anatomy.qmd": {
+    "anatomy.html": "99486eee"
+  },
+  "chapters/scope.qmd": {
+    "scope.html": "7e50d52e"
+  },
+  "chapters/global-namespace.qmd": {
+    "global-namespace.html": "02d56dd0"
   }
 }

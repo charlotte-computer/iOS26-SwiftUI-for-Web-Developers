@@ -1,0 +1,9 @@
+# Scope 
+
+Levels of scope: 
+
+- a module is a scope
+- a function is a scope 
+- curly braces are a scope
+
+

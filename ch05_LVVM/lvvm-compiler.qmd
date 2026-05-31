@@ -1,0 +1,17 @@
+# The Compiler
+
+This is totally optional, and only recommended for those who want to learn about what happens "under the hood".
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BT2Cv-Tjq7Q?si=MFw8jy26nDjE8_nV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+### Low-Level Virtual Machine
+
+- LLVM is an open source project founded in 2003 as a research project at the University of Illinois.
+
+- LLVM includes multiple subprojects, including compiler optimization and code generation technology, the Clang C/C++ compiler, the LLD linker, runtime components, and other low level system technology.
+
+- LLVM is widely used by many other projects including compilers for many languages (including Rust, Swift, Java, D, Go, OpenCL, CUDA, and countless others) and is used to accelerate many other applications, including graphics and database technology. It is widely deployed in commercial settings.[^1]
+
+[^1]: Chris Lattner, ["LVVM Wikipedia"](https://en.wikipedia.org/wiki/LLVM), en.wikipedia.org, 2026.

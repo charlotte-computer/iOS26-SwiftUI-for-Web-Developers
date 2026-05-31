@@ -4,864 +4,159 @@
     "href": "index.html",
     "title": "iOS26 SwiftUI for Web Developers",
     "section": "",
-    "text": "Preface\n\n\n\nThis is a book aimed at others on a similar journey of specialisation in Swift - from the world of React and web development.\nThis book assumes the reader has some programming experience and does not explain basics\n\n\n\n\n\n\nImportant\n\n\n\nThis is *not a legitimate Oreilly publishing, I hope it is one day.\n\n\nWriting this book as I ask AI to explain concepts to me, and making a shareable resource in the process\nThe dogs on the cover are Annie and Anubis they are adopted Greyhounds, recommend this breed to any software engineer wanting dogs - they are couch potatoes and will not bother you while you code.\nThis is dedicated to my wonderful partner Alex; who showed me the world of software engineering and gave me the power to build anything I could dream of. Thankyou for believing in me, and pushing me to learn to code. You were right, it rocks.",
+    "text": "Important\n\n\n\nThis is *not a legitimate Oreilly publishing, I hope it is one day.\n\n\n\nPreface\nThis is a book aimed at others on a similar journey of specialisation in Swift - from the world of React and web development.\nThis book assumes the reader has some programming experience and does not explain basics\nWriting this book as I ask AI to explain concepts to me, and making a shareable resource in the process\nThe dogs on the cover are Annie and Anubis they are adopted Greyhounds, recommend this breed to any software engineer wanting dogs - they are couch potatoes and will not bother you while you code.\nThis is dedicated to my wonderful partner Alex; who showed me the world of software engineering and gave me the power to build anything I could dream of. Thankyou for believing in me, and pushing me to learn to code. You were right, it rocks.",
     "crumbs": [
-      "Preface"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
+    "objectID": "chapters/anatomy.html",
+    "href": "chapters/anatomy.html",
+    "title": "Anatomy of a Basic App",
     "section": "",
-    "text": "If you are autistic, you’ll like the way this is very factually written rather than any fluff or personal stories.",
+    "text": "The Folder Structure\nEvery iOS project natively uses Xcode as the development environment. The folder structure relies on specific files existing in order for the application to compile correctly.\nHigh-Level Xcode Structure:",
     "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Apple Inc. 2026a. “Managing Files and Folders in Your Xcode\nProject.” 2026. https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project.\n\n\n———. 2026b. “ViewBuilder | Apple Developer Documentation.”\n2026. https://developer.apple.com/documentation/swiftui/viewbuilder.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html",
-    "href": "ch01_foundations/Stacks.html",
-    "title": "1  Stacks",
-    "section": "",
-    "text": "1.1 ZStack\nThink of a stack like a &lt;div with extra styling baked in\nTopmost Stack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#zstack",
-    "href": "ch01_foundations/Stacks.html#zstack",
-    "title": "1  Stacks",
-    "section": "1.2 ZStack",
-    "text": "1.2 ZStack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#hstack",
-    "href": "ch01_foundations/Stacks.html#hstack",
-    "title": "1  Stacks",
-    "section": "1.3 HStack",
-    "text": "1.3 HStack\nHorizontal-Stack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#grid",
-    "href": "ch01_foundations/Stacks.html#grid",
-    "title": "1  Stacks",
-    "section": "1.4 Grid",
-    "text": "1.4 Grid",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#section",
-    "href": "ch01_foundations/Stacks.html#section",
-    "title": "1  Stacks",
-    "section": "1.5 ",
-    "text": "1.5",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_data/state.html",
-    "href": "ch02_data/state.html",
-    "title": "3  State and Data Flow",
-    "section": "",
-    "text": ".",
-    "crumbs": [
-      "Part II: Data Flow and Architecture",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>State and Data Flow</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_advanced/navigation.html",
-    "href": "ch03_advanced/navigation.html",
-    "title": "10  Navigation and Routing",
-    "section": "",
-    "text": ".",
-    "crumbs": [
-      "Part III: Advanced iOS Interfaces",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Navigation and Routing</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/viewBuilder.html",
-    "href": "ch01_foundations/viewBuilder.html",
-    "title": "2  ViewBuilder",
-    "section": "",
-    "text": "A ViewBuilder is a property wrapper that allows you to create views that can accept multiple child views.\nstruct MyView&lt;Content: View&gt;: View {\n    let content: Content\n    \n    init(@ViewBuilder content: () -&gt; Content) {\n        self.content = content()\n    }\n    \n    var body: some View {\n        content\n    }\n}",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ViewBuilder</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#vstack",
-    "href": "ch01_foundations/Stacks.html#vstack",
-    "title": "1  Stacks",
-    "section": "1.2 VStack",
-    "text": "1.2 VStack\nVertical-Stack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#making-grids",
-    "href": "ch01_foundations/Stacks.html#making-grids",
-    "title": "1  Stacks",
-    "section": "1.4 Making Grids",
-    "text": "1.4 Making Grids",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/Stacks.html#making-grids-with-stacks",
-    "href": "ch01_foundations/Stacks.html#making-grids-with-stacks",
-    "title": "1  Stacks",
-    "section": "1.4 Making Grids with Stacks",
-    "text": "1.4 Making Grids with Stacks",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1.stacks.html",
-    "href": "ch01_foundations/1.stacks.html",
-    "title": "4  Stacks",
-    "section": "",
-    "text": "4.1 ZStack\nThink of a stack like a &lt;div with extra styling baked in\nTopmost Stack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1.stacks.html#vstack",
-    "href": "ch01_foundations/1.stacks.html#vstack",
-    "title": "4  Stacks",
-    "section": "4.2 VStack",
-    "text": "4.2 VStack\nVertical-Stack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1.stacks.html#hstack",
-    "href": "ch01_foundations/1.stacks.html#hstack",
-    "title": "4  Stacks",
-    "section": "4.3 HStack",
-    "text": "4.3 HStack\nHorizontal-Stack",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1.stacks.html#making-grids-with-stacks",
-    "href": "ch01_foundations/1.stacks.html#making-grids-with-stacks",
-    "title": "4  Stacks",
-    "section": "4.4 Making Grids with Stacks",
-    "text": "4.4 Making Grids with Stacks",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Stacks</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/3.view-builder.html",
-    "href": "ch01_foundations/3.view-builder.html",
-    "title": "3  ViewBuilder",
-    "section": "",
-    "text": "A ViewBuilder is a property wrapper that allows you to create views that can accept multiple child views.\nstruct MyView&lt;Content: View&gt;: View {\n    let content: Content\n    \n    init(@ViewBuilder content: () -&gt; Content) {\n        self.content = content()\n    }\n    \n    var body: some View {\n        content\n    }\n}",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ViewBuilder</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/5.view-builder.html",
-    "href": "ch01_foundations/5.view-builder.html",
-    "title": "5  ViewBuilder",
-    "section": "",
-    "text": "A (ViewBuilder?) is a list of Views. The reason for using it is to group together functional code.\n\nSee the official Apple documentation for more details (Apple Inc. 2026).\na property wrapper that allows for lets, ifs, switches etc. within a view.\n\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        return Text(\"1\")\n    } else {\n        return Text(\"2\")\n    }\n    return Circle().fill(.red) \n}\nadding ‘(ViewBuilder?)’ to the following function transforms it to no longer need return\n\n@ViewBuilder\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        Text(\"1\")\n    } else {\n        Text(\"2\")\n    }\n    Circle().fill(.red) \n}\n\n\n\n\nApple Inc. 2026. “ViewBuilder | Apple Developer Documentation.” 2026. https://developer.apple.com/documentation/swiftui/viewbuilder.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>`@ViewBuilder`</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/0.swift-thinking.html",
-    "href": "ch01_foundations/0.swift-thinking.html",
-    "title": "1  Thinking in Swift",
-    "section": "",
-    "text": "1.1 What is Swift?\nWelcome to Swift. If you are coming from JavaScript and React like me, this guide will help you translate your web development knowledge into iOS development.\nSwift is Apple’s primary programming language for building iOS applications.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/0.swift-thinking.html#why-was-it-built",
-    "href": "ch01_foundations/0.swift-thinking.html#why-was-it-built",
-    "title": "1  Thinking in Swift",
-    "section": "1.2 Why was it built?",
-    "text": "1.2 Why was it built?\nBefore 2014, developers used Objective-C to build Apple apps using the Cocoa and Cocoa Touch frameworks. Objective-C was powerful but had a complicated syntax. Swift was designed to be cleaner and safer while maintaining full compatibility with the older Objective-C codebases.\n\nComparison of how you display “Hello, World!” in C, Swift and React.\nHow it looked in Objective-C (before 2014):\n#import &lt;UIKit/UIKit.h&gt;\n\n@interface ViewController : UIViewController\n@end\n\n@implementation ViewController\n\n- (void)viewDidLoad {\n    [super viewDidLoad];\n    \n    UILabel *label = [[UILabel alloc] init];\n    label.text = @\"Hello, World!\";\n    [label sizeToFit];\n    label.center = self.view.center;\n    \n    [self.view addSubview:label];\n}\n\n@end\nHow it looks now in Swift (specifically using SwiftUI):\nimport SwiftUI\n\nstruct ContentView: View {\n    var body: some View {\n        Text(\"Hello, World!\")\n    }\n}\nHow that same concept looks in React (JavaScript):\nimport React from 'react';\n\nexport default function App() {\n  return (\n    &lt;div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}&gt;\n      &lt;h1&gt;Hello, World!&lt;/h1&gt;\n    &lt;/div&gt;\n  );\n}\n\nNote the styling in Swift is inbuilt, whereas in React everything is unstyled by default.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/0.swift-thinking.html#comparing-swift-to-javascript-react",
-    "href": "ch01_foundations/0.swift-thinking.html#comparing-swift-to-javascript-react",
-    "title": "1  Thinking in Swift",
-    "section": "1.3 Comparing Swift to JavaScript & React",
-    "text": "1.3 Comparing Swift to JavaScript & React\nFor developers coming from the web, many concepts in Swift and SwiftUI have direct parallels in JavaScript and React.\n\n\n\n\n\n\n\n\nFeature\nSwift & SwiftUI\nJavaScript & React\n\n\n\n\nLanguage Paradigm\nStrongly typed, heavily Protocol-Oriented\nDynamically typed, heavily Functional / Prototype-based\n\n\nExecution\nCompiled to machine code directly (Fast & Safe)\nInterpreted / JIT compiled via browser engine\n\n\nSafety\nErrors caught at compile time\nErrors caught at runtime (unless using TypeScript)\n\n\nCore UI Blocks\nView structs\nReact Components (Functions returning JSX)\n\n\nSyntax Style\nDeclarative Swift\nDeclarative JSX\n\n\nLocal State\n@State private var count = 0\nconst [count, setCount] = useState(0)\n\n\nPassed State (Props)\nlet title: String or @Binding\nComponent props\n\n\nGlobal State\n@EnvironmentObject or @Observable\nContext API, Redux, Zustand",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/0.swift-thinking.html#two-core-concepts-of-swift",
-    "href": "ch01_foundations/0.swift-thinking.html#two-core-concepts-of-swift",
-    "title": "1  Thinking in Swift",
-    "section": "1.3 Two Core Concepts of Swift",
-    "text": "1.3 Two Core Concepts of Swift\nWhen transitioning from JavaScript to Swift thinking, these are the two most important differences to understand:\n\n1. Swift is Object and Protocol-Oriented\n\n\n\n\n\n\nImportantEverything in Swift is an object.\n\n\n\nBasic data types like integers, strings, and booleans are fully functioning objects with their own properties and methods, unlike the primitive types found in JavaScript.\nlet age = 30 // age is an object. \n\n// We can call methods directly on it:\nlet isMultiple = age.isMultiple(of: 5) // returns true\n\n\nWhy is Swift designed this way?\n\n\n\nSo much of computing is about defining mutable state and managing it. Functional programming says ‘cool, you can do that…’ and the way it does that is making an entire copy of the data structure with the changes and then you copy the data struture - this is generally what people mean by functional programming; although you could define it in multiple different ways. Purely functional means there is no in-place mutation. Here’s a problem…computers are all bags of mutabale state. So if you saying you’re going to re-allocate and copy the entire data structure to make a change somewhere in the tree…it’s just extremely slow. - Chris Lattner\n\n\nInteroperability: The original Apple frameworks (Cocoa Touch) were built strictly on Object-Oriented Programming (OOP) paradigms. Swift needed to seamlessly interoperate with this massive existing ecosystem.\nProtocol-Oriented Programming: Swift expands on traditional OOP. Instead of focusing only on what objects are (via inheritance), Swift places a heavy emphasis on what objects can do using Protocols (similar to Interfaces in TypeScript).\n\n\n\n2. Swift is Strongly and Statically Typed\n\n\n\n\n\n\nImportantEverything in Swift has a specific type.\n\n\n\nThe compiler enforces these types before the app can run.\nvar name = \"Charlotte\" // The compiler infers this is a String\n\nname = 42  // The compiler immediately flags this as an error before the app ever runs\n\n\nType Inference: Swift’s compiler automatically figures out the type of a variable based on its initial value. This gives you the safety of strict types without the need to manually declare them every time.\n\n\n\nSwift type inference\n\n\nHow this differs from JavaScript and TypeScript:\n\nJavaScript: You can dynamically change a variable from a number to a string. Type errors are only caught at runtime (when the user is using the app), which can cause crashes.\nTypeScript: TypeScript adds a compile-time type checker on top of JavaScript and uses the exact same philosophy as Swift here. The compiler will flag name = 42 as an error before the code runs. The key difference is that TypeScript compiles down to JavaScript — it still ships interpreted JS to the browser.\n\nSwift compiles to native machine code — a fundamentally different runtime from TypeScript’s interpreted JavaScript, and a significantly faster one.\n\nSwift: Type errors are caught at compile-time (while you are writing the code). You cannot compile or run the app until type errors are fixed. This drastically reduces bugs in production.\n\n\n\nThe Compile Cycle: What happens when you hit build?\nFact: Swift compiles directly down to native machine code (binary). Unlike React, which is shipped as raw text (JavaScript) to be read and interpreted by a user’s web browser at runtime, an iOS app is fully “pre-baked” before it ever leaves your computer.\nThe Build Process (Step-by-step):\n\nYou write .swift code (Human readable logic).\nLLVM Compiler engages. It strictly checks for type-errors, missing variables, or syntactic anomalies. If it finds even one error, the build forcibly halts.\nTranslation into Machine Code. If your code passes all checks, LLVM translates your logic directly into highly optimized 1s and 0s (ARM Machine Code) specifically tailored for an iPhone’s processor.\nPackaging into an .ipa. This compiled binary, alongside your images and configuration files, is securely zipped into an .ipa (iOS App Store Package) file.\n\nhello world in Swift\n\nafter LLVM compilation in Swift\n\nWhat actually ships to the App Store?\n\nYou do not ship your raw source code.\nYou ship the finalized, fully compiled .ipa binary package.\nWhy this matters for your users: Because the app arrives on their physical phone already translated into raw machine code, it opens and runs blazingly fast compared to a web browser downloading and parsing a heavy JavaScript bundle.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/0.swift-thinking.html#comparing-swift-swiftui-to-javascript-react",
-    "href": "ch01_foundations/0.swift-thinking.html#comparing-swift-swiftui-to-javascript-react",
-    "title": "1  Thinking in Swift",
-    "section": "1.4 Comparing Swift & SwiftUI to JavaScript & React",
-    "text": "1.4 Comparing Swift & SwiftUI to JavaScript & React\nHere is a direct mapping of concepts between the two ecosystems.\n\n\n\n\n\n\n\n\nConcept\nSwift & SwiftUI\nJavaScript & React\n\n\n\n\nLanguage Paradigm\nStrongly typed, Protocol-Oriented\nDynamically typed, Functional/Prototype-based\n\n\nExecution\nCompiled directly to machine code\nInterpreted / JIT compiled by the browser\n\n\nError Checking\nCaught at compile-time\nCaught at runtime (unless using TypeScript)\n\n\nCore UI Component\nView structs\nReact Components (Functions returning JSX)\n\n\nSyntax Style\nDeclarative Swift\nDeclarative JSX\n\n\nLocal Component State\n@State private var count = 0\nconst [count, setCount] = useState(0)\n\n\nPassing State (Props)\nlet title: String or @Binding\nComponent props\n\n\nGlobal State\n@EnvironmentObject or @Observable\nContext API, Redux, or Zustand",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/0.swift-thinking.html#what-is-swift",
-    "href": "ch01_foundations/0.swift-thinking.html#what-is-swift",
-    "title": "1  Thinking in Swift",
-    "section": "",
-    "text": "Key facts about Swift:\n\nIntroduced: 2014 by Apple.\nPurpose: To replace Objective-C with a safer, faster, and more modern language.\nCreator: Chris Lattner. He previously built LLVM, which is the compiler infrastructure that now powers Swift.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Thinking in Swift</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1.anatomy.html",
-    "href": "ch01_foundations/1.anatomy.html",
-    "title": "2  Anatomy of a Basic App",
-    "section": "",
-    "text": "2.1 The Folder Structure\nWelcome to the anatomy of an iOS application. In this chapter, we break down exactly how a Swift app functions at a high level.\nEvery iOS project natively uses Xcode as the development environment. The folder structure relies on specific files existing in order for the application to compile correctly.\nHigh-Level Xcode Structure:",
-    "crumbs": [
-      "Part I: Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/1.anatomy.html#the-folder-structure",
-    "href": "ch01_foundations/1.anatomy.html#the-folder-structure",
-    "title": "2  Anatomy of a Basic App",
+    "objectID": "chapters/anatomy.html#the-folder-structure",
+    "href": "chapters/anatomy.html#the-folder-structure",
+    "title": "Anatomy of a Basic App",
     "section": "",
     "text": "App.swift — The root entry point of the app.\nContentView.swift — The first screen the user actually sees.\nAssets.xcassets — Where you store images, custom colors, and app icons.\nInfo.plist — Configuration file containing hardware permissions and app rules.\n\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\nReact projects are more flexible, but generally map similarly:\n\nindex.js (Root Entry)\nApp.js (Main Router/Screen)\npublic/ or src/assets/ (Images/Icons)\npackage.json (Configuration)",
     "crumbs": [
-      "Part I: Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/1.anatomy.html#the-root-entry-point",
-    "href": "ch01_foundations/1.anatomy.html#the-root-entry-point",
-    "title": "2  Anatomy of a Basic App",
-    "section": "2.2 The Root Entry Point",
-    "text": "2.2 The Root Entry Point\nWhen a user taps an app icon on their iPhone, iOS looks for the @main attribute to know strictly where the app officially starts executing.\nHere is the Swift Entry Point (App.swift):\nimport SwiftUI\n\n@main\nstruct MyApp: App {\n    var body: some Scene {\n        WindowGroup {\n            ContentView() // ⬅️ Points to the first Screen\n        }\n    }\n}\n\n\n\n\n\n\nNoteReact Equivalent (index.js)\n\n\n\n\n\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  &lt;React.StrictMode&gt;\n    &lt;App /&gt; {/* ⬅️ Points to the first Screen */}\n  &lt;/React.StrictMode&gt;\n);",
+    "objectID": "chapters/anatomy.html#the-root-entry-point",
+    "href": "chapters/anatomy.html#the-root-entry-point",
+    "title": "Anatomy of a Basic App",
+    "section": "The Root Entry Point",
+    "text": "The Root Entry Point\nWhen a user taps an app icon on their iPhone, iOS looks for the @main attribute to know strictly where the app officially starts executing.\nHere is the Swift Entry Point (App.swift):\nimport SwiftUI\n\n@main\nstruct MyApp: App {\n    var body: some Scene {\n        WindowGroup {\n            ContentView() // ⬅️ Points to the first Screen\n        }\n    }\n}\n\n\n\n\n\n\nNoteReact Equivalent (index.js)\n\n\n\n\n\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  &lt;React.StrictMode&gt;\n    &lt;App /&gt; {/* ⬅️ Points to the first Screen */}\n  &lt;/React.StrictMode&gt;\n);\n\n\n\n\nWhat About main.swift?\nBefore @main was introduced in Swift 5.3 (2020), the conventional entry point was a special file named main.swift. It is the only file in a Swift project that is allowed to contain top-level executable code — meaning code written directly at the file’s root scope, outside of any struct, class, or func.\n// main.swift (legacy entry point)\nimport UIKit\n\nUIApplicationMain(\n    CommandLine.argc,\n    CommandLine.unsafeArgv,\n    nil,\n    NSStringFromClass(AppDelegate.self)\n)\nThe name main.swift is not arbitrary — the Swift compiler treats it as a reserved filename with special rules:\n\nOnly one main.swift can exist per target. Having more than one will cause a compile error.\nTop-level expressions are only legal here. Any other .swift file that tries to run code at the top level (outside a type or function) will fail to compile.\n@main replaced it. Modern SwiftUI apps use @main on a struct instead, which is cleaner and avoids manually calling UIApplicationMain. You will still encounter main.swift in older UIKit projects or Swift command-line tools.\n\n\n\n\n\n\n\nNoteNode.js Parallel\n\n\n\n\n\nmain.swift behaves much like a Node.js entry file (e.g. index.js run directly via node index.js) — it is the one file where code runs immediately at the top level without needing to be wrapped in a function or class. All other files must export or be explicitly called.",
     "crumbs": [
-      "Part I: Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/1.anatomy.html#how-screens-work-views",
-    "href": "ch01_foundations/1.anatomy.html#how-screens-work-views",
-    "title": "2  Anatomy of a Basic App",
-    "section": "2.3 How Screens Work (Views)",
-    "text": "2.3 How Screens Work (Views)\nIn Swift, there is no generic &lt;div&gt;. A screen is always built strictly as a Struct conforming to the View protocol.\nHere is what ContentView.swift looks like. Keep an eye out for exactly how the answers to your common architectural questions map directly onto the code structure:\nimport SwiftUI\n\nstruct ContentView: View {\n    // ⬇️ Q3: Where is the data? \n    // Data is held explicitly inside the struct instance using Property Wrappers like @State.\n    @State private var userName: String = \"Charlotte\" \n\n    // ⬇️ Q2: When does render happen? \n    // ANY time the property marked as @State explicitly changes, the 'body' automatically re-renders.\n    var body: some View {\n        VStack {\n            Text(\"Hello, \\(userName)\")\n            \n            Button(\"Change Name\") {\n                // ⬇️ Q1: Is this single-threaded?\n                // Yes. By default, ALL UI code executes strictly on the Main Thread.\n                userName = \"Swift Developer\"\n            }\n        }\n    }\n}",
+    "objectID": "chapters/anatomy.html#how-screens-work-views",
+    "href": "chapters/anatomy.html#how-screens-work-views",
+    "title": "Anatomy of a Basic App",
+    "section": "How Screens Work (Views)",
+    "text": "How Screens Work (Views)\nIn Swift, there is no generic &lt;div&gt;. A screen is always built strictly as a Struct conforming to the View protocol.\nHere is what ContentView.swift looks like.\nimport SwiftUI\n\nstruct ContentView: View {\n    // ⬇️ Q3: Where is the data? \n    // Data is held explicitly inside the struct instance using Property Wrappers like @State.\n    @State private var userName: String = \"Charlotte\" \n\n    // ⬇️ Q2: When does render happen? \n    // ANY time the property marked as @State explicitly changes, the 'body' automatically re-renders.\n    var body: some View {\n        VStack {\n            Text(\"Hello, \\(userName)\")\n            \n            Button(\"Change Name\") {\n                // ⬇️ Q1: Is this single-threaded?\n                // Yes. By default, ALL UI code executes strictly on the Main Thread.\n                userName = \"Swift Developer\"\n            }\n        }\n    }\n}\n\nQ1. Is this single-threaded?\n\nUI rendering in Swift is purely single-threaded.\nAll interface rendering runs on what Apple calls the Main Thread.\nIn the code block above, when you tap the button, that line of code immediately executes on the Main Thread to guarantee a buttery-smooth 60 to 120 frames per second response.\nRule: If you fetch data from the internet (which is slow), you must explicitly push that task to a “Background Thread” to avoid freezing the screen.\n\n\n\nQ2. When does the render happen?\nRendering is reactive, triggered purely by a change in State.\n\nWhen the button is tapped and userName changes from “Charlotte” to “Swift Developer”, SwiftUI detects the change in @State and immediately invalidates the current body.\nSwiftUI then re-computes the physical screen to match the updated state. This is highly optimized and functionally matching how React triggers a re-render when you call setState().\n\n\n\nQ3. Where is the data stored?\nFact: Local state data is stored specifically inside the Struct instance using Property Wrappers.\n\nStructs are highly efficient, temporary data structures.\nThe data (userName) only exists for as long as this specific screen is visually alive on the device.\nIf you have global data (state you want to share across multiple screens), you store it in classes called ObservableObjects, which act very much like React Context or an overarching Redux Store.",
     "crumbs": [
-      "Part I: Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/1.anatomy.html#answering-core-architectural-questions",
-    "href": "ch01_foundations/1.anatomy.html#answering-core-architectural-questions",
-    "title": "2  Anatomy of a Basic App",
-    "section": "2.4 Answering Core Architectural Questions",
-    "text": "2.4 Answering Core Architectural Questions\nIt’s common to wonder how the environment handles processing work under the hood. Here are the clear, factual answers mapped from the code above.\n\n1. Is this single-threaded?\nFact: UI rendering in Swift is purely single-threaded.\n\nAll interface rendering runs on what Apple calls the Main Thread.\nIn the code block above, when you tap the button, that line of code immediately executes on the Main Thread to guarantee a buttery-smooth 60 to 120 frames per second response.\nRule: If you fetch data from the internet (which is slow), you must explicitly push that task to a “Background Thread” to avoid freezing the screen.\n\n\n\n2. When does the render happen?\nFact: Rendering is reactive, triggered purely by a change in State.\n\nWhen the button is tapped and userName changes from “Charlotte” to “Swift Developer”, SwiftUI detects the change in @State and immediately invalidates the current body.\nSwiftUI then re-computes the physical screen to match the updated state. This is highly optimized and functionally matching how React triggers a re-render when you call setState().\n\n\n\n3. Where is the data stored?\nFact: Local state data is stored specifically inside the Struct instance using Property Wrappers.\n\nStructs are highly efficient, temporary data structures.\nThe data (userName) only exists for as long as this specific screen is visually alive on the device.\nIf you have global data (state you want to share across multiple screens), you store it in classes called ObservableObjects, which act very much like React Context or an overarching Redux Store.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Anatomy of a Basic App</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1b.syntax.html",
-    "href": "ch01_foundations/1b.syntax.html",
-    "title": "3  Swift Syntax & Lexical Rules",
+    "objectID": "chapters/objects.html",
+    "href": "chapters/objects.html",
+    "title": "Objects & Data Structures",
     "section": "",
-    "text": "3.1 The Rules of Syntax\nWelcome to the lexical breakdown of Swift. When transitioning from JavaScript, you will notice Swift is structurally cleaner, strictly enforced by the compiler, and relies heavily on minimizing visual clutter.\nHere is a fast, factual rundown of the core lexical rules in Swift.",
+    "text": "If numbers are objects, what happens if you build a custom object and try to add them together with +?",
     "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Swift Syntax & Lexical Rules</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objects & Data Structures</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/1b.syntax.html#the-rules-of-syntax",
-    "href": "ch01_foundations/1b.syntax.html#the-rules-of-syntax",
-    "title": "3  Swift Syntax & Lexical Rules",
+    "objectID": "chapters/objects.html#structs-value-types",
+    "href": "chapters/objects.html#structs-value-types",
+    "title": "Objects & Data Structures",
+    "section": "Structs (Value Types)",
+    "text": "Structs (Value Types)\nThe struct is the backbone of Swift and the default choice for data modeling (and all SwiftUI views).\n\n\n\n\n\n\nTipJS / React Perspective\n\n\n\nReact requires state to be immutable (never mutating variables directly; always using setState). Swift enforces immutability automatically with structs. When you pass a struct, Swift creates an entirely new, disconnected physical copy in memory.\n\n\nKey Traits:\n\nBehavior: Copied on assignment.\nSafety: Modifying a copy does not alter the original.\nInheritance: None. (Use Protocols instead).\n\nstruct User {\n    var name: String\n    var role: String\n}\n\nvar admin = User(name: \"Alice\", role: \"Admin\")\nvar backupAdmin = admin // Creates a distinct, physical copy in memory\n\nbackupAdmin.name = \"Bob\"\n// admin.name safely remains \"Alice\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objects & Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/objects.html#classes-reference-types",
+    "href": "chapters/objects.html#classes-reference-types",
+    "title": "Objects & Data Structures",
+    "section": "Classes (Reference Types)",
+    "text": "Classes (Reference Types)\nClasses are used less frequently in modern Swift than in older object-oriented languages. You use them primarily for data that must be shared across different screens simultaneously (like ViewModels).\n\n\n\n\n\n\nTipJS / React Perspective\n\n\n\nA Swift class behaves exactly like a standard JavaScript Object. If you pass it to a new variable, you are just passing a pointer. Changing one changes them all.\n\n\nKey Traits:\n\nBehavior: Shared reference in memory.\nSafety: Mutable across your entire app (requires careful management).\nInheritance: Can inherit from parent classes.\n\nclass DatabaseConnection {\n    var isConnected: Bool = false\n}\n\nlet db1 = DatabaseConnection()\nlet db2 = db1 // Points to the exact same memory address\n\ndb2.isConnected = true\n// db1.isConnected is now also true",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objects & Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/objects.html#enums-enumerations",
+    "href": "chapters/objects.html#enums-enumerations",
+    "title": "Objects & Data Structures",
+    "section": "Enums (Enumerations)",
+    "text": "Enums (Enumerations)\nEnums in Swift are first-class, memory-safe structures used to represent a group of related, mutually exclusive states.\n\n\n\n\n\n\nTipJS / React Perspective\n\n\n\nIn TypeScript, you enforce state using Union Strings (type Status = \"success\" | \"error\" | \"loading\"). Swift enums are the native, highly-optimized equivalent, but they can also carry variables directly inside them.\n\n\nKey Traits:\n\nBehavior: Value type.\nSuperpower: Can attach specific variables directly to specific cases (“Associated Values”).\nUsage: Replaces boolean flags (isLoading, hasError) and magic strings.\n\nenum LoadingState {\n    case idle\n    case loading\n    case success([String]) // Data is attached safely inside the case\n    case error(Error)\n}\n\nlet currentState = LoadingState.success([\"Item 1\", \"Item 2\"])",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objects & Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/objects.html#actors-concurrency-safe-reference-types",
+    "href": "chapters/objects.html#actors-concurrency-safe-reference-types",
+    "title": "Objects & Data Structures",
+    "section": "Actors (Concurrency-Safe Reference Types)",
+    "text": "Actors (Concurrency-Safe Reference Types)\nActors are a modern Swift feature built exclusively to prevent Data Races (when two parts of your app try to change the same memory at the exact same millisecond).\n\n\n\n\n\n\nTipJS / React Perspective\n\n\n\nJavaScript is single-threaded; the Event Loop handles tasks one by one, so parallel memory collisions rarely happen. Swift is genuinely multi-threaded. Code runs in parallel. Actors are required to safely manage shared data across these parallel threads.\n\n\nKey Traits:\n\nBehavior: Reference type (Shared memory).\nSafety: Automatically isolates its state. It forces outside code to wait in a queue (await) to interact with it.\nUsage: High-performance, concurrent background tasks.\n\nactor SafeCounter {\n    var count = 0\n    \n    func increment() {\n        count += 1\n    }\n}\n\nlet counter = SafeCounter()\n\n// Because the actor is heavily guarded, you must pause and \"await\" your turn to access it:\n// await counter.increment()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objects & Data Structures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/variables.html",
+    "href": "chapters/variables.html",
+    "title": "Variables",
     "section": "",
-    "text": "1. Semicolons are Dead\nFact: Swift does not require semicolons ; at the end of statements.\n\nIn modern JavaScript, semicolons are technically optional but are widely enforced by linters (like Prettier/ESLint) to prevent interpreter errors.\nIn Swift, semicolons are genuinely discouraged by the compiler.\nRule: Only use a semicolon if you are writing two completely separate statements on the exact same line (which you should rarely ever do).\n\n// Correct Swift\nlet name = \"Charlotte\"\nlet age = 28\n\n// Discouraged Swift (Do not do this)\nlet name = \"Charlotte\"; let age = 28;\n\n\n2. Variables and Constants (let vs var)\nFact: let in Swift is functionally identical to const in JavaScript. var in Swift is identical to let in JavaScript.\n\nRule: Always default to using let when declaring new data. Only change it to var if the Swift compiler explicitly throws an error telling you that the value needs to mutate later.\n\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript?\n\n\n\n\n\nconst name = \"Charlotte\" // Immutable\nlet age = 28 // Mutable\n\n\n\nlet name = \"Charlotte\" // Immutable (Use this default)\nvar age = 28 // Mutable (Use only if changing)\n\nVariables have a type which is established when the variable is declared and cannot be changed later.\nThe type of the variable is derived from the first value that is assigned to it. For example, let name = \"Charlotte\" is a String, and let age = 28 is an Int.\n\n\n3. String Interpolation\nFact: Swift uses \\() to inject variables into strings. - In JavaScript, you switch to backticks and use ${variable}. - In Swift, you keep standard double quotes \"\" and inject the variable natively using a backslash and parentheses \\(variable).\n\n\n5. Parentheses in Control Flow\nFact: Swift deliberately drops the parentheses () around if, guard, and switch statements. - Rule: The curly braces {} encompassing the block are strictly mandatory, but the parentheses holding the boolean condition are entirely omitted to reduce visual noise.\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript?\n\n\n\n\n\nif (age &gt; 18) {\n    console.log(\"Adult\");\n}\n\n\n\nSwift Equivalent:\n// ⬇️ No parenthesis needed around 'age &gt; 18'\nif age &gt; 18 { \n    print(\"Adult\")\n}\n\n\n6. Multi-Line Dot Syntax (Modifier Chaining)\nFact: Swift heavily relies on chaining methods together using dot . notation. For readability in enterprise applications, these chains are almost always broken across multiple vertical lines. - Rule: The dot . must start on the new line, typically aligned directly beneath the object it modifies.\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript & React?\n\n\n\n\n\n// JavaScript Method Chaining (Data Handling)\nconst activeUsers = users\n    .filter(user =&gt; user.isActive)\n    .sort((a, b) =&gt; a.id - b.id);\n\n// React UI Equivalent (Applying styles/actions)\n// React rarely uses dot-chaining for components; instead, you stack physical props or merge class strings:\n&lt;button \n    className=\"bg-blue-500 text-white font-bold py-2 px-4 rounded\"\n    onClick={handleTap}\n&gt;\n    Enter Dashboard\n&lt;/button&gt;\n\n\n\nSwift Equivalent (SwiftUI Modifiers): In SwiftUI, you strictly apply styles and behaviors using “View Modifiers”, which are just functions chained vertically via dot notation.\n// Enterprise App Snippet: Structuring a styled button\nButton(action: handleTap) {\n    Text(\"Enter Dashboard\")\n}\n.font(.headline)\n.fontWeight(.bold)\n.foregroundColor(.white)\n.padding(.vertical, 12)\n.padding(.horizontal, 24)\n.background(Color.blue)\n.cornerRadius(8)",
+    "text": "a Variable is an object reference\nlet is an immutable reference - its value is assigned once and cannot be changed\nvar is a mutable reference - its value can be changed\n\n\n\n\nlet-var.png\n\n\n\nVariables have a type which is established when the variable is declared and cannot be changed later.\n\ntype annotation is optional in Swift\ntype inference is the process of deducing the type of a variable from its initial value\n\n\nvar name = \"Charlotte\"         // inferred as String\nname = 26                     // Error: Cannot assign value of type 'Int' to type 'String'\n\nvariables start with small letter\ntypes start with uppercase letter\nA variable declared at the top level of a file is a global variable\n\n\nObject Members\nclass fly {\n    let name = \"buzz\"\n    func sayName() {\n        print(name)\n    }\n}\n\nname here is a property of the object\n\na variable declared at the top level of an object declaration\n\nsayName here is a method of the object\n\na function declared at the top level of an object declaration\n\n\nIf declared at the top level of an object declaration - it’s an object member. Members of an object define messages that can be sent to the object.",
     "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Swift Syntax & Lexical Rules</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Variables</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/2.stacks.html",
-    "href": "ch01_foundations/2.stacks.html",
-    "title": "4  Layout Building Blocks (Stacks)",
+    "objectID": "chapters/functions.html",
+    "href": "chapters/functions.html",
+    "title": "Functions",
     "section": "",
-    "text": "4.1 The &lt;div&gt; Equivalent\nWelcome to SwiftUI layouts. In HTML and React, developers reach for native &lt;div&gt; elements and CSS Flexbox to physically position items on the screen. In Swift, you explicitly use Stacks, which are structurally safer and highly optimized pre-configured wrappers.\nFact: Stacks act conceptually identically to div tags, but they come with pre-baked flexbox styles specifically tailored for mobile and desktop screens. - In React, a div is structurally dumb. You must explicitly apply display: flex; flex-direction: column just to format items sequentially. - In Swift, Stacks are inherently intelligent and are implicitly pre-configured to handle flexible layout distribution and alignment.",
+    "text": "Swift functions use the func keyword, enforce strict types on both the arguments and the output, and explicitly mandate how you call them.\nKey differences compared to JavaScript:\n\nArguments require explicit types (e.g., name: String).\nA function’s return type is declared with a right-facing arrow -&gt;.\nWhen invoking a function, you must explicitly write out the parameter’s name to make the code highly legible.\n\nfunc name(parameterName: parameterType) -&gt; ReturnType {\n    // Code to execute\n    return value\n}\n\nname() becomes a global function existing in the global namespace of your specific module\nyou can call name() in any file within the same module\n\nprivate func name(parameterName: parameterType) -&gt; ReturnType { ... }\n\nYou cannot call this from another file. It is restricted exclusively to the file (or enclosing scope) it was declared in.\n\npublic func name(parameterName: parameterType) -&gt; ReturnType { ... }\n\nYou can call this from any other file, including files in entirely different modules (like if you are building a Framework that another app imports).\n\n// 1. Standard Swift Function\nfunc greet(name: String) -&gt; String {\n    return \"Hello \\(name)\" // Notice string interpolation uses \\( ) not ${ }\n}\n\nlet message = greet(name: \"Charlotte\") // ⬅️ MUST explicitly write 'name:' \n\n\n// 2. SwiftUI View (Struct returning UI)\nstruct Greet: View {\n    let name: String\n    \n    var body: some View {\n        Text(\"Hello \\(name)\")\n    }\n}\n\n// ⬇️ Called exactly like a function using named parameters!\nGreet(name: \"Charlotte\")\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript & React?\n\n\n\n\n\n// 1. Standard JavaScript Function\nfunction greet(name) {\n    return \"Hello \" + name;\n}\n\ngreet(\"Charlotte\"); // Called without explicitly naming the parameters\n\n\n// 2. React Functional Component (Returns UI)\nexport default function Greet({ name }) {\n    return &lt;h1&gt;Hello {name}&lt;/h1&gt;;\n}\n\n// Called using JSX, where props act similarly to named parameters\n&lt;Greet name=\"Charlotte\" /&gt;\n\n\n\nFunction Parameter Omitting: If you want Swift to behave exactly like JavaScript and let you omit the parameter name when calling a function, you explicitly place an underscore _ before the parameter name in the definition.\nfunc fastGreet(_ name: String) -&gt; String {\n    return \"Hey \\(name)\"\n}\n\n// Now it looks exactly like JavaScript when invoked:\nlet fastMessage = fastGreet(\"Charlotte\")\n\nAll executable code must live inside body of a function\na function declared at the top level of a file is a global function\n\nHow often do functions run?\nWhen do the functions run?\nHot reloading?",
     "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Functions</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/2.stacks.html#the-div-equivalent",
-    "href": "ch01_foundations/2.stacks.html#the-div-equivalent",
-    "title": "4  Layout Building Blocks (Stacks)",
+    "objectID": "chapters/scope.html",
+    "href": "chapters/scope.html",
+    "title": "Scope",
     "section": "",
-    "text": "1. VStack (Vertical Stack)\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React equivalent using inline Flexbox styles\n&lt;div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}&gt;\n    &lt;h1&gt;Top Item&lt;/h1&gt;\n    &lt;p&gt;Bottom Item&lt;/p&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// Swift automatically stacks vertically and injects a default Apple-standard gap\nVStack {\n    Text(\"Top Item\")\n        .font(.title)\n    Text(\"Bottom Item\")\n}\n\n\n2. HStack (Horizontal Stack)\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React equivalent using inline Flexbox styles\n&lt;div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}&gt;\n    &lt;span&gt;Left Item&lt;/span&gt;\n    &lt;span&gt;Right Item&lt;/span&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// Swift automatically links them horizontally\nHStack {\n    Text(\"Left Item\")\n    Text(\"Right Item\")\n}\n\n\n3. ZStack (Depth Stack)\nFact: ZStack physically stacks visual elements on top of each other strictly along the Z-axis (depth). - Rule: The first item written systematically in the code is placed at the mathematical bottom, and subsequent items visually stack sequentially on top of it.\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React typically overrides standard flow using relative and absolute positioning\n&lt;div style={{ position: 'relative', width: '200px', height: '200px' }}&gt;\n    &lt;img src=\"background.jpg\" style={{ position: 'absolute', width: '100%', zIndex: 0 }} /&gt;\n    &lt;h1 style={{ position: 'absolute', zIndex: 10 }}&gt;Text on top&lt;/h1&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// No manual CSS absolute positioning required\nZStack {\n    Image(\"background\") // Bottom physical layer\n        .resizable()\n\n    Text(\"Text on top\") // Top physical layer\n        .foregroundColor(.white)\n}",
+    "text": "Levels of scope:\n\na module is a scope\na function is a scope\ncurly braces are a scope",
     "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Scope</span>"
     ]
   },
   {
-    "objectID": "ch01_foundations/2.stacks.html#making-grids",
-    "href": "ch01_foundations/2.stacks.html#making-grids",
-    "title": "4  Layout Building Blocks (Stacks)",
-    "section": "4.2 Making Grids",
-    "text": "4.2 Making Grids\nFact: In React, creating a responsive grid requires verbose CSS Grid definitions (grid-template-columns, gap, fr fractions). In Swift, wrappers like LazyVGrid naturally handle the complex fractional mathematics cleanly at compile-time.\nWhy are they called Lazy? - Because they only evaluate identically when elements physically overlap the viewable screen. If you inject 10,000 items in a grid manually, Swift only physically renders the 10 that the user is currently looking at, guaranteeing flawless performance automatically.\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React using bulky CSS Grid\n&lt;div style={{ \n    display: 'grid', \n    gridTemplateColumns: 'repeat(2, 1fr)', \n    gap: '16px' \n}}&gt;\n    &lt;div&gt;Item 1&lt;/div&gt;\n    &lt;div&gt;Item 2&lt;/div&gt;\n    &lt;div&gt;Item 3&lt;/div&gt;\n    &lt;div&gt;Item 4&lt;/div&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// ⬇️ 1. Define the grid spacing mathematically (Two identically flexible columns)\nlet columns = [\n    GridItem(.flexible()),\n    GridItem(.flexible())\n]\n\nvar body: some View {\n    // ⬇️ 2. Apply it cleanly to the Lazy wrapper\n    LazyVGrid(columns: columns, spacing: 16) {\n        Text(\"Item 1\")\n        Text(\"Item 2\")\n        Text(\"Item 3\")\n        Text(\"Item 4\")\n    }\n}\nFact vs Verbosity Conclusion: Notice exactly how much less verbose the SwiftUI wrapper visually acts. You explicitly define the mechanical structure of your layouts once as pure data (let columns), and inject them into the standard logical Grid components—entirely avoiding manual CSS string-map configuration.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/6.view-builder.html",
-    "href": "ch01_foundations/6.view-builder.html",
-    "title": "8  @ViewBuilder",
+    "objectID": "chapters/global-namespace.html",
+    "href": "chapters/global-namespace.html",
+    "title": "Global Namespace",
     "section": "",
-    "text": "A @ViewBuilder is a list of Views. The reason for using it is to group together functional code.\nThe official Apple documentation (Apple Inc. 2026) states it is “A custom parameter attribute that constructs views from closures.”\n\na property wrapper that allows for lets, ifs, switches etc. within a view.\n\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        return Text(\"1\")\n    } else {\n        return Text(\"2\")\n    }\n    return Circle().fill(.red) \n}\nadding ‘(ViewBuilder?)’ to the following function transforms it to no longer need return\n\n@ViewBuilder\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        Text(\"1\")\n    } else {\n        Text(\"2\")\n    }\n    Circle().fill(.red) \n}\n\n\n\n\nApple Inc. 2026. “ViewBuilder | Apple Developer Documentation.” 2026. https://developer.apple.com/documentation/swiftui/viewbuilder.",
+    "text": "Namespaces",
     "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>`@ViewBuilder`</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Namespace</span>"
     ]
   },
   {
-    "objectID": "ch04_interview/interview-prep.html",
-    "href": "ch04_interview/interview-prep.html",
-    "title": "11  Interview Prep: Swift & iOS Architecture",
+    "objectID": "chapters/global-namespace.html#namespaces",
+    "href": "chapters/global-namespace.html#namespaces",
+    "title": "Global Namespace",
     "section": "",
-    "text": "11.1 Quick-Fire Questions & Answers\nWelcome to the interview prep zone. After absorbing structural knowledge, here is a literal, rapid-fire breakdown of the questions you are highly likely to encounter when interviewing for an iOS role—especially if they know you are transitioning from web development.\nNo fluff. Just the raw architectural facts wrapped in clear answers, heavily visualizing what you actually say out loud.",
+    "text": "a namespace is a named region of code.\ncannot be accessed directly without using the dot operator .\n\nclass Dog {             // Dog is a namespace (because it contains a nested class)\n    class Annie {}      // Annie is a nested type\n}\n   \nDog.Annie",
     "crumbs": [
-      "Part IV: Interview Prep",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Interview Prep: Swift & iOS Architecture</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Namespace</span>"
     ]
   },
   {
-    "objectID": "ch04_interview/interview-prep.html#quick-fire-questions-answers",
-    "href": "ch04_interview/interview-prep.html#quick-fire-questions-answers",
-    "title": "11  Interview Prep: Swift & iOS Architecture",
-    "section": "",
-    "text": "1. “What is the difference between @State and @Binding?”\nThe Fact: @State physically owns the data locally. @Binding physically creates a reference to data owned by someone else.\n\nAnswer Structure: “In SwiftUI, @State is used to create and explicitly own local data inside a specific view. When you use @Binding inside a child view, you are simply passing down direct, two-way access to that parent’s @State variable without duplicating the physical data.”\nReact Parallel: “It is functionally identical to passing down a useState’s setter function (setCount) via props to a child component, allowing the child to mutate the parent’s data.”\n\n\n\n2. “Why use a Struct instead of a Class for SwiftUI views?”\nThe Fact: Structs are “Value Types” and strictly immutable. Classes are “Reference Types” and require complex memory tracking.\n\nAnswer Structure: “SwiftUI Views are explicitly built using Structs because they are lightweight. This means every time the layout state changes, the system can instantly destroy and seamlessly recreate the view virtually cost-free. If we used Classes, tracking physical state differences would be slow because Classes live on the explicit memory heap and require complex reference tracking.”\n\n\n\n3. “Explain the MVVM Architecture.”\nThe Fact: MVVM cleanly isolates visual UI logic from raw data execution.\n\nAnswer Structure: “MVVM strictly splits logic into three boxes.\n\nModel: The raw physical data shape (like a JSON struct).\nView: The purely visual SwiftUI component you see on screen.\nViewModel: The operational brain. This is an ObservableObject class that securely fetches the data, processes it, and cleanly hands it to the View.”\n\nVisual Rule: The View should fundamentally never make a direct API call itself. It explicitly explicitly asks the ViewModel to execute the work.\n\n\n\n4. “Is Swift Pass-by-Value or Pass-by-Reference?”\nThe Fact: Swift execution fundamentally depends on exactly what physical structure you are sending out.\n\nAnswer Structure: “It depends strictly on the Type. Structs and Enums are passed by value (they are literally physically duplicated when passed). Classes are explicitly passed by reference (a memory pointer to the exact identical location is shared).”\n\n\n\n5. “What is Protocol-Oriented Programming (POP)?”\nThe Fact: POP forcibly requires developers to standardize what objects can do rather than what objects inherit from.\n\nAnswer Structure: “Instead of creating massive fragile, inherited Class trees (like Vehicle -&gt; Car -&gt; ElectricCar), Swift uses Protocols. A Protocol acts identically to an Interface in TypeScript. You give a Struct a protocol (like Drivable), natively guaranteeing it possesses specific functions, completely bypassing the massive structural nightmares typical iteration inheritance creates.”\n\n\n\n6. “How does SwiftUI handle the Main Thread?”\nThe Fact: Any code that updates the user interface visually absolutely must occur on the explicit Main Thread.\n\nAnswer Structure: “UI updates always run exclusively on the Main Thread to guarantee an unbreakable 60fps frame rate. If I pull data from the internet, I explicitly forceful move that heavy processing to a Background Thread. Once the data completely arrives, I strategically inject it back onto the Main Thread using @MainActor or DispatchQueue.main.async so the screen visually updates without stuttering.”",
+    "objectID": "chapters/global-namespace.html#modules",
+    "href": "chapters/global-namespace.html#modules",
+    "title": "Global Namespace",
+    "section": "Modules",
+    "text": "Modules\n\nmodules are actually a namespace too MyApp.Dog.Annie is the true name of class Annie\nimport Foundation / import UiKit are used to import namespaces without the need for dot notation every time",
     "crumbs": [
-      "Part IV: Interview Prep",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Interview Prep: Swift & iOS Architecture</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/3.stacks.html",
-    "href": "ch01_foundations/3.stacks.html",
-    "title": "5  Layout Building Blocks (Stacks)",
-    "section": "",
-    "text": "5.1 The &lt;div&gt; Equivalent\nWelcome to SwiftUI layouts. In HTML and React, developers reach for native &lt;div&gt; elements and CSS Flexbox to physically position items on the screen. In Swift, you explicitly use Stacks, which are structurally safer and highly optimized pre-configured wrappers.\nFact: Stacks act conceptually identically to div tags, but they come with pre-baked flexbox styles specifically tailored for mobile and desktop screens. - In React, a div is structurally dumb. You must explicitly apply display: flex; flex-direction: column just to format items sequentially. - In Swift, Stacks are inherently intelligent and are implicitly pre-configured to handle flexible layout distribution and alignment.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/3.stacks.html#the-div-equivalent",
-    "href": "ch01_foundations/3.stacks.html#the-div-equivalent",
-    "title": "5  Layout Building Blocks (Stacks)",
-    "section": "",
-    "text": "1. VStack (Vertical Stack)\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React equivalent using inline Flexbox styles\n&lt;div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}&gt;\n    &lt;h1&gt;Top Item&lt;/h1&gt;\n    &lt;p&gt;Bottom Item&lt;/p&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// Swift automatically stacks vertically and injects a default Apple-standard gap\nVStack {\n    Text(\"Top Item\")\n        .font(.title)\n    Text(\"Bottom Item\")\n}\n\n\n2. HStack (Horizontal Stack)\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React equivalent using inline Flexbox styles\n&lt;div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}&gt;\n    &lt;span&gt;Left Item&lt;/span&gt;\n    &lt;span&gt;Right Item&lt;/span&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// Swift automatically links them horizontally\nHStack {\n    Text(\"Left Item\")\n    Text(\"Right Item\")\n}\n\n\n3. ZStack (Depth Stack)\nFact: ZStack physically stacks visual elements on top of each other strictly along the Z-axis (depth). - Rule: The first item written systematically in the code is placed at the mathematical bottom, and subsequent items visually stack sequentially on top of it.\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React typically overrides standard flow using relative and absolute positioning\n&lt;div style={{ position: 'relative', width: '200px', height: '200px' }}&gt;\n    &lt;img src=\"background.jpg\" style={{ position: 'absolute', width: '100%', zIndex: 0 }} /&gt;\n    &lt;h1 style={{ position: 'absolute', zIndex: 10 }}&gt;Text on top&lt;/h1&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// No manual CSS absolute positioning required\nZStack {\n    Image(\"background\") // Bottom physical layer\n        .resizable()\n\n    Text(\"Text on top\") // Top physical layer\n        .foregroundColor(.white)\n}",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/3.stacks.html#making-grids",
-    "href": "ch01_foundations/3.stacks.html#making-grids",
-    "title": "5  Layout Building Blocks (Stacks)",
-    "section": "5.2 Making Grids",
-    "text": "5.2 Making Grids\nFact: In React, creating a responsive grid requires verbose CSS Grid definitions (grid-template-columns, gap, fr fractions). In Swift, wrappers like LazyVGrid naturally handle the complex fractional mathematics cleanly at compile-time.\nWhy are they called Lazy? - Because they only evaluate identically when elements physically overlap the viewable screen. If you inject 10,000 items in a grid manually, Swift only physically renders the 10 that the user is currently looking at, guaranteeing flawless performance automatically.\n\n\n\n\n\n\nNoteWhat does this look like in React?\n\n\n\n\n\n// React using bulky CSS Grid\n&lt;div style={{ \n    display: 'grid', \n    gridTemplateColumns: 'repeat(2, 1fr)', \n    gap: '16px' \n}}&gt;\n    &lt;div&gt;Item 1&lt;/div&gt;\n    &lt;div&gt;Item 2&lt;/div&gt;\n    &lt;div&gt;Item 3&lt;/div&gt;\n    &lt;div&gt;Item 4&lt;/div&gt;\n&lt;/div&gt;\n\n\n\nSwift Equivalent:\n// ⬇️ 1. Define the grid spacing mathematically (Two identically flexible columns)\nlet columns = [\n    GridItem(.flexible()),\n    GridItem(.flexible())\n]\n\nvar body: some View {\n    // ⬇️ 2. Apply it cleanly to the Lazy wrapper\n    LazyVGrid(columns: columns, spacing: 16) {\n        Text(\"Item 1\")\n        Text(\"Item 2\")\n        Text(\"Item 3\")\n        Text(\"Item 4\")\n    }\n}\nFact vs Verbosity Conclusion: Notice exactly how much less verbose the SwiftUI wrapper visually acts. You explicitly define the mechanical structure of your layouts once as pure data (let columns), and inject them into the standard logical Grid components—entirely avoiding manual CSS string-map configuration.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Layout Building Blocks (Stacks)</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/7.view-builder.html",
-    "href": "ch01_foundations/7.view-builder.html",
-    "title": "8  @ViewBuilder",
-    "section": "",
-    "text": "A @ViewBuilder is a list of Views. The reason for using it is to group together functional code.\nThe official Apple documentation (Apple Inc. 2026) states it is “A custom parameter attribute that constructs views from closures.”\n\na property wrapper that allows for lets, ifs, switches etc. within a view.\n\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        return Text(\"1\")\n    } else {\n        return Text(\"2\")\n    }\n    return Circle().fill(.red) \n}\nadding ‘(ViewBuilder?)’ to the following function transforms it to no longer need return\n\n@ViewBuilder\nfunc matchMarker(peg: Int) -&gt; some View {\n    if peg == 1 {\n        Text(\"1\")\n    } else {\n        Text(\"2\")\n    }\n    Circle().fill(.red) \n}\n\n\n\n\nApple Inc. 2026. “ViewBuilder | Apple Developer Documentation.” 2026. https://developer.apple.com/documentation/swiftui/viewbuilder.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>`@ViewBuilder`</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_data/state.html",
-    "href": "ch03_data/state.html",
-    "title": "12  State and Data Flow",
-    "section": "",
-    "text": ".",
-    "crumbs": [
-      "Part III: Data Flow and Architecture",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>State and Data Flow</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_data/xcdatamodeld.html",
-    "href": "ch03_data/xcdatamodeld.html",
-    "title": "13  Persistent Storage (.xcdatamodeld)",
-    "section": "",
-    "text": "13.1 What exactly is it?\nWelcome to the native database system of iOS. As your app grows, you will inevitably need to save data permanently so it safely survives when the user forcibly closes the app. You accomplish this using a specialized file visually represented as .xcdatamodeld, which powers Apple’s highly optimized Core Data (or the newer SwiftData) framework.\nFact: The .xcdatamodeld file is the blueprint for a fully functioning, high-performance local database entirely built into the iOS system itself.",
-    "crumbs": [
-      "Part III: Data Flow and Architecture",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Persistent Storage (`.xcdatamodeld`)</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_data/xcdatamodeld.html#what-exactly-is-it",
-    "href": "ch03_data/xcdatamodeld.html#what-exactly-is-it",
-    "title": "13  Persistent Storage (.xcdatamodeld)",
-    "section": "",
-    "text": "Production Grade: It is explicitly used for Production apps. This is exactly how massive scale apps (like Twitter, Spotify, and Apple Notes) securely store gigabytes of user data permanently on your physical phone.\nStandalone: It completely replaces the structural need to rely on linking an external local database dependency.\n\n\nHow does it conceptually map to Web Storage?\n\n\n\n\n\n\nNoteIs it like localStorage in the browser?\n\n\n\n\n\nNo. localStorage is extremely fragile. It is strictly limited to 5MB, mechanically converts everything down into a raw String, and gets forcefully wiped if the user clears their cache mapping.\nTo achieve exact localStorage-like behavior in iOS (for storing tiny items like specifically setting a “Dark Mode” toggle or caching a user token), Swift uses a feature called User Defaults. We never use .xcdatamodeld for tiny settings.\n\n\n\n\n\n\n\n\n\nNoteIs it like SQLite or IndexedDB?\n\n\n\n\n\nYes. Under the explicit hood, .xcdatamodeld literally commands an optimized SQLite relational database file physically hidden in the phone’s sandboxed file system. It structurally handles complex relational mapping constraints, massive tables manipulating millions of rows, offline storage caching buffers, and instant synchronization.",
-    "crumbs": [
-      "Part III: Data Flow and Architecture",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Persistent Storage (`.xcdatamodeld`)</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_data/xcdatamodeld.html#how-.xcdatamodeld-works-visually",
-    "href": "ch03_data/xcdatamodeld.html#how-.xcdatamodeld-works-visually",
-    "title": "13  Persistent Storage (.xcdatamodeld)",
-    "section": "13.2 How .xcdatamodeld Works Visually",
-    "text": "13.2 How .xcdatamodeld Works Visually\nFact: Unlike traditional Web databases where you forcefully write out raw SQL string queries (like SELECT * FROM users), Xcode deliberately provides a purely graphical visual interface.\nWhen you click on the .xcdatamodeld file in Xcode:\n\nYou see a visual flowchart map.\nYou graphically add an “Entity” (A Database Table). You might physically name it User.\nYou graphically add “Attributes” (Table Columns). You explicitly attach an age as a strict Integer, and name as a strict String.\n\nThe Mechanical Magic: Swift physically analyzes your visual blueprint map inside Xcode and automatically, silently generates the exact matching object-oriented Swift Classes necessary to execute logic against it in the compiler background.",
-    "crumbs": [
-      "Part III: Data Flow and Architecture",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Persistent Storage (`.xcdatamodeld`)</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_data/xcdatamodeld.html#fetching-data-swiftui-example",
-    "href": "ch03_data/xcdatamodeld.html#fetching-data-swiftui-example",
-    "title": "13  Persistent Storage (.xcdatamodeld)",
-    "section": "13.3 Fetching Data (SwiftUI Example)",
-    "text": "13.3 Fetching Data (SwiftUI Example)\nHere is a factual comparison of exactly how you retrieve data from a robust database in both ecosystems.\n\n\n\n\n\n\nNoteWhat does a SQL query structurally look like in Node/Javascript?\n\n\n\n\n\n// Raw un-typed database execution\nconst users = await db.query(\"SELECT * FROM User ORDER BY name ASC\");\n\n\n\nSwift Equivalent (SwiftUI): In Swift, because there is an unbreakable, compiler-checked link between the visual .xcdatamodeld file and the executing View, we extract information directly inside the physical view using a Property Wrapper called @FetchRequest (or @Query in SwiftData).\nimport SwiftUI\n\nstruct UserListView: View {\n    // ⬇️ This is the executing Query. \n    // It strictly commands the database: \"Give me all Users, structurally sorted by their name.\"\n    @FetchRequest(sortDescriptors: [SortDescriptor(\\.name)]) \n    var users: FetchedResults&lt;User&gt; \n\n    var body: some View {\n        List(users) { user in\n            // ⬇️ We mechanically use the exact physical 'name' property we built in the visual map\n            Text(user.name ?? \"Unknown User\") \n        }\n    }\n}",
-    "crumbs": [
-      "Part III: Data Flow and Architecture",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Persistent Storage (`.xcdatamodeld`)</span>"
-    ]
-  },
-  {
-    "objectID": "ch03_data/xcdatamodeld.html#core-architectural-rules",
-    "href": "ch03_data/xcdatamodeld.html#core-architectural-rules",
-    "title": "13  Persistent Storage (.xcdatamodeld)",
-    "section": "13.4 Core Architectural Rules",
-    "text": "13.4 Core Architectural Rules\n\nProduction Permanence: This is a highly hardened, explicitly engineered, massive-scale production-ready storage architecture—not a simple development mock.\nTypes are Absolute: If you graphically define age as an Integer in the .xcdatamodeld map, the database codebase will explicitly throw a compiler error if you mistakenly attempt to save the string \"twenty\".\nCloud Connected: Apple natively includes a literal toggle switch inside the Xcode configuration that dynamically, seamlessly syncs this local SQLite database to iCloud—explicitly duplicating state cross-platform (Watch, Mac, and iPhone) with zero lines of manual synchronization code.\nWhen is another database needed? Fact: .xcdatamodeld is strictly “Local-First”. If your app demands real-time multi-user visibility (like a shared chat room, global high scores, or feeding data to external web users), you explicitly need a remote database (like Supabase, Firebase, or a custom backend) to act as the global server. Coré Data is then typically used as an offline cache to physically hold what it downloads from that external server.\nCan sensitive data live here? Fact: Absolutely not. While .xcdatamodeld is sandboxed within the app, it is not heavily encrypted against a deliberately compromised device. You must never store raw user passwords, financial tokens, or API keys here.\n\nRule: High-security sensitive strings are exclusively securely saved into the Keychain, an entirely separate, specialized hardware-encrypted vault physically built into Apple devices.",
-    "crumbs": [
-      "Part III: Data Flow and Architecture",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Persistent Storage (`.xcdatamodeld`)</span>"
-    ]
-  },
-  {
-    "objectID": "ch04_advanced/navigation.html",
-    "href": "ch04_advanced/navigation.html",
-    "title": "14  Navigation and Routing",
-    "section": "",
-    "text": ".",
-    "crumbs": [
-      "Part IV: Advanced iOS Interfaces",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Navigation and Routing</span>"
-    ]
-  },
-  {
-    "objectID": "ch04_advanced/enterprise-folder-structure.html",
-    "href": "ch04_advanced/enterprise-folder-structure.html",
-    "title": "15  Model View ViewModel",
-    "section": "",
-    "text": "This is based on this wonderful repository by (kudoleh?) iOS Clean Architecture MVVM. Let’s systematically break down Clean Architecture and MVVM on iOS, layer by layer. The goal is complete separation of concerns.\n\n\n\n\n\nflowchart TD\n    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;\n    subgraph Presentation[Presentation Layer]\n        UI[Views / UI]\n        VM[ViewModels]\n    end\n    style Presentation fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph Domain[Domain Layer]\n        UC[Use Cases]\n        E[Entities]\n        RI[Repository Interfaces]\n    end\n    style Domain fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph Data[Data Layer]\n        RI_Impl[Repository Implementations]\n        API[API / Network]\n        DB[Local DB / CoreData]\n    end\n    style Data fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n    \n    UI &lt;--&gt;|Observes/Actions| VM\n    VM --&gt;|Executes| UC\n    UC --&gt;|Uses| E\n    UC --&gt;|Requests from| RI\n    RI_Impl -.-&gt;|Implements| RI\n    RI_Impl --&gt; API\n    RI_Impl --&gt; DB\n\n\n\n\n\n\n\nDependency Direction\nThe most important rule in Clean Architecture: Inner layers do not depend on outer layers.\nPresentation Layer -&gt; Domain Layer &lt;- Data Layer\n\nPresentation Layer depends on the Domain Layer.\nData Layer depends on the Domain Layer.\nDomain Layer depends on nothing outside of itself. It is the isolated core containing your business rules.\n\n\n\n\n1. Domain Layer\nThe Domain Layer is the conceptual heart of your application. It contains the core business rules and logic. It must not import any UI frameworks (like UIKit or SwiftUI) or data frameworks (like CoreData or Alamofire).\n\nEntities: Pure Swift structs or classes representing the raw data models of your business (e.g., Movie, User).\nUse Cases (Interactors): Classes that define specific application actions (e.g., SearchMoviesUseCase, FetchRecentQueriesUseCase). They combine data from entities and repositories.\nRepository Interfaces (Protocols): Protocols that define how data should be fetched or saved. By defining these here, the Domain Layer dictates what data it needs without caring how it is retrieved (Dependency Inversion).\n\n\n\n2. Presentation Layer\nThe Presentation Layer is responsible for what the user sees and interacts with. It uses the MVVM (Model-View-ViewModel) pattern to separate UI rendering from UI logic.\n\nViews (UI): SwiftUI Views or UIViewControllers. They display data and capture user input. They have no business logic.\nViewModels: They handle presentation logic. They take input from the View, execute Domain Use Cases, and expose observable state back to the View. They should be completely independent of UI frameworks, making them easily testable and reusable across UIKit and SwiftUI replacements.\nFlow Coordinators: Usually placed here to manage navigation between views, reducing the burden on individual views and view models.\n\n\n\n3. Data Layer\nThe Data Layer implements the interfaces defined by the Domain Layer. It handles data retrieval, storage, and mapping.\n\nRepository Implementations: Conforms to the Domain Layer’s repository interfaces. This is where you decide where the data actually comes from (e.g., fetching from an API first, then falling back to a cached local database).\nData Transfer Objects (DTOs): Intermediate models used for parsing JSON (e.g., Decodable) or mapping to local databases (NSManagedObject). They are strictly part of this layer and are mapped to pure Domain Entities before returning to the Domain Layer.\n\n\n\n4. Infrastructure Layer (Network)\nOften considered a part of (or a supporting boundary for) the Data Layer.\n\nNetwork Wrapper: A wrapper around your networking engine (like Alamofire or URLSession). It manages endpoints, base URLs, and raw data mapping. By isolating networking here, you can easily swap out networking libraries without rewriting your data repositories.\n\n\n\nThe Data Flow Lifecycle\n\nView receives a user interaction (e.g., tapping a search button).\nView calls a method on the ViewModel.\nViewModel executes a Use Case from the Domain Layer.\nUse Case requests data via a Repository Interface.\nRepository Implementation (Data Layer) fetches data from a remote API or local database (Infrastructure Layer).\nData Layer maps the raw response (DTO) into a clean Entity and returns it.\nUse Case applies business rules and returns the result to the ViewModel.\nViewModel updates its observable state.\nView observes the state change and automatically re-renders the UI.",
-    "crumbs": [
-      "Part IV: Advanced iOS Interfaces",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Model View ViewModel</span>"
-    ]
-  },
-  {
-    "objectID": "ch06_interview/interview-prep.html",
-    "href": "ch06_interview/interview-prep.html",
-    "title": "16  Interview Prep: Swift & iOS Architecture",
-    "section": "",
-    "text": "16.1 Quick-Fire Questions & Answers\nWelcome to the interview prep zone. After absorbing structural knowledge, here is a literal, rapid-fire breakdown of the questions you are highly likely to encounter when interviewing for an iOS role—especially if they know you are transitioning from web development.\nNo fluff. Just the raw architectural facts wrapped in clear answers, heavily visualizing what you actually say out loud.",
-    "crumbs": [
-      "Part V: Interview Prep",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Interview Prep: Swift & iOS Architecture</span>"
-    ]
-  },
-  {
-    "objectID": "ch06_interview/interview-prep.html#quick-fire-questions-answers",
-    "href": "ch06_interview/interview-prep.html#quick-fire-questions-answers",
-    "title": "16  Interview Prep: Swift & iOS Architecture",
-    "section": "",
-    "text": "1. “What is the difference between @State and @Binding?”\nThe Fact: @State physically owns the data locally. @Binding physically creates a reference to data owned by someone else.\n\nIs the binding reactive? Yes. Because @Binding is a direct two-way structural tunnel to the parent’s @State, any changes made by the child instantly mutate the parent’s data, natively triggering a reactive update.\nWhat happens to the view? The moment the underlying @State mutates (whether altered by the parent or flipped via the child’s @Binding), SwiftUI instantly invalidates both views and seamlessly re-renders them to reflect the new data visually.\nExplicit React Equivalents:\n\n@State = const [count, setCount] = useState().\n@Binding = Passing the setCount mutating function down as a physical prop: &lt;Child increment={setCount} /&gt;.\n\nAnswer Structure: “In SwiftUI, @State is used to firmly create and own local data inside a specific view. When you use @Binding inside a child view, you are simply passing down direct, two-way reactive access to that parent’s @State variable without ever duplicating the physical memory.”\n\n\n\n2. “Why use a Struct instead of a Class for SwiftUI views?”\nThe Fact: Structs are “Value Types” and strictly immutable. Classes are “Reference Types” and require complex memory tracking.\n\nAnswer Structure: “SwiftUI Views are explicitly built using Structs because they are lightweight. This means every time the layout state changes, the system can instantly destroy and seamlessly recreate the view virtually cost-free. If we used Classes, tracking physical state differences would be slow because Classes live on the explicit memory heap and require complex reference tracking.”\n\n\n\n3. “Explain the MVVM Architecture.”\nThe Fact: MVVM cleanly isolates visual UI logic from raw data execution.\n\nAnswer Structure: “MVVM strictly splits logic into three boxes.\n\nModel: The raw physical data shape (like a JSON struct).\nView: The purely visual SwiftUI component you see on screen.\nViewModel: The operational brain. This is an ObservableObject class that securely fetches the data, processes it, and cleanly hands it to the View.”\n\nVisual Rule: The View should fundamentally never make a direct API call itself. It explicitly explicitly asks the ViewModel to execute the work.\n\n\n\n4. “Is Swift Pass-by-Value or Pass-by-Reference?”\nThe Fact: Swift execution fundamentally depends on exactly what physical structure you are sending out.\n\nAnswer Structure: “It depends strictly on the Type. Structs and Enums are passed by value (they are literally physically duplicated when passed). Classes are explicitly passed by reference (a memory pointer to the exact identical location is shared).”\n\n\n\n5. “What is Protocol-Oriented Programming (POP)?”\nThe Fact: POP forcibly requires developers to standardize what objects can do rather than what objects inherit from.\n\nAnswer Structure: “Instead of creating massive fragile, inherited Class trees (like Vehicle -&gt; Car -&gt; ElectricCar), Swift uses Protocols. A Protocol acts identically to an Interface in TypeScript. You give a Struct a protocol (like Drivable), natively guaranteeing it possesses specific functions, completely bypassing the massive structural nightmares typical iteration inheritance creates.”\n\n\n\n6. “How does SwiftUI handle the Main Thread?”\nThe Fact: Any code that updates the user interface visually absolutely must occur on the explicit Main Thread.\n\nAnswer Structure: “UI updates always run exclusively on the Main Thread to guarantee an unbreakable 60fps frame rate. If I pull data from the internet, I explicitly forceful move that heavy processing to a Background Thread. Once the data completely arrives, I strategically inject it back onto the Main Thread using @MainActor or DispatchQueue.main.async so the screen visually updates without stuttering.”",
-    "crumbs": [
-      "Part V: Interview Prep",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Interview Prep: Swift & iOS Architecture</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/dont-panic.html",
-    "href": "ch02_Xcode/dont-panic.html",
-    "title": "11  Don’t Panic",
-    "section": "",
-    "text": "Xcode has so many ways it can make you feel so anxious, frustrated, and upset. Let’s go through them so you know what is a usual issue.\n\nGhost Files - Files that are hidden\nSometimes you can see files in your IDE (VScode / Antigravity) that do not exist in the xcode same exact project.\nRight click on a folder in Xcode and click \"Add Files\" to see non greyed out files that are in the same folder as your project. make sure that the files are added to the project.\nEven though the file is in the correct folder, Xcode won’t acknowledge it until you manually re-link it inside the IDE via File &gt; Add Files To \"YourProject\".\n— ## References\nFor an official deeper dive into exactly how Xcode manages literal file maps versus physical folder mappings: - Managing Files and Folders in Your Xcode Project (Apple Inc. 2026)\n\n\n\n\nApple Inc. 2026. “Managing Files and Folders in Your Xcode Project.” 2026. https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Don't Panic</span>"
-    ]
-  },
-  {
-    "objectID": "ch04_advanced/mvvm.html",
-    "href": "ch04_advanced/mvvm.html",
-    "title": "15  Model View ViewModel (MVVM)",
-    "section": "",
-    "text": "Dependency Direction\nThis is based on this wonderful repository by (kudoleh?) iOS Clean Architecture MVVM. Let’s systematically break down Clean Architecture and MVVM on iOS, layer by layer. The goal is complete separation of concerns.\nThe most important rule in Clean Architecture: Inner layers do not depend on outer layers.\nPresentation Layer -&gt; Domain Layer &lt;- Data Layer",
-    "crumbs": [
-      "Part IV: Advanced iOS Interfaces",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Model View ViewModel (MVVM)</span>"
-    ]
-  },
-  {
-    "objectID": "ch04_advanced/mvvm.html#case-study-the-movies-app",
-    "href": "ch04_advanced/mvvm.html#case-study-the-movies-app",
-    "title": "15  Model View ViewModel (MVVM)",
-    "section": "15.1 Case Study: “The Movies App”",
-    "text": "15.1 Case Study: “The Movies App”\nTo make this concrete, let’s look at the “Movies App” example from the reference repository. The goal of the app is simple: it allows a user to search for movies, see a list of results, and view details about a selected movie. It also caches recent searches so they work offline.\nLet’s map our abstract layer concepts directly to the actual code structures in this app.\n\n\n\n\n\nflowchart TD\n    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;\n    \n    subgraph Presentation[Presentation Layer]\n        UI[MoviesListView&lt;br&gt;MoviesListViewController]\n        VM[MoviesListViewModel]\n        Coord[MoviesSearchFlowCoordinator]\n    end\n    style Presentation fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph Domain[Domain Layer]\n        UC[SearchMoviesUseCase]\n        E[Movie&lt;br&gt;MovieQuery]\n        RI[MoviesRepository Protocol]\n    end\n    style Domain fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph Data[Data Layer]\n        RI_Impl[DefaultMoviesRepository]\n        API[MoviesResponseDTO]\n        DB[MoviesResponseEntity&lt;br&gt;CoreData]\n    end\n    style Data fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n    \n    UI &lt;--&gt;|Observes/Actions| VM\n    Coord -.-&gt;|Listens for Routing| VM\n    VM --&gt;|Executes| UC\n    UC --&gt;|Uses| E\n    UC --&gt;|Requests from| RI\n    RI_Impl -.-&gt;|Implements| RI\n    RI_Impl --&gt; API\n    RI_Impl --&gt; DB\n\n\n\n\n\n\n\n1. Domain Layer in Action\nThe Domain Layer sets the rules. Here we define Movie as a simple struct. We define SearchMoviesUseCase, which expects a search query and returns a list of Movies. Crucially, the Use Case doesn’t know how to fetch movies. It just talks to a protocol: MoviesRepository. The Domain says: “I need a repository that can fulfill this protocol.”\n\n\n2. Presentation Layer in Action\nThe Presentation Layer drives the UI. We have MoviesListView which handles the visual layout (e.g., a search bar and list). This view observes MoviesListViewModel. When the user types “Inception”, the View tells the ViewModel. The ViewModel calls SearchMoviesUseCase.start(query: \"Inception\"). When the Use Case returns an array of Movie structs, the ViewModel updates its observable state, and the View automatically updates the screen. Meanwhile, MoviesSearchFlowCoordinator observes the ViewModel to know when it should push the Movie Detail screen onto the navigation stack.\n\n\n3. Data Layer in Action\nThe Data Layer does the dirty work. DefaultMoviesRepository implements the MoviesRepository protocol from the Domain Layer. When asked for movies, it first checks its persistent storage (like CoreData, using MoviesResponseEntity). If it doesn’t have the data, it asks the API. It receives JSON, decodes it using MoviesResponseDTO (Data Transfer Object), maps it cleanly into our pure Swift Movie struct, and passes it back up to the Domain Layer. Because of this separation, if we decided to swap CoreData for Realm, the UI and Domain wouldn’t need to change a single line of code!\n\n\n\nWhat is a DIContainer?\nIn Clean Architecture, because inner layers (like the Domain) cannot know about outer layers (like Network or Data Repositories), we rely heavily on Dependency Inversion. The Domain simply says: “I need something that conforms to MoviesRepository.” But who actually creates the DefaultMoviesRepository and hands it to the Domain?\nThis is the job of the Dependency Injection Container (DIContainer).\nA DIContainer is a central factory object that wires your entire app together. It usually lives at the very top level of your app (often in an AppDIContainer or SceneDIContainer). Its responsibilities are to:\n\nHold Shared Resources: Keep track of long-lived dependencies (like a single APIClient instance or a shared CoreDataStorage).\nBuild the Dependency Graph: When a View needs a ViewModel, the DIContainer builds the ViewModel. To do that, it builds the required Use Case. To do that, it builds the required Repository.\n\nBy keeping all setup and instantiation logic inside a DIContainer, your Views and ViewModels don’t need to know how to build their own dependencies. This keeps your layers loosely coupled and makes your code incredibly easy to test (because you can simply inject a “Mock” repository instead of the real one during a test).",
-    "crumbs": [
-      "Part IV: Advanced iOS Interfaces",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Model View ViewModel (MVVM)</span>"
-    ]
-  },
-  {
-    "objectID": "ch04_advanced/domain-driven-design.html",
-    "href": "ch04_advanced/domain-driven-design.html",
-    "title": "16  Domain Driven Design (DDD)",
-    "section": "",
-    "text": "If MVVM tells you how to separate your UI from your logic, Domain Driven Design (DDD) tells you how to structure the logic itself.\nDDD is an approach to building software centered entirely around the business domain. The primary goal is that your code must speak the exact same language as your business experts. No artificial developer translation layers.\nLet’s look at the core building blocks of DDD in an iOS context.\n\n\n\n\n\nflowchart TD\n    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;\n    \n    subgraph BoundedContextA [Bounded Context: Checkout]\n        AggA[Aggregate: Order]\n        EntA[Entity: OrderItem]\n        VOA[Value Object: Currency]\n        \n        AggA --&gt; EntA\n        EntA --&gt; VOA\n    end\n    style BoundedContextA fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph BoundedContextB [Bounded Context: Profile]\n        AggB[Aggregate: Customer]\n        EntB[Entity: CustomerRecord]\n        VOB[Value Object: MailingAddress]\n        \n        AggB --&gt; EntB\n        EntB --&gt; VOB\n    end\n    style BoundedContextB fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n    \n    BoundedContextA -.-&gt;|Strictly Isolated| BoundedContextB\n\n\n\n\n\n\n\nThe 4 Core Concepts\n\n1. Ubiquitous Language\nStop using developer jargon (UserDataManager, NetworkHandler) when talking to subject matter experts. Use the exact vocabulary they use. If the business calls it a “Customer Profile”, your struct must be named CustomerProfile. If they call the checkout process “Fulfillment”, your Swift module must be named Fulfillment.\n\n\n2. Bounded Contexts\nDon’t build one massive, tangled app-wide data model. Treat completely separate features of your app as distinct universes (Bounded Contexts). A User in the Profile context needs fields like bio and avatar. But a User in the Checkout context only needs a paymentToken and shippingAddress. Instead of creating a giant User struct packed with unused optional fields, create two separate distinct models within their own Bounded Context folders.\n\n\n3. Entities vs Value Objects\nWhen designing your raw data structures, categorize them strictly into two buckets:\n\nEntities: Defined by their Identity. They change over time, but their ID remains the same.\n\nExample: A Customer(id: 123, name: \"Alice\"). If Alice changes her name to Bob, it’s still the exact same customer because the ID is 123.\niOS execution: Often a class or a struct explicitly conforming to Identifiable.\n\nValue Objects: Defined entirely by their Attributes. They have no ID. They are perfectly interchangeable and strictly immutable.\n\nExample: An Address(zip: \"90210\"). If the zip code changes, it is not the same address anymore. It is a completely new Address.\niOS execution: Pure, immutable let only struct.\n\n\n\n\n4. Aggregates\nAn Aggregate is a cluster of Entities and Value Objects treated as a single unit or boundary. For example, an Order (Aggregate Root) contains OrderItems (Entities) and a ShippingAddress (Value Object). You should never interact with an OrderItem directly from outside the aggregate. You must go through the Order. If you want to modify an item, you tell the aggregate root: order.updateItem(...).\n\n\n\n\nHow DDD Shapes Your Folders\nThe most immediate practical impact DDD has on your Xcode project is folder structure. Instead of grouping files by their “Type” (like MVC does), you group them by their Feature or “Bounded Context”.\nThe Wrong Way (Grouped by File Type)\nModels/\n  - Product.swift\n  - User.swift\nViews/\n  - ProductList.swift\n  - UserProfile.swift\nThe DDD Way (Grouped by Feature / Bounded Context)\nCatalog/ (Bounded Context)\n  - Domain/\n    - Product.swift\n  - Presentation/\n    - ProductList.swift\n\nAccount/ (Bounded Context)\n  - Domain/\n    - User.swift\n  - Presentation/\n    - UserProfile.swift\nBy structuring your codebase by feature, you natively isolate your domains. You could easily drag and drop the entire Catalog folder into a completely different app prototype, because it doesn’t hopelessly tangle itself with the Account logic!",
-    "crumbs": [
-      "Part IV: Advanced iOS Interfaces",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Domain Driven Design (DDD)</span>"
-    ]
-  },
-  {
-    "objectID": "ch04_advanced/modern-clean-architecture.html",
-    "href": "ch04_advanced/modern-clean-architecture.html",
-    "title": "19  Modern Clean Architecture for mobile applications",
-    "section": "",
-    "text": "If we combine the deep decoupling of Clean Architecture with the modularization strategies of Domain-Driven Design (DDD), we arrive at a highly scalable setup often called Modern Clean Architecture.\nThe goal here isn’t just separation for the sake of it. The primary motivation is to keep the design of each layer incredibly easy to understand, trivially maintainable, and mathematically isolated to drastically protect build times.\n\n\n\n\n\nflowchart TD\n    classDef default fill:#ffffff,stroke:#333,stroke-width:2px,color:#000000;\n    \n    subgraph Composition [Root]\n        App[Application Layer]\n    end\n    style Composition fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph UI [User Interfaces]\n        Features[Features Layer&lt;br&gt;MVVM / TCA]\n    end\n    style UI fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph Business [Core]\n        Domain[Domain Layer&lt;br&gt;Entities & Use Cases]\n    end\n    style Business fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    subgraph Infra [Plugins & Hardware]\n        Platform[Platform Layer&lt;br&gt;API / DB Impls]\n        Core[Core Layer&lt;br&gt;HTTP / Tools]\n    end\n    style Infra fill:transparent,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5\n\n    App --&gt;|Wires| Features\n    App --&gt;|Instantiates| Platform\n    App -.-&gt;|Injects dynamically| Domain\n    \n    Features --&gt;|Renders| Domain\n    Platform --&gt;|Implements protocols| Domain\n    Platform --&gt;|Uses| Core\n\n\n\n\n\n\n\nThe 5 Architectural Layers\n\n1. Domain Layer\nThis encapsulates the absolute core business logic. It contains Entities, Value Objects, Aggregates, and Use Case protocols. It isolates the business logic so that application-specific concerns (like UI or networking) absolutely cannot pollute the math. It depends on nothing else.\n\n\n2. Features Layer\nThis implements the UI requirements and builds individual screens. Because everything else is decoupled, your choice of UI pattern becomes far less critical here! You can use MVVM for your Profile feature and switch to TCA (The Composable Architecture) for complex Checkout flows without issue. * Navigation: Managed via the Coordinator pattern (essentially just the Delegate pattern). The ViewModel blindly delegates navigation side effects out to a Coordinator protocol (coordinator.showDetail(for: movie)).\n\n\n3. Application Layer\nThe absolute top-level of your app. This layer is responsible for creating the main structural navigation hierarchy, instantiating concrete implementations of UseCases from the Platform layer, and injecting them into the Features layer at runtime. Because it constructs the entire interface, it uniquely holds the total context required to manage the app-wide navigation stack.\n\n\n4. Platform Layer (The Plugin Model)\nThis layer utilizes the raw toolkits built in the Core layer to actually fulfill the protocols defined in the Domain layer. For example, a MoviesAPI module uses a generic HTTPClient (from Core) to fulfill the MoviesGateway protocol (from Domain). This forces a strict plugin design: if you suddenly need to change your networking from REST to GraphQL, you simply swap the plugin out in the Platform layer. The Features UI and Domain math remain completely untouched.\n\n\n5. Core Layer\nThe very bottom foundational infrastructure. This includes your primitive HTTP networking wrappers, SwiftData extensions, caching mechanisms, and generic utilities utilized by the Platform layer to build its concrete plugins.\n\n\n\n\nThe Ultimate Payout: Developer Productivity\nWhy go through all this trouble to aggressively enforce dependency rules? Xcode Build times.\nIn this architecture, a Feature module (like MoviesUI) only depends on the Domain module (pure Swift protocols and structs) and SwiftUI. It does not depend on the Platform, Application, or Core layers.\nThis means when you modify the MoviesUI code, Xcode only has to compile that specific UI Feature and the Domain layer. Your day-to-day SwiftUI work can rely on instant Xcode Previews and feature-specific mini-apps without ever suffering the heavy compilation times of the networking, CoreData, or global application boot sequence!\n\n\n20 The Master Blueprint: Bounded MVVM\nTo achieve ultra-scalable iOS architectures, we must merge the rigid math of Clean Architecture with the feature-first isolation of Domain Driven Design (DDD).\nThis creates a strict project structuring meta-rule: Feature-First, Layer-Second.\nThis plan exists as a rigid blueprint so both human developers and LLMs can instantly understand exactly where a file belongs, how it should be named, and precisely why.\n\n\nThe Architecture Meta-Rules\n\nStrict Isolation (Feature-First): At the highest level, the app is horizontally split into completely isolated Bounded Contexts (Features). We do not have a global “Models” folder or a global “Views” folder.\nLayer Separation (Layer-Second): Inside each specialized Feature folder, we strictly enforce Clean Architecture vertically: Domain, Presentation, Data, and DIContainer.\nZero Horizontal Bleed: The Presentation folder in the Checkout feature cannot talk to the Presentation folder in the Catalog feature. If features must communicate, they are wired together exclusively by the top-level Application global hierarchy.\n\n\n\n\nThe Master Folder Structure\nHere is the exact folder structure required for an iOS app following Bounded MVVM.\nMyApp/\n  App/\n    - MyApp.swift (Entry point)\n    - AppDIContainer.swift (The master factory wiring features together)\n\n  Features/ (Bounded Contexts)\n    MovieSearch/ \n      - DIContainer/\n        - MovieSearchDIContainer.swift\n      - Domain/\n        - Entities/\n          - Movie.swift\n        - UseCases/\n          - SearchMoviesUseCase.swift\n        - Interfaces/\n          - MoviesRepository.swift (Protocol)\n      - Presentation/\n        - ViewModels/\n          - MovieSearchViewModel.swift\n        - Views/\n          - MovieSearchView.swift\n      - Data/\n        - Repositories/\n          - DefaultMoviesRepository.swift (Implements Domain Interface)\n        - DTOs/\n          - MovieDTO.swift (Raw JSON structuring)\n          \n    UserProfile/\n      - DIContainer/ ...\n      - Domain/ ...\n      - Presentation/ ...\n      - Data/ ...\n\n  Core/ (Tools without Business Logic)\n    - Networking/\n      - HTTPClient.swift\n    - Persistence/\n      - SwiftDataStorage.swift\n\n\n\nReasoning & LLM Context Engine\nThis structure provides massive computational benefits for compiling code, reading code, and importantly, for giving context to AI assistants.\n\nWhy Feature-First?\nBy completely separating MovieSearch from UserProfile at the root directory, if you or an LLM needs to fix a bug in the search page, you only need to look at files inside the MovieSearch/ folder. It entirely eliminates “context pollution”. If we grouped by file type (e.g., placing all 50 app views into one Views/ folder), the LLM context window gets immediately flooded trying to artificially decipher which views relate to the current task.\n\n\nWhy Layer-Second?\nInside MovieSearch, the folder structure inherently enforces Clean Architecture dependency mathematics. * Domain: The LLM knows this folder contains the raw truth. Pure Swift structs. No import SwiftUI. No import Alamofire. If the core rules of searching change, this is where we edit. * Data: The gross reality of the internet. The LLM knows this is where messy JSON payloads (MovieDTO.swift) live and are painstakingly mapped into clean Domain entities. It depends on Domain, but Domain has no idea Data even exists. * Presentation: Purely visual logic. If the user wants a button to be blue, the LLM knows to strictly look inside the Presentation/Views/ folder.\n\n\nNaming Conventions (Strict Standards)\nTo guarantee the architecture functions flawlessly, we enforce these precise naming rules:\n\nEntities (Domain): Raw noun. (e.g., Movie.swift, User.swift).\nUse Cases (Domain): Action verb + Domain Noun + “UseCase”. (e.g., SearchMoviesUseCase.swift).\nInterfaces (Domain): Noun + “Repository” protocol. (e.g., MoviesRepository.swift).\nRepositories (Data): “Default” + Noun + “Repository”. (e.g., DefaultMoviesRepository.swift).\nData Transfer Objects (Data): Noun + “DTO”. (e.g., MovieDTO.swift).\nViews (Presentation): Feature Noun + “View”. (e.g., MovieSearchView.swift).\nViewModels (Presentation): Feature Noun + “ViewModel”. (e.g., MovieSearchViewModel.swift).",
-    "crumbs": [
-      "Part IV: Advanced iOS Interfaces",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Modern Clean Architecture for mobile applications</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1c.namespace.html",
-    "href": "ch01_foundations/1c.namespace.html",
-    "title": "4  Modules and the Global Namespace",
-    "section": "",
-    "text": "4.1 1. The Module Namespace\nWelcome to one of the most initially jarring transitions from web development. A few seconds into writing Swift, you will quickly ask: “Where are all the import statements?”\nIn JavaScript and React, every single file is entirely isolated. If you need a function, a component, or a variable from another file, you must explicitly import it, complete with a strict relative or absolute file path.\nIn Swift, you will almost never write an import statement connecting your own files.\nSwift uses a compiler-level architectural concept called a Module.\nBy default, every single .swift file you create inside your Xcode project is compiled together into one single unified Module (your App target).\nAll structs, classes, variables, and functions defined broadly in a file are automatically injected into this shared Module Namespace at compile time.\nBecause they all exist in the exact same Module, they are instantly accessible from any other file in your project. Zero import statements are required.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modules and the Global Namespace</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1c.namespace.html#the-module-namespace",
-    "href": "ch01_foundations/1c.namespace.html#the-module-namespace",
-    "title": "4  Modules and the Global Namespace",
-    "section": "",
-    "text": "// FileA.swift\nstruct User {\n    let name: String\n}\n\n// FileB.swift\n// No imports needed! The compiler already knows 'User' exists in the shared Module.\nlet currentUser = User(name: \"Charlotte\")",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modules and the Global Namespace</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1c.namespace.html#where-do-definitions-live",
-    "href": "ch01_foundations/1c.namespace.html#where-do-definitions-live",
-    "title": "4  Modules and the Global Namespace",
-    "section": "4.2 2. Where do definitions “live”?",
-    "text": "4.2 2. Where do definitions “live”?\nIn JavaScript, a function “lives” strictly inside the physical file it is defined in. It must be explicitly exported from that source file to be seen by the rest of the application.\nIn Swift, the physical file is nothing more than a visually convenient folder for human developers. The Swift compiler essentially flattens all of your files and reads your codebase as one giant, master dictionary of definitions. The file boundary itself does not exist to the compiler unless you explicitly invoke access control modifiers.\n\nAccess Control Modifiers\nIf you want to hide a variable or function so it cannot be accessed globally across the namespace, you explicitly restrict it:\n\ninternal (Default): Accessible anywhere within your entire app (the Module). You do not need to write this word; it is the default state.\nprivate: Accessible only within the exact same { } code block where it is defined.\nfileprivate: Accessible only within the exact physical .swift file you are currently looking at.\npublic: Accessible to other Modules entirely. This is rarely used unless you are physically separating your app into multiple internal frameworks or writing an open-source library.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modules and the Global Namespace</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/1c.namespace.html#when-do-you-write-import",
-    "href": "ch01_foundations/1c.namespace.html#when-do-you-write-import",
-    "title": "4  Modules and the Global Namespace",
-    "section": "4.3 3. When DO you write “import”?",
-    "text": "4.3 3. When DO you write “import”?\nYou only ever use the import keyword in Swift when you need an entirely different, external Module.\nFor example, when you need Apple’s UI framework, or Apple’s Bluetooth framework, you are importing a massive, pre-compiled binary library from entirely outside your local app space.\nimport SwiftUI // Apple's External UI Framework\nimport CoreBluetooth // Apple's External Bluetooth Framework\nimport Foundation // Apple's Core Operating System Utilities\n\nstruct MyView: View {\n    // You now have access to SwiftUI structs, like Text and Button\n}\nSummary: Your own files belong to a single family (the Module) and talk to each other directly without formal introductions. External frameworks are strangers, and must be formally imported.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modules and the Global Namespace</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/8.objects.html",
-    "href": "ch01_foundations/8.objects.html",
-    "title": "10  Object Types: Classes, Structs, Enums, and Actors",
-    "section": "",
-    "text": "10.1 Structs (Value Types)\nIn JavaScript, almost everything is a mutable Object. In Swift, you must choose the specific data structure that explicitly matches your memory and concurrency requirements.\nIn Swift, struct is the default choice for data modeling and SwiftUI views.\nKey Facts:",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Object Types: Classes, Structs, Enums, and Actors</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/8.objects.html#structs-value-types",
-    "href": "ch01_foundations/8.objects.html#structs-value-types",
-    "title": "10  Object Types: Classes, Structs, Enums, and Actors",
-    "section": "",
-    "text": "struct User {\n    var name: String\n    var role: String\n}\n\nvar admin = User(name: \"Alice\", role: \"Admin\")\nvar backupAdmin = admin // Creates a distinct, physical copy in memory\nbackupAdmin.name = \"Bob\"\n\n// admin.name remains \"Alice\"\n\n\n\n\n\n\n\nNoneJS/React Comparison:\n\n\n\nReact developers are used to treating state as immutable (e.g., you never mutate React state directly; you use setState). A Swift struct enforces this at the compiler level. When you pass a struct to a new variable or function, Swift creates a complete copy (Value Type).\n\n\n\n\nDefault choice: Always start with a struct.\nValue type: Copied when passed around. Safely prevents unintended side effects.\nNo inheritance: Structs cannot inherit from other structs. Use Protocols for shared behavior instead.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Object Types: Classes, Structs, Enums, and Actors</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/8.objects.html#classes-reference-types",
-    "href": "ch01_foundations/8.objects.html#classes-reference-types",
-    "title": "10  Object Types: Classes, Structs, Enums, and Actors",
-    "section": "10.2 2. Classes (Reference Types)",
-    "text": "10.2 2. Classes (Reference Types)\nClasses exist in Swift but are used far less frequently than in older object-oriented languages. Since SwiftUI is entirely struct-based, you primarily use classes for shared state (like a ViewModel) or when interfacing with legacy Objective-C frameworks.\nJS/React Comparison: A Swift class behaves exactly like a JavaScript Object or ES6 Class. When passed around, you are passing a pointer to the exact same instance in memory (Reference Type).\nclass DatabaseConnection {\n    var isConnected: Bool = false\n}\n\nlet db1 = DatabaseConnection()\nlet db2 = db1 // Points to the exact same memory address\ndb2.isConnected = true\n\n// db1.isConnected is now also true\nKey Facts: - Reference type: Points to shared memory. - Inheritance: Can inherit behavior from a superclass. - Usage limit: Use when you explicitly need shared, mutable state that multiple parts of your app observe concurrently (e.g., @Observable ViewModels).",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Object Types: Classes, Structs, Enums, and Actors</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/8.objects.html#enums-enumerations",
-    "href": "ch01_foundations/8.objects.html#enums-enumerations",
-    "title": "10  Object Types: Classes, Structs, Enums, and Actors",
-    "section": "10.3 3. Enums (Enumerations)",
-    "text": "10.3 3. Enums (Enumerations)\nAn enum in Swift is a first-class citizen. They are incredibly powerful, stringently typed, and safe.\nJS/React Comparison: In TypeScript, you often use union string types (type Status = \"success\" | \"error\" | \"loading\"). Swift enums are explicitly defined, memory-safe structures that can also carry associated varying values.\nenum LoadingState {\n    case idle\n    case loading\n    case success([String]) // Associated data attached directly to the case\n    case error(Error)\n}\n\nlet currentState = LoadingState.success([\"Item 1\", \"Item 2\"])\nKey Facts: - Defines a common type for a group of related values. - Highly preferable over “magic strings” or boolean flags. - Enums can have computed properties and functions entirely within themselves.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Object Types: Classes, Structs, Enums, and Actors</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/8.objects.html#actors-concurrency-safe-reference-types",
-    "href": "ch01_foundations/8.objects.html#actors-concurrency-safe-reference-types",
-    "title": "10  Object Types: Classes, Structs, Enums, and Actors",
-    "section": "10.4 4. Actors (Concurrency Safe Reference Types)",
-    "text": "10.4 4. Actors (Concurrency Safe Reference Types)\nActors are a modern addition to Swift designed exclusively to solve multi-threading concurrency issues (Data Races).\nJS/React Comparison: JavaScript is fundamentally single-threaded. Concurrency is handled by the Event Loop, so you rarely worry about two threads entirely rewriting the same variable at the exact same millisecond.\nSwift apps natively run parallel code across multiple threads. An actor solves thread-safety without requiring manual lock management.\nactor SafeCounter {\n    var count = 0\n    \n    func increment() {\n        count += 1\n    }\n}\n\nlet counter = SafeCounter()\n// Accessing an actor requires you to \"await\" \n// because the actor forces safe, sequential access.\n// await counter.increment() \nKey Facts: - Operates identically to a class (it is a reference type). - Automatically thread-safe: It isolates its internal state, ensuring only one thread can access its mutable state at a given time. - Prevents Data Races natively at compile time.",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Object Types: Classes, Structs, Enums, and Actors</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/intro-to-xcode.html",
-    "href": "ch02_Xcode/intro-to-xcode.html",
-    "title": "11  Why is Xcode Different from VSCode?",
-    "section": "",
-    "text": "11.1 Text Editor vs. Monolithic Toolchain\nWelcome to native iOS development. If you are coming from web development, Xcode will feel fundamentally different from Visual Studio Code (VSCode). There are factual, architectural reasons for this difference.\nVSCode is primarily a text editor. It relies on external tools (Node, Webpack, Vite, Babel) to compile and run your code.\nXcode is a monolithic toolchain. It is an Integrated Development Environment (IDE) that contains everything required to build, test, and ship an Apple application inside a single complete package.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Why is Xcode Different from VSCode?</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/intro-to-xcode.html#text-editor-vs.-monolithic-toolchain",
-    "href": "ch02_Xcode/intro-to-xcode.html#text-editor-vs.-monolithic-toolchain",
-    "title": "11  Why is Xcode Different from VSCode?",
-    "section": "",
-    "text": "Feature\nVSCode (Web Development)\nXcode (Native iOS)\n\n\n\n\nCore Architecture\nLightweight text editor.\nMonolithic build system and IDE.\n\n\nDependencies\nRequires external installation of Node, npm, compilers.\nContains the Swift compiler, LLVM, and visual debuggers built-in.\n\n\nPlugins\nHighly extensible through a massive third-party marketplace.\nClosed system. Apple tightly controls the toolchain.\n\n\nUI Design\nRequires coding HTML/CSS or using external tools like Figma.\nContains a built-in visual canvas (SwiftUI Canvas) synced directly to Swift code.\n\n\nTesting\nRelies on external browsers (Chrome, Safari).\nContains localized system Simulators for every Apple device.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Why is Xcode Different from VSCode?</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/intro-to-xcode.html#the-misconception-mobile-devs-dont-use-xcode",
-    "href": "ch02_Xcode/intro-to-xcode.html#the-misconception-mobile-devs-dont-use-xcode",
-    "title": "11  Why is Xcode Different from VSCode?",
-    "section": "11.2 The Misconception: “Mobile Devs Don’t Use Xcode”",
-    "text": "11.2 The Misconception: “Mobile Devs Don’t Use Xcode”\nYou may have heard a rumor that mobile developers avoid or do not use Xcode.\nThis is factually incorrect for native developers, but partially true for cross-platform developers.\nHere is the exact breakdown of who uses what:\n\n1. Native iOS Developers (Swift/SwiftUI)\nNative iOS developers must use Xcode. It is the only officially supported environment that provides the visual SwiftUI Canvas, Instruments (for performance profiling), and direct access to the latest Apple SDKs. You cannot build a modern native iOS application efficiently without it.\n\n\n2. Cross-Platform Developers (React Native / Flutter)\nCross-platform developers write their logic and UI in JavaScript, TypeScript, or Dart. They typically use VSCode as their primary text editor for daily coding.\nHowever, they still require Xcode. They rely on xcodebuild (the underlying command-line tool bundled with Xcode) running in the background to compile the final iOS application. They also must occasionally open the Xcode application directly to: - Manage app signing certificates and provisioning profiles. - Configure specific native device permissions (like Camera, Bluetooth, Location access). - Upload the final binary application to the App Store Connect.\nSummary: If you are writing native Swift and SwiftUI, Xcode is your primary and required tool. If you are writing React Native, VSCode is your text editor, but Xcode is your required build dependency.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Why is Xcode Different from VSCode?</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/hotkeys-and-quick-actions.html",
-    "href": "ch02_Xcode/hotkeys-and-quick-actions.html",
-    "title": "12  Xcode Hotkeys and Quick Actions for VSCode Developers",
-    "section": "",
-    "text": "Key Legend\nWelcome. If you are accustomed to VSCode, your muscle memory will need minor adjustments for Xcode.\nThe following tables map standard VSCode hotkeys to their exact Xcode equivalents. Use the visual references to locate the keys quickly.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Xcode Hotkeys and Quick Actions for VSCode Developers</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/hotkeys-and-quick-actions.html#core-navigation",
-    "href": "ch02_Xcode/hotkeys-and-quick-actions.html#core-navigation",
-    "title": "12  Xcode Hotkeys and Quick Actions for VSCode Developers",
-    "section": "12.1 Core Navigation",
-    "text": "12.1 Core Navigation\n\n\n\n\n\n\n\n\n\nObjective\nVSCode\nXcode\nNote\n\n\n\n\nFind/Open a File\n⌘ P\n⇧ ⌘ O\nXcode calls this “Open Quickly”.\n\n\nCommand Palette\n⇧ ⌘ P\n⇧ ⌘ A\nXcode calls this “Quick Actions”. Type to find application commands.\n\n\nToggle Left Sidebar\n⌘ B\n⌘ 0\nToggles the “Navigator” panel.\n\n\nToggle Right Sidebar\n-\n⌥ ⌘ 0\nToggles the “Inspectors” panel.\n\n\nToggle Bottom Panel\n⌘ J\n⇧ ⌘ Y\nToggles the “Debug Area” (console).",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Xcode Hotkeys and Quick Actions for VSCode Developers</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/hotkeys-and-quick-actions.html#search-and-editing",
-    "href": "ch02_Xcode/hotkeys-and-quick-actions.html#search-and-editing",
-    "title": "12  Xcode Hotkeys and Quick Actions for VSCode Developers",
-    "section": "12.2 Search and Editing",
-    "text": "12.2 Search and Editing\n\n\n\n\n\n\n\n\n\nObjective\nVSCode\nXcode\nNote\n\n\n\n\nSave File\n⌘ S\n⌘ S\nIdentical behavior.\n\n\nFind Text in File\n⌘ F\n⌘ F\nIdentical behavior.\n\n\nFind Text in Project\n⇧ ⌘ F\n⇧ ⌘ F\nIdentical behavior. Opens the Find Navigator.\n\n\nToggle Comment\n⌘ /\n⌘ /\nIdentical behavior.\n\n\nFormat Code\n⇧ ⌥ F\n⌃ I\nSelect text first (e.g., ⌘ A), then ⌃ I to “Re-Indent”.\n\n\nRename Symbol\nF2\n⌃ ⌘ E\n“Edit All in Scope”. Safely renames all instances.\n\n\nGo to Definition\nF12 or ⌘ Click\n⌃ ⌘ J\nAlternatively, ⌘ Click on a symbol to open a context menu.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Xcode Hotkeys and Quick Actions for VSCode Developers</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/hotkeys-and-quick-actions.html#the-quick-action-menu-a",
-    "href": "ch02_Xcode/hotkeys-and-quick-actions.html#the-quick-action-menu-a",
-    "title": "12  Xcode Hotkeys and Quick Actions for VSCode Developers",
-    "section": "12.3 The Quick Action Menu (⇧ ⌘ A)",
-    "text": "12.3 The Quick Action Menu (⇧ ⌘ A)\nIn VSCode, the Command Palette (⇧ ⌘ P) is the primary way to execute tasks. In Xcode, Quick Actions (⇧ ⌘ A) serves the exact same purpose. It provides a visual search overlay for all available Xcode menu commands.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Xcode Hotkeys and Quick Actions for VSCode Developers</span>"
-    ]
-  },
-  {
-    "objectID": "ch02_Xcode/hotkeys-and-quick-actions.html#the-action-menu-click",
-    "href": "ch02_Xcode/hotkeys-and-quick-actions.html#the-action-menu-click",
-    "title": "12  Xcode Hotkeys and Quick Actions for VSCode Developers",
-    "section": "12.4 The Action Menu (⌘ Click)",
-    "text": "12.4 The Action Menu (⌘ Click)\nIn Xcode, holding ⌘ and clicking on any code symbol (struct, variable, view) opens a visual Action Menu. This is a primary visual interaction method in Xcode for refactoring, extracting subviews, or jumping to definitions.",
-    "crumbs": [
-      "Part II: Xcode Essentials",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Xcode Hotkeys and Quick Actions for VSCode Developers</span>"
-    ]
-  },
-  {
-    "objectID": "ch06_interview/quick-rules.html",
-    "href": "ch06_interview/quick-rules.html",
-    "title": "21  Quick Swift Rules",
-    "section": "",
-    "text": "For reading, and not needing to understand yet fully as we will cover in depth\n\nvariables defined anywhere (not ones scoped inside functions or other blocks) are available everywhere in the codebase\nSwift is Object orientated,\nSwift compiles all files into a single module, so you don’t need to import your own files.\n\nAll structs, classes, variables, and functions defined broadly in a file are automatically injected into this shared Module Namespace at compile time\nSwift compiler essentially flattens all of your files and reads your codebase as one giant, master dictionary of definitions.\n\ninternal / private / fileprivate / public are used to control the visibility of variables and functions\n\ninternal (default) - accessible anywhere within your entire app (the Module). You do not need to write this word; it is the default state.\nprivate - accessible only within the exact same { } code block where it is defined.\nfileprivate - accessible only within the exact physical .swift file you are currently looking at.\npublic - accessible to other Modules entirely. This is rarely used unless you are physically separating your app into multiple internal frameworks or writing an open-source library.",
-    "crumbs": [
-      "Part V: Interview Prep",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Quick Swift Rules</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/8.objects.html#footnotes",
-    "href": "ch01_foundations/8.objects.html#footnotes",
-    "title": "10  Object Types: Classes, Structs, Enums, and Actors",
-    "section": "",
-    "text": "Swift.org, “Value and Reference Types”, Swift.org Documentation.↩︎",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Object Types: Classes, Structs, Enums, and Actors</span>"
-    ]
-  },
-  {
-    "objectID": "ch01_foundations/4.functions.html",
-    "href": "ch01_foundations/4.functions.html",
-    "title": "6  Functions",
-    "section": "",
-    "text": "All executable code must live inside body of a function\n\nFunction anatomy\nfunc name(parameterName: parameterType) -&gt; ReturnType {\n    // Code to execute\n    return value\n}\nname() is not added to the global scope, and can be called in any other file.\nWriting Functions Fact: Swift functions use the func keyword, enforce strict types on both the arguments and the output, and explicitly mandate how you call them.\nKey differences compared to JavaScript:\n\nArguments require explicit types (e.g., name: String).\nA function’s return type is declared with a right-facing arrow -&gt;.\nWhen invoking a function, you must explicitly write out the parameter’s name to make the code highly legible.\n\n\n\n\n\n\n\nNoteWhat does this look like in JavaScript & React?\n\n\n\n\n\n// 1. Standard JavaScript Function\nfunction greet(name) {\n    return \"Hello \" + name;\n}\n\ngreet(\"Charlotte\"); // Called without explicitly naming the parameters\n\n\n// 2. React Functional Component (Returns UI)\nexport default function Greet({ name }) {\n    return &lt;h1&gt;Hello {name}&lt;/h1&gt;;\n}\n\n// Called using JSX, where props act similarly to named parameters\n&lt;Greet name=\"Charlotte\" /&gt;\n\n\n\nSwift Equivalent:\n// 1. Standard Swift Function\nfunc greet(name: String) -&gt; String {\n    return \"Hello \\(name)\" // Notice string interpolation uses \\( ) not ${ }\n}\n\nlet message = greet(name: \"Charlotte\") // ⬅️ MUST explicitly write 'name:' \n\n\n// 2. SwiftUI View (Struct returning UI)\nstruct Greet: View {\n    let name: String\n    \n    var body: some View {\n        Text(\"Hello \\(name)\")\n    }\n}\n\n// ⬇️ Called exactly like a function using named parameters!\nGreet(name: \"Charlotte\")\nFunction Parameter Omitting: If you want Swift to behave exactly like JavaScript and let you omit the parameter name when calling a function, you explicitly place an underscore _ before the parameter name in the definition.\nfunc fastGreet(_ name: String) -&gt; String {\n    return \"Hey \\(name)\"\n}\n\n// Now it looks exactly like JavaScript when invoked:\nlet fastMessage = fastGreet(\"Charlotte\")\nHow often do functions run?\nWhen do the functions run?\nHot reloading?",
-    "crumbs": [
-      "Part I: Foundations",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Functions</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Namespace</span>"
     ]
   }
 ]

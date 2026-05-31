@@ -1,0 +1,27 @@
+
+# Global Namespace
+
+- about global namespace 
+- whats in it 
+- how to write to it
+
+
+
+## Namespaces 
+
+- a namespace is a named region of code.
+- cannot be accessed directly without using the dot operator **.**
+
+```swift
+class Dog {             // Dog is a namespace (because it contains a nested class)
+    class Annie {}      // Annie is a nested type
+}
+   
+Dog.Annie 
+```
+
+
+## Modules
+
+- modules are actually a namespace too `MyApp.Dog.Annie` is the true name of class Annie
+- `import Foundation` / `import UiKit` are used to import namespaces without the need for dot notation every time

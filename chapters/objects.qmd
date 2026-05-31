@@ -1,0 +1,236 @@
+# Objects & Data Structures
+
+::: {.callout-important}
+
+## Everything is an Object
+
+In Swift, there are no "primitives" like in standard JavaScript. Every value is a complex type with its own properties and methods.
+:::
+
+- **Standard Integers are Objects:** An `Int` in Swift is actually a `struct` object type.
+- Because it is an object, this is valid Swift code:
+
+```swift
+let greeting = 1.hello // Valid, assuming 'hello' is an extension on Int
+
+```
+
+- You can call methods directly on the number
+
+```swift
+1.hello() // Also valid
+
+```
+
+
+#### If numbers are objects, what happens if you build a custom object and try to add them together with `+`?
+
+
+```swift
+let objectOne = {description: "hey there", title: "number one"}
+let objectTwo = {description: "two", title: "number two"}
+
+
+objectOne + objectTwo // Compiler Error
+```
+
+::: {.callout-warning}
+
+## Why does it fail? (Type Safety)
+
+Swift’s strict Type Safety system refuses to guess what you want the `+` operator to do.
+
+* *Do you want to mathematically add the numbers?*
+* *Do you want to concatenate the title strings?*
+* *Do you want to merge the descriptions?*
+
+Because the compiler cannot logically know your intent, it safely fails.
+:::
+
+#### The Solution: Operator Overloading
+
+- Explicitly teach the compiler how to add your custom types.
+- This is done by writing a function for the `+` sign.
+
+```swift
+struct CustomNumber {
+    var value: Int
+    var title: String
+    var description: String
+}
+
+extension CustomNumber {
+    static func + (left: CustomNumber, right: CustomNumber) -> CustomNumber {
+        
+        // Define the exact logic for merging the properties
+        let newValue = left.value + right.value
+        let newTitle = left.title + " and " + right.title
+        let newDescription = left.description + " | " + right.description
+        
+        return CustomNumber(value: newValue, title: newTitle, description: newDescription)
+    }
+}
+
+let numberOne = CustomNumber(value: 1, title: "number one", description: "hey there")
+let numberTwo = CustomNumber(value: 2, title: "number two", description: "two")
+
+let result = numberOne + numberTwo
+
+print(result.value)       // 3
+print(result.title)       // "number one and number two"
+print(result.description) // "hey there | two"
+
+```
+
+::: {.callout-caution}
+
+## Is Operator Overloading Common?
+
+* **Mathematical Types = Very Common:** Custom `Vector`, `Matrix`, or `Currency` structs almost always overload `+` to allow clean math syntax.
+* **Complex UI/Data Types = Bad Practice:** Do not use `+` to merge User Profiles or UI Elements. Instead, write clear functions like `numberOne.combineWith(numberTwo)` so other developers don't have to guess the behavior.
+:::
+
+---
+
+
+# The 4 Main Object Types in Swift
+
+To model data accurately, Swift requires you to choose a structure that matches your **memory** and **concurrency** needs.
+
+
+::: {.callout}
+* `struct`: **Value** type. Copied when passed. (Default choice).
+* `class`: **Reference** type. Shared when passed.
+* `enum`: **Value** type. Represents distinct states, can hold associated data.
+* `actor`: **Reference** type. Shared, but strictly **thread-safe**.
+
+
+:::
+
+
+#### Value Types vs Reference Types
+
+![Scenario A: sending a copy — two completely independent memory allocations (Value Types)](../public/images/value-types.png)
+
+
+
+![Scenario B: sending a link — both variables point to the same memory location (Reference Types)](../public/images/reference-types.png)
+
+---
+
+## Structs (Value Types)
+
+The `struct` is the backbone of Swift and the default choice for data modeling (and all SwiftUI views).
+
+::: {.callout-tip title="JS / React Perspective"}
+React requires state to be immutable (never mutating variables directly; always using `setState`). Swift enforces immutability automatically with structs. When you pass a struct, Swift creates an entirely new, disconnected physical copy in memory.
+:::
+
+**Key Traits:**
+
+* **Behavior:** Copied on assignment.
+* **Safety:** Modifying a copy does not alter the original.
+* **Inheritance:** None. (Use Protocols instead).
+
+```swift
+struct User {
+    var name: String
+    var role: String
+}
+
+var admin = User(name: "Alice", role: "Admin")
+var backupAdmin = admin // Creates a distinct, physical copy in memory
+
+backupAdmin.name = "Bob"
+// admin.name safely remains "Alice"
+
+```
+
+---
+
+##  Classes (Reference Types)
+
+Classes are used less frequently in modern Swift than in older object-oriented languages. You use them primarily for data that *must* be shared across different screens simultaneously (like ViewModels).
+
+::: {.callout-tip title="JS / React Perspective"}
+A Swift `class` behaves exactly like a standard JavaScript Object. If you pass it to a new variable, you are just passing a pointer. Changing one changes them all.
+:::
+
+**Key Traits:**
+
+* **Behavior:** Shared reference in memory.
+* **Safety:** Mutable across your entire app (requires careful management).
+* **Inheritance:** Can inherit from parent classes.
+
+```swift
+class DatabaseConnection {
+    var isConnected: Bool = false
+}
+
+let db1 = DatabaseConnection()
+let db2 = db1 // Points to the exact same memory address
+
+db2.isConnected = true
+// db1.isConnected is now also true
+
+```
+
+---
+
+## Enums (Enumerations)
+
+Enums in Swift are first-class, memory-safe structures used to represent a group of related, mutually exclusive states.
+
+::: {.callout-tip title="JS / React Perspective"}
+In TypeScript, you enforce state using Union Strings (`type Status = "success" | "error" | "loading"`). Swift enums are the native, highly-optimized equivalent, but they can also carry variables directly inside them.
+:::
+
+**Key Traits:**
+
+* **Behavior:** Value type.
+* **Superpower:** Can attach specific variables directly to specific cases ("Associated Values").
+* **Usage:** Replaces boolean flags (`isLoading`, `hasError`) and magic strings.
+
+```swift
+enum LoadingState {
+    case idle
+    case loading
+    case success([String]) // Data is attached safely inside the case
+    case error(Error)
+}
+
+let currentState = LoadingState.success(["Item 1", "Item 2"])
+
+```
+
+---
+
+##  Actors (Concurrency-Safe Reference Types)
+
+Actors are a modern Swift feature built exclusively to prevent **Data Races** (when two parts of your app try to change the same memory at the exact same millisecond).
+
+::: {.callout-tip title="JS / React Perspective"}
+JavaScript is single-threaded; the Event Loop handles tasks one by one, so parallel memory collisions rarely happen. Swift is genuinely multi-threaded. Code runs in parallel. Actors are required to safely manage shared data across these parallel threads.
+:::
+
+**Key Traits:**
+
+* **Behavior:** Reference type (Shared memory).
+* **Safety:** Automatically isolates its state. It forces outside code to wait in a queue (`await`) to interact with it.
+* **Usage:** High-performance, concurrent background tasks.
+
+```swift
+actor SafeCounter {
+    var count = 0
+    
+    func increment() {
+        count += 1
+    }
+}
+
+let counter = SafeCounter()
+
+// Because the actor is heavily guarded, you must pause and "await" your turn to access it:
+// await counter.increment()
+
+```

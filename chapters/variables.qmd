@@ -1,0 +1,41 @@
+# Variables
+
+- a Variable is an object reference
+- **let** is an immutable reference - its value is assigned once and cannot be changed
+- **var** is a mutable reference - its value can be changed
+
+![let-var.png](../public/images/let-var.png)
+
+- Variables have a **type** which is established when the variable is declared and cannot be changed later.
+    - *type annotation* is optional in Swift
+    - *type inference* is the process of deducing the type of a variable from its initial value
+
+```swift
+var name = "Charlotte"         // inferred as String
+name = 26                     // Error: Cannot assign value of type 'Int' to type 'String'
+```
+
+- variables start with small letter
+- types start with uppercase letter
+- A variable declared at the top level of a file is a global variable
+
+
+#### Object Members
+
+```swift 
+class fly {
+    let name = "buzz"
+    func sayName() {
+        print(name)
+    }
+}
+```
+
+- name here is a **property** of the object 
+    - a variable declared at the top level of an object declaration 
+- sayName here is a **method** of the object
+    - a function declared at the top level of an object declaration 
+
+If declared at the top level of an object declaration - it's an **object member**.
+Members of an object define *messages* that can be sent to the object.
+
