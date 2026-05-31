@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Anatomy of a Basic App – iOS26 SwiftUI for Web Developers</title>
+<title>Instances – iOS26 SwiftUI for Web Developers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,8 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../chapters/objects.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../chapters/global-namespace.html" rel="prev">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -102,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/anatomy.html"><span class="chapter-title">Anatomy of a Basic App</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/instances.html"><span class="chapter-title">Instances</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -130,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/anatomy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Anatomy of a Basic App</span></a>
+  <a href="../chapters/anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Anatomy of a Basic App</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,12 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/instances.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instances</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/optionals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optionals</span></a>
+  <a href="../chapters/instances.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Instances</span></a>
   </div>
 </li>
     </ul>
@@ -178,17 +172,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-folder-structure" id="toc-the-folder-structure" class="nav-link active" data-scroll-target="#the-folder-structure">The Folder Structure</a></li>
-  <li><a href="#the-root-entry-point" id="toc-the-root-entry-point" class="nav-link" data-scroll-target="#the-root-entry-point">The Root Entry Point</a>
-  <ul class="collapse">
-  <li><a href="#what-about-main.swift" id="toc-what-about-main.swift" class="nav-link" data-scroll-target="#what-about-main.swift">What About <code>main.swift</code>?</a></li>
-  </ul></li>
-  <li><a href="#how-screens-work-views" id="toc-how-screens-work-views" class="nav-link" data-scroll-target="#how-screens-work-views">How Screens Work (Views)</a>
-  <ul class="collapse">
-  <li><a href="#q1.-is-this-single-threaded" id="toc-q1.-is-this-single-threaded" class="nav-link" data-scroll-target="#q1.-is-this-single-threaded">Q1. Is this single-threaded?</a></li>
-  <li><a href="#q2.-when-does-the-render-happen" id="toc-q2.-when-does-the-render-happen" class="nav-link" data-scroll-target="#q2.-when-does-the-render-happen">Q2. When does the render happen?</a></li>
-  <li><a href="#q3.-where-is-the-data-stored" id="toc-q3.-where-is-the-data-stored" class="nav-link" data-scroll-target="#q3.-where-is-the-data-stored">Q3. Where is the data stored?</a></li>
-  </ul></li>
+  <li><a href="#instance-messages" id="toc-instance-messages" class="nav-link active" data-scroll-target="#instance-messages">Instance Messages</a></li>
+  <li><a href="#self" id="toc-self" class="nav-link" data-scroll-target="#self">self</a></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Anatomy of a Basic App</span></h1>
+<h1 class="title"><span class="chapter-title">Instances</span></h1>
 </div>
 
 
@@ -214,164 +199,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="the-folder-structure" class="level2">
-<h2 class="anchored" data-anchor-id="the-folder-structure">The Folder Structure</h2>
-<p>Every iOS project natively uses Xcode as the development environment. The folder structure relies on specific files existing in order for the application to compile correctly.</p>
-<p><strong>High-Level Xcode Structure:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">var</span> <span class="va">name</span> <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">func</span> <span class="fu">bark</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        print<span class="op">(</span><span class="st">"Woof!"</span><span class="op">)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>Dog</code> is a Type - it is instructions on what Dog is; what it can do; but it is not a dog.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">fido</span> <span class="op">=</span> Dog<span class="op">()</span> <span class="co">// instantiating `Dog`</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">fluffy</span> <span class="op">=</span> Dog<span class="op">()</span> <span class="co">// instantiating `Dog`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li><code>App.swift</code> — The root entry point of the app.</li>
-<li><code>ContentView.swift</code> — The first screen the user actually sees.</li>
-<li><code>Assets.xcassets</code> — Where you store images, custom colors, and app icons.</li>
-<li><code>Info.plist</code> — Configuration file containing hardware permissions and app rules.</li>
+<li><code>fido</code> is an <strong>instance</strong> of <code>Dog</code>.</li>
+<li><code>fluffy</code> is an <strong>instance</strong> of <code>Dog</code>.</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What does this look like in React?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>React projects are more flexible, but generally map similarly:</p>
+<section id="instance-messages" class="level3">
+<h3 class="anchored" data-anchor-id="instance-messages">Instance Messages</h3>
 <ul>
-<li><code>index.js</code> (Root Entry)</li>
-<li><code>App.js</code> (Main Router/Screen)</li>
-<li><code>public/</code> or <code>src/assets/</code> (Images/Icons)</li>
-<li><code>package.json</code> (Configuration)</li>
+<li><code>fido.bark()</code> is sending a message to the instance <code>fido</code> to <code>bark()</code>.</li>
+<li>there must be an instance to send messages to.</li>
+<li>we can send messages to instances to change their properties</li>
+<li><code>print(fido.name)</code> we can send messages to instances to get their properties</li>
 </ul>
-</div>
-</div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fido<span class="op">.</span>name <span class="op">=</span> <span class="st">"Fido"</span> <span class="co">// sending a message to instance `fido` to change its `name` property</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>print<span class="op">(</span>fido<span class="op">.</span>name<span class="op">)</span> <span class="co">// "Fido"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>print<span class="op">(</span>fluffy<span class="op">.</span>name<span class="op">)</span> <span class="co">// ""  </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">// fido and fluffy have their own properties - they are distinct instances </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="the-root-entry-point" class="level2">
-<h2 class="anchored" data-anchor-id="the-root-entry-point">The Root Entry Point</h2>
-<p>When a user taps an app icon on their iPhone, iOS looks for the <code>@main</code> attribute to know strictly where the app officially starts executing.</p>
-<p><strong>Here is the Swift Entry Point (<code>App.swift</code>):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">@main</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> MyApp<span class="op">:</span> <span class="dt">App</span> <span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some Scene <span class="op">{</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        WindowGroup <span class="op">{</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            ContentView<span class="op">()</span> <span class="co">// ⬅️ Points to the first Screen</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>React Equivalent (<code>index.js</code>)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ReactDOM <span class="im">from</span> <span class="st">'react-dom/client'</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> App <span class="im">from</span> <span class="st">'./App'</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> <span class="bu">root</span> <span class="op">=</span> ReactDOM<span class="op">.</span><span class="fu">createRoot</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'root'</span>))<span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">root</span><span class="op">.</span><span class="fu">render</span>(</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>React<span class="op">.</span><span class="at">StrictMode</span><span class="op">&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>App <span class="op">/&gt;</span> {<span class="co">/* ⬅️ Points to the first Screen */</span>}</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;/</span>React<span class="op">.</span><span class="at">StrictMode</span><span class="op">&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<section id="what-about-main.swift" class="level3">
-<h3 class="anchored" data-anchor-id="what-about-main.swift">What About <code>main.swift</code>?</h3>
-<p>Before <code>@main</code> was introduced in Swift 5.3 (2020), the conventional entry point was a special file named <strong><code>main.swift</code></strong>. It is the only file in a Swift project that is allowed to contain top-level executable code — meaning code written directly at the file’s root scope, outside of any <code>struct</code>, <code>class</code>, or <code>func</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// main.swift (legacy entry point)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">UIKit</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>UIApplicationMain<span class="op">(</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    CommandLine<span class="op">.</span>argc<span class="op">,</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    CommandLine<span class="op">.</span>unsafeArgv<span class="op">,</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">nil</span><span class="op">,</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    NSStringFromClass<span class="op">(</span>AppDelegate<span class="op">.</span><span class="kw">self</span><span class="op">)</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The name <code>main.swift</code> is not arbitrary — the Swift compiler treats it as a reserved filename with special rules:</p>
+<section id="self" class="level3">
+<h3 class="anchored" data-anchor-id="self">self</h3>
 <ul>
-<li><strong>Only one <code>main.swift</code> can exist</strong> per target. Having more than one will cause a compile error.</li>
-<li><strong>Top-level expressions are only legal here.</strong> Any other <code>.swift</code> file that tries to run code at the top level (outside a type or function) will fail to compile.</li>
-<li><strong><code>@main</code> replaced it.</strong> Modern SwiftUI apps use <code>@main</code> on a struct instead, which is cleaner and avoids manually calling <code>UIApplicationMain</code>. You will still encounter <code>main.swift</code> in older UIKit projects or Swift command-line tools.</li>
+<li>.self allows instances to send messages to themselves</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Node.js Parallel
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><code>main.swift</code> behaves much like a Node.js entry file (e.g.&nbsp;<code>index.js</code> run directly via <code>node index.js</code>) — it is the one file where code runs immediately at the top level without needing to be wrapped in a function or class. All other files must export or be explicitly called.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="how-screens-work-views" class="level2">
-<h2 class="anchored" data-anchor-id="how-screens-work-views">How Screens Work (Views)</h2>
-<p>In Swift, there is no generic <code>&lt;div&gt;</code>. A screen is always built strictly as a <code>Struct</code> conforming to the <code>View</code> protocol.</p>
-<p>Here is what <code>ContentView.swift</code> looks like.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> ContentView<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ⬇️ Q3: Where is the data? </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Data is held explicitly inside the struct instance using Property Wrappers like @State.</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">userName</span><span class="op">:</span> String <span class="op">=</span> <span class="st">"Charlotte"</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ⬇️ Q2: When does render happen? </span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ANY time the property marked as @State explicitly changes, the 'body' automatically re-renders.</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">"Hello, </span><span class="er">\(</span><span class="st">userName)"</span><span class="op">)</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span><span class="st">"Change Name"</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                <span class="co">// ⬇️ Q1: Is this single-threaded?</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                <span class="co">// Yes. By default, ALL UI code executes strictly on the Main Thread.</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                userName <span class="op">=</span> <span class="st">"Swift Developer"</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="q1.-is-this-single-threaded" class="level3">
-<h3 class="anchored" data-anchor-id="q1.-is-this-single-threaded">Q1. Is this single-threaded?</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">var</span> <span class="va">name</span> <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">var</span> <span class="va">whatDoesTheDogSay</span> <span class="op">=</span> <span class="st">"Woof!"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">func</span> <span class="fu">bark</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        print<span class="op">(</span><span class="kw">self</span><span class="op">.</span>whatDoesTheDogSay<span class="op">)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">func</span> <span class="fu">speak</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    print<span class="op">(</span><span class="kw">self</span><span class="op">.</span>name <span class="op">+</span> <span class="st">" says "</span> <span class="op">+</span> <span class="kw">self</span><span class="op">.</span>whatDoesTheDogSay<span class="op">)</span> <span class="co">// self refers to the instance</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">self</span><span class="op">.</span>bark<span class="op">()</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">lassie</span> <span class="op">=</span> Dog<span class="op">()</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>lassie<span class="op">.</span>name <span class="op">=</span> <span class="st">"Lassie"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>lassie<span class="op">.</span>whatDoesTheDogSay <span class="op">=</span> <span class="st">"Woof Woof"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>lassie<span class="op">.</span>speak<span class="op">()</span> <span class="co">// "Lassie says Woof Woof Woof Woof"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li><strong>UI rendering</strong> in Swift is purely single-threaded.</li>
-<li>All interface rendering runs on what Apple calls the <strong>Main Thread</strong>.</li>
-<li>In the code block above, when you tap the button, that line of code immediately executes on the Main Thread to guarantee a buttery-smooth 60 to 120 frames per second response.</li>
-<li><strong>Rule:</strong> If you fetch data from the internet (which is slow), you must explicitly push that task to a “Background Thread” to avoid freezing the screen.</li>
+<li>self refers to this exact instance - the currently running code.</li>
+<li>self is optional when writing code - the compiler knows which instance you are referring to - it is good to be explicit</li>
 </ul>
-</section>
-<section id="q2.-when-does-the-render-happen" class="level3">
-<h3 class="anchored" data-anchor-id="q2.-when-does-the-render-happen">Q2. When does the render happen?</h3>
-<p>Rendering is reactive, triggered purely by a change in State.</p>
+<section id="private" class="level4">
+<h4 class="anchored" data-anchor-id="private">private</h4>
 <ul>
-<li>When the button is tapped and <code>userName</code> changes from “Charlotte” to “Swift Developer”, SwiftUI detects the change in <code>@State</code> and immediately invalidates the current <code>body</code>.</li>
-<li>SwiftUI then re-computes the physical screen to match the updated state. This is highly optimized and functionally matching how React triggers a re-render when you call <code>setState()</code>.</li>
+<li>use when you dont want an instance to have its properties changed from the outside</li>
 </ul>
-</section>
-<section id="q3.-where-is-the-data-stored" class="level3">
-<h3 class="anchored" data-anchor-id="q3.-where-is-the-data-stored">Q3. Where is the data stored?</h3>
-<p><strong>Fact:</strong> Local state data is stored specifically inside the Struct instance using Property Wrappers.</p>
-<ul>
-<li>Structs are highly efficient, temporary data structures.</li>
-<li>The data (<code>userName</code>) only exists for as long as this specific screen is visually alive on the device.</li>
-<li>If you have global data (state you want to share across multiple screens), you store it in classes called <code>ObservableObjects</code>, which act very much like React Context or an overarching Redux Store.</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="kw">var</span> <span class="va">name</span> <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="kw">var</span> <span class="va">whatDoesTheDogSay</span> <span class="op">=</span> <span class="st">"Woof!"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cat <span class="op">{</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">func</span> <span class="fu">changeWhatDogSays</span><span class="op">(</span><span class="va">dog</span><span class="op">:</span> <span class="dt">Dog</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="va">annie</span> <span class="op">=</span> Dog<span class="op">()</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        annie<span class="op">.</span>whatDoesTheDogSay <span class="op">=</span> <span class="st">"Meow!"</span> <span class="co">// ❌ error</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -780,14 +676,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Preface</span></span>
+      <a href="../chapters/global-namespace.html" class="pagination-link" aria-label="Global Namespace">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Global Namespace</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/objects.html" class="pagination-link" aria-label="Objects &amp; Data Structures">
-        <span class="nav-page-text"><span class="chapter-title">Objects &amp; Data Structures</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

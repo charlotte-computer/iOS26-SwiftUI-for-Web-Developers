@@ -16,7 +16,7 @@ book:
     - chapters/functions.qmd
     - chapters/scope.qmd
     - chapters/global-namespace.qmd
-    - chapters/optionals.qmd
+    - chapters/instances.qmd
     # - part: "Part I: Foundations"
     #   chapters:
     #     - ch01_foundations/0.swift-thinking.qmd

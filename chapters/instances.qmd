@@ -1,0 +1,91 @@
+# Instances
+
+```swift
+class Dog {
+   var name = ""
+   func bark() {
+        print("Woof!")
+    }
+}
+
+```
+
+`Dog` is a Type - it is instructions on what Dog is; what it can do; but it is not a dog.
+
+
+```swift
+let fido = Dog() // instantiating `Dog`
+let fluffy = Dog() // instantiating `Dog`
+```
+
+- `fido` is an **instance** of `Dog`.
+- `fluffy` is an **instance** of `Dog`.
+
+
+### Instance Messages
+
+- `fido.bark()` is sending a message to the instance `fido` to `bark()`.
+- there must be an instance to send messages to.
+-  we can send messages to instances to change their properties
+- `print(fido.name)` we can send messages to instances to get their properties
+
+
+```swift
+fido.name = "Fido" // sending a message to instance `fido` to change its `name` property
+
+print(fido.name) // "Fido"
+print(fluffy.name) // ""  
+
+// fido and fluffy have their own properties - they are distinct instances 
+```
+
+### self
+
+- .self allows instances to send messages to themselves 
+
+
+```swift
+class Dog {
+   var name = ""
+   var whatDoesTheDogSay = "Woof!"
+
+   func bark() {
+        print(self.whatDoesTheDogSay)
+    }
+
+   func speak() {
+    print(self.name + " says " + self.whatDoesTheDogSay) // self refers to the instance
+    self.bark()
+   }
+}
+
+```
+
+```swift
+let lassie = Dog()
+lassie.name = "Lassie"
+lassie.whatDoesTheDogSay = "Woof Woof"
+lassie.speak() // "Lassie says Woof Woof Woof Woof"
+```
+
+
+- self refers to this exact instance - the currently running code. 
+- self is optional when writing code - the compiler knows which instance you are referring to - it is good to be explicit 
+
+#### private 
+
+- use when you dont want an instance to have its properties changed from the outside
+
+```swift
+class Dog {
+   private var name = ""
+   private var whatDoesTheDogSay = "Woof!"
+}
+
+class Cat {
+    func changeWhatDogSays(dog: Dog) {
+        let annie = Dog()
+        annie.whatDoesTheDogSay = "Meow!" // ❌ error
+}
+```
+

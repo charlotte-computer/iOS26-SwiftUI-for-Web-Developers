@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../chapters/optionals.html" rel="next">
+<link href="../chapters/instances.html" rel="next">
 <link href="../chapters/scope.html" rel="prev">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -160,6 +160,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/instances.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instances</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/optionals.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optionals</span></a>
   </div>
 </li>
@@ -175,6 +180,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#namespaces" id="toc-namespaces" class="nav-link active" data-scroll-target="#namespaces">Namespaces</a></li>
   <li><a href="#modules" id="toc-modules" class="nav-link" data-scroll-target="#modules">Modules</a></li>
+  <li><a href="#whats-in-the-global-namespace" id="toc-whats-in-the-global-namespace" class="nav-link" data-scroll-target="#whats-in-the-global-namespace">What’s in the Global Namespace?</a></li>
+  <li><a href="#how-to-write-to-the-global-namespace" id="toc-how-to-write-to-the-global-namespace" class="nav-link" data-scroll-target="#how-to-write-to-the-global-namespace">How to Write to the Global Namespace</a>
+  <ul class="collapse">
+  <li><a href="#the-recommended-pattern-use-a-namespace-type" id="toc-the-recommended-pattern-use-a-namespace-type" class="nav-link" data-scroll-target="#the-recommended-pattern-use-a-namespace-type">The Recommended Pattern — Use a Namespace Type</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -200,31 +210,193 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<ul>
-<li>about global namespace</li>
-<li>whats in it</li>
-<li>how to write to it</li>
-</ul>
+<p>In JavaScript, there is always a global object — <code>window</code> in the browser, <code>global</code> in Node.js. Any variable you declare with <code>var</code> at the top level automatically becomes a property on that object, and you can inspect or mutate the global scope at runtime.</p>
+<p>Swift has no such object. There is no <code>window</code>, no <code>global</code>, nothing to inspect. Instead, <strong>the global namespace in Swift is your module</strong> — the compiled unit of code that makes up your app or framework. It is a flat, statically-typed scope that the compiler fully resolves before your app ever runs.</p>
 <section id="namespaces" class="level2">
 <h2 class="anchored" data-anchor-id="namespaces">Namespaces</h2>
-<ul>
-<li>a namespace is a named region of code.</li>
-<li>cannot be accessed directly without using the dot operator <strong>.</strong></li>
-</ul>
+<p>A namespace is a named region of code. In Swift, any type that contains nested types creates its own namespace. Nested names cannot be accessed without the dot operator <code>.</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog <span class="op">{</span>             <span class="co">// Dog is a namespace (because it contains a nested class)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Annie <span class="op">{}</span>      <span class="co">// Annie is a nested type</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Dog<span class="op">.</span>Annie </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Dog<span class="op">.</span>Annie               <span class="co">// ✅ Correct — must go through Dog</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Annie                   <span class="co">// ❌ Compile error — Annie does not exist at the top level</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>React Parallel
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This is similar to named exports. If <code>Annie</code> is a named export inside a <code>Dog</code> module, you cannot use <code>Annie</code> directly without importing or destructuring it from <code>Dog</code> first.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Annie } <span class="im">from</span> <span class="st">'./Dog'</span>  <span class="co">// explicit — similar to Dog.Annie</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 </section>
 <section id="modules" class="level2">
 <h2 class="anchored" data-anchor-id="modules">Modules</h2>
-<ul>
-<li>modules are actually a namespace too <code>MyApp.Dog.Annie</code> is the true name of class Annie</li>
-<li><code>import Foundation</code> / <code>import UiKit</code> are used to import namespaces without the need for dot notation every time</li>
-</ul>
+<p>Every Swift target (your app, a Swift package, a framework) compiles into a <strong>module</strong>. The module is itself a namespace. So the fully qualified name of <code>Annie</code> above is actually:</p>
+<pre><code>MyApp.Dog.Annie</code></pre>
+<p>Swift just lets you omit the module prefix when you are already inside that module — the same way you do not have to write <code>MyApp.ContentView</code> from within your own app.</p>
+<p><code>import</code> statements bring an external module’s top-level declarations into scope so you do not have to prefix everything:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">Foundation</span>   // <span class="im">gives</span> <span class="im">you</span> <span class="im">Date</span>, <span class="im">URL</span>, <span class="im">etc</span><span class="op">.</span> <span class="im">without</span> <span class="im">writing</span> <span class="im">Foundation</span><span class="op">.</span><span class="im">Date</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span>      // <span class="im">gives</span> <span class="im">you</span> <span class="im">View</span>, <span class="im">Text</span>, <span class="im">etc</span><span class="op">.</span> <span class="im">without</span> <span class="im">writing</span> <span class="im">SwiftUI</span><span class="op">.</span><span class="im">View</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Without the <code>import</code>, the types still exist — you would just need their full qualified name (<code>Foundation.Date</code>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>React Parallel
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Without import — you'd need the full path every time (impractical)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> d <span class="op">=</span> <span class="kw">new</span> globalThis<span class="op">.</span><span class="fu">Date</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">// With import — short name available directly</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { format } <span class="im">from</span> <span class="st">'date-fns'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="whats-in-the-global-namespace" class="level2">
+<h2 class="anchored" data-anchor-id="whats-in-the-global-namespace">What’s in the Global Namespace?</h2>
+<p>Anything declared at the <strong>top level of a Swift file</strong> — meaning outside of any <code>struct</code>, <code>class</code>, <code>enum</code>, or <code>func</code> — lives in the module’s global namespace and is accessible from every other file in the same target without any import:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What you can declare globally</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Types (<code>struct</code>, <code>class</code>, <code>enum</code>, <code>actor</code>, <code>protocol</code>)</td>
+<td><code>struct User { }</code></td>
+</tr>
+<tr class="even">
+<td>Global variables and constants</td>
+<td><code>let appVersion = "1.0"</code></td>
+</tr>
+<tr class="odd">
+<td>Top-level functions</td>
+<td><code>func greet() { }</code></td>
+</tr>
+<tr class="even">
+<td>Extensions</td>
+<td><code>extension String { }</code></td>
+</tr>
+<tr class="odd">
+<td>Operators</td>
+<td><code>func +(lhs: Point, rhs: Point) -&gt; Point { }</code></td>
+</tr>
+<tr class="even">
+<td><code>typealias</code></td>
+<td><code>typealias UserID = String</code></td>
+</tr>
+</tbody>
+</table>
+<p>By default, these are <code>internal</code> — visible to every file in your module, but <strong>not</strong> visible to other modules (other frameworks or apps that might import yours). You can widen this to <code>public</code> if you are building a library.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>React Parallel — No Direct Equivalent
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>JavaScript modules require explicit exports. Swift’s <code>internal</code> is more like writing a variable in a shared module store — everything in the same app can see it without you doing anything extra.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// JS — you must export explicitly</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> appVersion <span class="op">=</span> <span class="st">"1.0"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Swift — no export needed within the same module</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> appVersion <span class="op">=</span> <span class="st">"1.0"</span>  <span class="co">// every file in the app can use this</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-write-to-the-global-namespace" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-write-to-the-global-namespace">How to Write to the Global Namespace</h2>
+<p>Declare something at the top level of any <code>.swift</code> file (outside all types):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// AppConstants.swift</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="va">appVersion</span><span class="op">:</span> String <span class="op">=</span> <span class="st">"2.0"</span>         <span class="co">// global constant</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> <span class="va">currentEnvironment</span><span class="op">:</span> String <span class="op">=</span> <span class="st">"prod"</span> <span class="co">// global variable (mutatable)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="fu">logEvent</span><span class="op">(</span><span class="va">_</span> <span class="va">name</span><span class="op">:</span> <span class="dt">String</span><span class="op">)</span> <span class="op">{</span>         <span class="co">// global function</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    print<span class="op">(</span><span class="st">"[</span><span class="er">\(</span><span class="st">currentEnvironment)] </span><span class="er">\(</span><span class="st">name)"</span><span class="op">)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Every other file in the app can now use <code>appVersion</code>, <code>currentEnvironment</code>, and <code>logEvent()</code> with no import needed.</p>
+<section id="the-recommended-pattern-use-a-namespace-type" class="level3">
+<h3 class="anchored" data-anchor-id="the-recommended-pattern-use-a-namespace-type">The Recommended Pattern — Use a Namespace Type</h3>
+<p>Raw global variables work, but they pollute the flat module scope and can cause naming collisions as the codebase grows. The Swift community convention is to wrap related globals inside a <code>struct</code> or a caseless <code>enum</code> with <code>static</code> members:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// AppConstants.swift</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">enum</span> App <span class="op">{</span>                              <span class="co">// caseless enum — cannot be instantiated</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">let</span> <span class="va">version</span> <span class="op">=</span> <span class="st">"2.0"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="kw">var</span> <span class="va">environment</span> <span class="op">=</span> <span class="st">"prod"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">enum</span> API <span class="op">{</span>                          <span class="co">// nested namespace</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="kw">let</span> <span class="va">baseURL</span> <span class="op">=</span> <span class="st">"https://api.example.com"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">static</span> <span class="kw">let</span> <span class="va">timeout</span><span class="op">:</span> Double <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Usage from anywhere in the app:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>print<span class="op">(</span>App<span class="op">.</span>version<span class="op">)</span>          <span class="co">// "2.0"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>print<span class="op">(</span>App<span class="op">.</span>API<span class="op">.</span>baseURL<span class="op">)</span>      <span class="co">// "https://api.example.com"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>App<span class="op">.</span>environment <span class="op">=</span> <span class="st">"staging"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A caseless <code>enum</code> is preferred over <code>struct</code> here because you <strong>cannot accidentally create an instance</strong> of it (<code>App()</code> would be a compile error), making it a pure namespace with no ambiguity.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>React Parallel — <code>const config</code> Object
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This pattern maps closely to a shared config object in JavaScript:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// constants.js</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> App <span class="op">=</span> {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">version</span><span class="op">:</span> <span class="st">"2.0"</span><span class="op">,</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">environment</span><span class="op">:</span> <span class="st">"prod"</span><span class="op">,</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">API</span><span class="op">:</span> {</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">baseURL</span><span class="op">:</span> <span class="st">"https://api.example.com"</span><span class="op">,</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">timeout</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">// usage</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { App } <span class="im">from</span> <span class="st">'./constants'</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(App<span class="op">.</span><span class="at">API</span><span class="op">.</span><span class="at">baseURL</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The key difference: Swift’s <code>enum</code> namespace is enforced at compile time — you cannot pass it around as a value, extend it unexpectedly, or accidentally mutate it without <code>static var</code>.</p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -635,8 +807,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/optionals.html" class="pagination-link" aria-label="Optionals">
-        <span class="nav-page-text"><span class="chapter-title">Optionals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/instances.html" class="pagination-link" aria-label="Instances">
+        <span class="nav-page-text"><span class="chapter-title">Instances</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

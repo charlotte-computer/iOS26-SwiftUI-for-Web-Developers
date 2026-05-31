@@ -148,5 +148,8 @@
   },
   "chapters/global-namespace.qmd": {
     "global-namespace.html": "02d56dd0"
+  },
+  "chapters/instances.qmd": {
+    "instances.html": "e89a4650"
   }
 }
